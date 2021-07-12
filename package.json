@@ -12,17 +12,29 @@
 	"devDependencies": {
 		"@sveltejs/kit": "next",
 		"@zakuro9715/eslint-config": "^4.0.0",
+		"autoprefixer": "^10.2.6",
+		"cssnano": "^5.0.6",
 		"eslint": "^7.30.0",
 		"eslint-plugin-import": "^2.23.4",
 		"eslint-plugin-promise": "^4.3.1",
 		"eslint-plugin-svelte3": "^3.2.0",
-		"svelte": "^3.34.0",
 		"postcss": "^8.3.5",
 		"postcss-load-config": "^3.1.0",
+		"rehype-highlight": "^4.1.0",
+		"rehype-stringify": "^8.0.0",
+		"remark-frontmatter": "^3.0.0",
+		"remark-gfm": "^1.0.0",
+		"remark-parse": "^9.0.0",
+		"remark-rehype": "^8.1.0",
+		"svelte": "^3.34.0",
 		"svelte-preprocess": "^4.7.3",
-		"autoprefixer": "^10.2.6",
-		"cssnano": "^5.0.6",
-		"tailwindcss": "^2.2.4"
+		"tailwindcss": "^2.2.4",
+		"to-vfile": "^7.2.0",
+		"unified": "^9.2.1",
+		"yaml": "^1.10.2"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"remark-extract-frontmatter": "^3.1.0"
+	}
 }
