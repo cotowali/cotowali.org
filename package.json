@@ -1,0 +1,22 @@
+{
+  "name": "cotowali.org",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "devDependencies": {
+    "@sveltejs/kit": "next",
+    "@zakuro9715/eslint-config": "^4.0.0",
+    "eslint": "^7.30.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-svelte3": "^3.2.0",
+    "svelte": "^3.34.0"
+  },
+  "type": "module"
+}

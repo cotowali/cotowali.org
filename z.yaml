@@ -1,0 +1,11 @@
+default: main
+tasks:
+  main: |
+    if [ $# -eq 0 ]
+    then
+      npm start
+    else
+      npm run "$(echo "$*" | tr ' ' ':')"
+    fi
+  install: npm install $@
+  lint.fix: npm run lint:fix $@
