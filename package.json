@@ -10,6 +10,7 @@
 		"lint:fix": "npm run lint -- --fix"
 	},
 	"devDependencies": {
+		"@sveltejs/adapter-static": "^1.0.0-next.13",
 		"@sveltejs/kit": "next",
 		"@zakuro9715/eslint-config": "^4.0.0",
 		"autoprefixer": "^10.2.6",
