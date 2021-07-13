@@ -2,10 +2,7 @@
   import { base } from '$app/paths'
   export async function load({ page, fetch }) {
     const slug = page.params.slug
-    console.log(slug)
-    const text = await fetch(`${base}/guides/${slug}.json`).then((r) => r.text())
-    console.log(text)
-    const post = await fetch(`${base}/guides/${slug}.json`)
+    const post = await fetch(`/guides/${slug}.json`)
       .then((r) => r.json())
     return {
       props: { post }

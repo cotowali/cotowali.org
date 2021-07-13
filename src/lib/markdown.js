@@ -1,4 +1,4 @@
-import vfile from 'to-vfile'
+import { promises as fs } from 'fs'
 import unified from 'unified'
 import parse from 'remark-parse'
 import gfm from 'remark-gfm'
@@ -9,26 +9,16 @@ import extractFrontmatter from 'remark-extract-frontmatter'
 import highlight from 'rehype-highlight'
 import yaml from 'yaml'
 
-const parser = unified()
+const processor = unified()
   .use(parse)
   .use(gfm)
   .use(frontmatter)
   .use(extractFrontmatter, { yaml: yaml.parse })
-
-const runner = unified()
   .use(remark2rehype)
   .use(highlight)
   .use(rehypeStringify)
 
-export function process(filename) {
-  console.log(filename)
-  const tree = parser.parse(vfile.readSync(filename))
-  console.log(tree)
-  let metadata = {}
-  if (tree.childern.length > 0 && tree.children[0].type == 'yaml') {
-    metadata = yaml.load(tree.children[0].value)
-    tree.children = tree.children.slice(1, tree.children.length)
-  }
-  const content = runner.stringify(runner.runSync(tree))
+export async function process(filename) {
+  const { data: metadata, contents: content } = await processor.process(await fs.readFile(filename))
   return { metadata, content }
 }

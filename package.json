@@ -22,6 +22,7 @@
 		"postcss-load-config": "^3.1.0",
 		"rehype-highlight": "^4.1.0",
 		"rehype-stringify": "^8.0.0",
+		"remark-extract-frontmatter": "^3.1.0",
 		"remark-frontmatter": "^3.0.0",
 		"remark-gfm": "^1.0.0",
 		"remark-parse": "^9.0.0",
@@ -29,12 +30,8 @@
 		"svelte": "^3.34.0",
 		"svelte-preprocess": "^4.7.3",
 		"tailwindcss": "^2.2.4",
-		"to-vfile": "^7.2.0",
 		"unified": "^9.2.1",
 		"yaml": "^1.10.2"
 	},
-	"type": "module",
-	"dependencies": {
-		"remark-extract-frontmatter": "^3.1.0"
-	}
+	"type": "module"
 }
