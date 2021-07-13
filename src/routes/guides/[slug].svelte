@@ -2,17 +2,21 @@
   import { base } from '$app/paths'
   export async function load({ page, fetch }) {
     const slug = page.params.slug
-    const post = await fetch(`/contents/guides/${slug}.json`)
-      .then((r) => r.json())
-    return {
-      props: { post }
-    }
+    return await fetch(`/contents/guides/${slug}.json`).then(async (r) => {
+      if (!r.ok) {
+        return { status: r.status, error: new Error(r.status == 404 ? 'Not Found' : 'Faild to load') }
+      }
+      const entry = await r.json()
+      return {
+        props: { entry }
+      }
+    })
   }
 </script>
 
 <script>
-  export let post
+  export let entry
 </script>
 
-<h1>{post.metadata.title}</h1>
-{@html post.content}
+<h1>{entry.metadata.title}</h1>
+{@html entry.content}

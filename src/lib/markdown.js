@@ -18,7 +18,10 @@ const processor = unified()
   .use(highlight)
   .use(rehypeStringify)
 
+export class FaildToLoadError extends Error {}
+
 export async function process(filename) {
-  const { data: metadata, contents: content } = await processor.process(await fs.readFile(filename))
+  const text = await fs.readFile(filename).catch(() => { throw new FaildToLoadError() })
+  const { data: metadata, contents: content } = await processor.process(text)
   return { metadata, content }
 }
