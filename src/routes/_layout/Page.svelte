@@ -38,7 +38,7 @@
     @apply h-12 inline-block align-middle leading-none;
   }
   .nav-item-anchor {
-    @apply h-full flex items-center;
+    @apply h-full flex items-center; /* align text middle */
   }
   .content {
     @apply pt-12;
