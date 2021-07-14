@@ -20,9 +20,7 @@
   </header>
 
   <div class="content">
-    hello layout
     <slot></slot>
-    <span class="border inline-block align-bottom h-24">XXXX</span>
   </div>
 </div>
 
