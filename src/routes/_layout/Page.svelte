@@ -5,7 +5,7 @@
     </nav>
   </header>
 
-  <div>
+  <div class="content">
     hello layout
     <slot></slot>
   </div>
@@ -16,6 +16,9 @@
     @apply min-h-full
   }
   .header {
-    @apply flex shadow;
+    @apply w-full flex shadow fixed h-12
+  }
+  .content {
+    @apply pt-12
   }
 </style>
