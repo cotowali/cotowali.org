@@ -41,6 +41,7 @@
   }
   .nav-item-anchor {
     @apply h-full flex items-center; /* align text middle */
+    @apply px-2;
   }
   .content {
     @apply pt-12;
