@@ -1,3 +1,10 @@
+<script>
+  const navs = [
+    { text: 'Guilde', href: '/guide'},
+    { text: 'GitHub', href: 'https://github.com/cotowali/cotowali', target: '_blank'},
+  ]
+</script>
+
 <div class="page">
   <header class="header">
     <div class="flex items-center">
@@ -5,8 +12,9 @@
     </div>
     <nav>
       <ul class="flex h-full">
-        <li><a class="h-full flex items-center">Guide</a></li>
-        <li><a class="h-full flex items-center">GitHub</a></li>
+        {#each navs as { text, href, ...attrs} }
+          <li><a class="nav-item-anchor" {href} {...attrs}>{text}</a></li>
+        {/each}
       </ul>
     </nav>
   </header>
@@ -28,6 +36,9 @@
   }
   .header-item{
     @apply h-12 inline-block align-middle leading-none;
+  }
+  .nav-item-anchor {
+    @apply h-full flex items-center;
   }
   .content {
     @apply pt-12;
