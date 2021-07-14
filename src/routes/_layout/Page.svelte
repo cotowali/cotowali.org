@@ -34,9 +34,6 @@
     @apply px-4;
     @apply shadow;
   }
-  .header-item{
-    @apply h-12 inline-block align-middle leading-none;
-  }
   .nav-item-anchor {
     @apply h-full flex items-center; /* align text middle */
     @apply px-2;
