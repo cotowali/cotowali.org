@@ -1,0 +1,3 @@
+[submodule "packages/@cotowali/design"]
+	path = packages/@cotowali/design
+	url = git@github.com:cotowali/design

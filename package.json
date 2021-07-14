@@ -39,6 +39,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@cotowali/design": "file:src/design"
+		"@cotowali/design": "file:packages/@cotowali/design"
 	}
 }
