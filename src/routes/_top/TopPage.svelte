@@ -1,7 +1,8 @@
 <script>
   import Container from '$components/Container.svelte'
+  import Hero from './Hero.svelte'
 </script>
 
 <Container>
-  <h1>Cotowali</h1>
+  <Hero />
 </Container>
