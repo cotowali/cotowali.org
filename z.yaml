@@ -9,3 +9,4 @@ tasks:
     fi
   install: npm install $@
   lint.fix: npm run lint:fix $@
+  repl: node --experimental-repl-await
