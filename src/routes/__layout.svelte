@@ -1,7 +1,7 @@
 <script>
   import "../app.postcss"
 
-  import Page from './_layout/Page.svelte'
+  import Page from '$lib/components/Page.svelte'
 </script>
 
 <Page>
