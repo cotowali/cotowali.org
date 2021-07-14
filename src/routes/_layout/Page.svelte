@@ -31,7 +31,8 @@
     @apply min-h-full;
   }
   .header {
-    @apply flex items-stretch fixed w-full h-12;
+    @apply flex justify-between;
+    @apply fixed w-full h-12;
     @apply shadow;
   }
   .header-item{
