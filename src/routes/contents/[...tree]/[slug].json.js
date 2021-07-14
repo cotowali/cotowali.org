@@ -10,5 +10,6 @@ export async function get({ params }) {
     if (e instanceof FaildToLoadError) {
       return { status: 404, body: '"not found"' }
     }
+    return { status: 500, body: 'internal error' }
   }
 }
