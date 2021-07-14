@@ -1,1 +1,5 @@
-<h1>Cotowali</h1>
+<script>
+  import TopPage from './_top/TopPage.svelte'
+</script>
+
+<TopPage />
