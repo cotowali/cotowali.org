@@ -1,6 +1,9 @@
 import path from 'path'
+import fs from 'fs'
 import preprocess from "svelte-preprocess"
 import adapterStatic from '@sveltejs/adapter-static'
+
+const src = path.resolve('./src')
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,10 +17,15 @@ const config = {
     vite: {
       resolve: {
         alias: {
-          $components: path.resolve('./src/components')
+          // $foo: src/foo
+          ...Object.fromEntries(
+            fs.readdirSync(src, { withFileTypes: true })
+              .filter((f) => f.isDirectory())
+              .map((f) => ['$' + f.name, path.join(src, f.name)]),
+          ),
         },
-      }
-    }
+      },
+    },
   },
 
   preprocess: [preprocess({
