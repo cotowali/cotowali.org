@@ -1,3 +1,4 @@
+import path from 'path'
 import preprocess from "svelte-preprocess"
 import adapterStatic from '@sveltejs/adapter-static'
 
@@ -9,6 +10,14 @@ const config = {
       pages: 'dist',
       assets: 'dist',
     }),
+
+    vite: {
+      resolve: {
+        alias: {
+          $components: path.resolve('./src/components')
+        },
+      }
+    }
   },
 
   preprocess: [preprocess({
