@@ -1,1 +1,7 @@
-<h1>Cotowali</h1>
+<script>
+  import Container from '$lib/components/Container.svelte'
+</script>
+
+<Container>
+  <h1>Cotowali</h1>
+</Container>
