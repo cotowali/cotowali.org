@@ -33,6 +33,7 @@
   .header {
     @apply flex justify-between;
     @apply fixed w-full h-12;
+    @apply px-4;
     @apply shadow;
   }
   .header-item{
