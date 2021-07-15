@@ -11,8 +11,8 @@
 </div>
 
 <style>
-.hero {
-  @apply flex justify-center items-center;
-  @apply gap-x-16 py-24;
-}
+  .hero {
+    @apply flex justify-center items-center;
+    @apply gap-x-16 py-24;
+  }
 </style>
