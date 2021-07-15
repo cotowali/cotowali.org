@@ -1,4 +1,4 @@
-const colors = require('@cotowali/design/colors.json')
+const { colors } = require('@cotowali/design')
 
 const config = {
   mode: "jit",
@@ -8,7 +8,7 @@ const config = {
   theme: {
     extend: {},
     colors: {
-      main: colors.main,
+      main: colors.brand.red,
     },
   },
   plugins: [],
