@@ -7,6 +7,9 @@ const config = {
   ],
   theme: {
     extend: {},
+    boxShadow: {
+      DEFAULT: '0 2px 3px 2px rgba(0, 0, 0, 0.5)',
+    },
     colors: {
       main: colors.brand.red.hex(),
       dark: colors.dark.hex(),
