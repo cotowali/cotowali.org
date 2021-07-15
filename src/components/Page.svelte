@@ -27,6 +27,8 @@
 <style>
   .page {
     @apply min-h-full;
+    @apply bg-dark;
+    @apply text-white;
   }
   .header {
     @apply flex justify-between;
