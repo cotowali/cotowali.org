@@ -3,3 +3,6 @@ node_modules
 /.svelte-kit
 /package
 /dist
+
+/cypress/videos
+/cypress/screenshots
