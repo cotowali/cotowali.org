@@ -10,6 +10,7 @@ const config = {
     colors: {
       main: colors.brand.red.hex(),
       dark: colors.dark.hex(),
+      'dark-darken-1': colors.dark.set('hsl.l', 0.018).hex(),
       white: colors.white.hex(),
     },
   },
