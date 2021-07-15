@@ -1,0 +1,9 @@
+services:
+  e2e:
+    build:
+      context: .
+      dockerfile: cypress.dockerfile
+    working_dir: /app
+    volumes:
+      - .:/app
+
