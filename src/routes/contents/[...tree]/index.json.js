@@ -4,9 +4,9 @@ import { process } from '$lib/markdown'
 
 export async function get({ params }) {
   const { tree } = params
-  const { sections } = yaml.parse(await fs.readFile(`src/contents/${tree}/index.yaml`, 'utf-8'))
+  const { pages } = yaml.parse(await fs.readFile(`src/contents/${tree}/index.yaml`, 'utf-8'))
   const body = JSON.stringify(await Promise.all(
-    sections.map(async (slug) => {
+    pages.map(async (slug) => {
       const path = `contents/${tree}/${slug}`
       const obj = await process(`src/${path}.md`)
       obj.metadata.path = path
