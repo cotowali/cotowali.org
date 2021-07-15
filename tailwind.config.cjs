@@ -8,7 +8,7 @@ const config = {
   theme: {
     extend: {},
     colors: {
-      main: colors.brand.red,
+      main: colors.brand.red.hex(),
     },
   },
   plugins: [],
