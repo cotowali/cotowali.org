@@ -1,6 +1,6 @@
 <script>
   const navs = [
-    { text: 'Guilde', href: '/guide' },
+    { text: 'Docs', href: '/docs' },
     { text: 'GitHub', href: 'https://github.com/cotowali/cotowali', target: '_blank' },
   ]
 </script>
