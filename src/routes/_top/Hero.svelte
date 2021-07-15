@@ -4,7 +4,7 @@
 
 <div>
   <div class="flex flex-col">
-    <h1>Cotowali</h1>
+    <h1 class="text-main">Cotowali</h1>
     <p>A statically typed script language that transpile into POSIX sh</p>
   </div>
   <img src={logo} class="h-60">
