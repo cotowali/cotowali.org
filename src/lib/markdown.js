@@ -9,11 +9,13 @@ import extractFrontmatter from 'remark-extract-frontmatter'
 import highlight from 'rehype-highlight'
 import yaml from 'yaml'
 
-const processor = unified()
+const base = unified()
   .use(parse)
   .use(gfm)
   .use(frontmatter)
   .use(extractFrontmatter, { yaml: yaml.parse })
+
+const md = base
   .use(remark2rehype)
   .use(highlight)
   .use(rehypeStringify)
@@ -22,6 +24,6 @@ export class FaildToLoadError extends Error {}
 
 export async function process(filename) {
   const text = await fs.readFile(filename).catch(() => { throw new FaildToLoadError() })
-  const { data: metadata, contents: content } = await processor.process(text)
+  const { data: metadata, contents: content } = await md.process(text)
   return { metadata, content }
 }
