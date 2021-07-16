@@ -34,7 +34,7 @@
     @apply flex justify-between;
     @apply fixed w-full h-12;
     @apply px-4;
-    @apply shadow;
+    @apply bg-brand-red shadow;
   }
   .nav-item-anchor {
     @apply h-full flex items-center; /* align text middle */
