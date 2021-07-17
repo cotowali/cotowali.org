@@ -24,13 +24,17 @@
 </header>
 
 <div class="page">
-  <slot></slot>
+  <div class="content">
+    <main>
+      <slot></slot>
+    </main>
 
-  <footer class="footer">
-    <p class="text-sm">
-    Copyright &copy; 2021 The Cotowali Authors
-    </p>
-  </footer>
+    <footer class="footer">
+      <p class="text-sm">
+      Copyright &copy; 2021 The Cotowali Authors
+      </p>
+    </footer>
+  </div>
 </div>
 
 <style>
@@ -38,8 +42,8 @@
     @apply text-white;
   }
   .page {
-    @apply flex flex-col justify-between;
-    @apply min-h-full;
+    @apply flex justify-between;
+    @apply min-h-full w-full;
     @apply bg-dark;
     @apply pt-12;
   }
@@ -48,6 +52,10 @@
     @apply fixed w-full h-12;
     @apply px-4;
     @apply bg-brand-red shadow;
+  }
+  .content {
+    @apply flex flex-col justify-between;
+    @apply flex-grow;
   }
   .footer {
     @apply text-center;
