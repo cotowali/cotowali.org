@@ -14,6 +14,7 @@ const config = {
       brand: {
         red: colors.brand.red.hex(),
         'red-lighten-1': colors.brand.red.set('hsl.l', 0.53).hex(),
+        'dark-red': colors.brand.darkRed.hex(),
       },
       dark: colors.dark.set('hsl.l', 0.14).hex(),
       'dark-darken-1': colors.dark.set('hsl.l', 0.018).hex(),
