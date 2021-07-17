@@ -2,14 +2,18 @@
   export let type = 'button'
   export let href
 
-  $: classNames = 'button'
+  let passedClass
+  export { passedClass as class }
+
+  let baseClass = 'button'
+  $: className = `${baseClass} ${passedClass}`
   $: tag = href && 'a' || 'button'
 </script>
 
 {#if tag === 'a'}
-  <a class="{classNames}" {href} {...$$restProps}><slot /></a>
+  <a class="{className}" {href} {...$$restProps}><slot /></a>
 {:else}
-  <button class="{classNames}" {type} {...$$restProps}><slot/></button>
+  <button class="{className}" {type} {...$$restProps}><slot/></button>
 {/if}
 
 <style>
