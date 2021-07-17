@@ -18,6 +18,7 @@
 
 <style>
   .button {
+    @apply px-6 py-3;
     @apply shadow;
   }
 </style>
