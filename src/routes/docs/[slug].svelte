@@ -19,7 +19,7 @@
 </script>
 
 <Page>
-  <nav slot='sidenav'>sidenav</nav>
+  <nav slot='left'>sidenav</nav>
   <h1>{entry.metadata.title}</h1>
   {@html entry.content}
 </Page>

@@ -24,8 +24,8 @@
 </header>
 
 <div class="page">
-  {#if $$slots.sidenav }
-    <slot name="sidenav" />
+  {#if $$slots.left }
+    <slot name="left" />
   {/if}
   <div class="content">
     <main>
@@ -38,6 +38,9 @@
       </p>
     </footer>
   </div>
+  {#if $$slots.right }
+    <slot name="right" />
+  {/if}
 </div>
 
 <style>
