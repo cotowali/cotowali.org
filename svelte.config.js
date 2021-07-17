@@ -21,6 +21,7 @@ const config = {
           ...Object.fromEntries(
             fs.readdirSync(src, { withFileTypes: true })
               .filter((f) => f.isDirectory())
+              .filter((f) => f.name !== 'lib') // $lib is handled by svelte kit
               .map((f) => ['$' + f.name, path.join(src, f.name)]),
           ),
         },
