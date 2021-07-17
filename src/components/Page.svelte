@@ -24,7 +24,9 @@
   </div>
 
   <footer class="footer">
-    Copyright &copy; 2021 The Cotowali Authors. All rights reserved.
+    <p class="text-sm">
+      Copyright &copy; 2021 The Cotowali Authors
+    </p>
   </footer>
 </div>
 
