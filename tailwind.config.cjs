@@ -10,6 +10,9 @@ const config = {
     boxShadow: {
       DEFAULT: '0 3px 7px 0 rgba(0, 0, 0, 0.5)',
     },
+    borderRadius: {
+      DEFAULT: '0.125rem',
+    },
     colors: {
       brand: {
         red: colors.brand.red.hex(),
