@@ -10,7 +10,7 @@
       <p>A statically typed script language that transpile into POSIX sh</p>
     </div>
     <div class="mt-5">
-      <Button href="/docs/getting-started">Get Strated</Button>
+      <Button class="bg-brand-red" href="/docs/getting-started">Get Strated</Button>
     </div>
   </div>
   <img src={logo} class="h-60">
