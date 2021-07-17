@@ -13,7 +13,7 @@
     <nav>
       <ul class="flex h-full">
         {#each navs as { text, href, ...attrs} }
-          <li><a class="nav-item-anchor" {href} {...attrs}>{text}</a></li>
+          <li><a class="nav-item-anchor hover:bg-brand-red-lighten-1" {href} {...attrs}>{text}</a></li>
         {/each}
       </ul>
     </nav>
