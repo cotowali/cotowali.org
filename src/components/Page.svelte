@@ -24,6 +24,9 @@
 </header>
 
 <div class="page">
+  {#if $$slots.sidenav }
+    <slot name="sidenav" />
+  {/if}
   <div class="content">
     <main>
       <slot></slot>
