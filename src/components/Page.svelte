@@ -10,37 +10,38 @@
   ]
 </script>
 
-<div class="page">
-  <header class="header">
-    <div class="flex items-center">
-      <span>Cotowali</span>
-    </div>
-    <nav>
-      <ul class="flex h-full">
-        {#each navs as { text, href, ...attrs} }
-          <li><a class="nav-item-anchor hover:bg-brand-red-lighten-1" {href} {...attrs}>{text}</a></li>
-        {/each}
-      </ul>
-    </nav>
-  </header>
-
-  <div class="content mh-full">
-    <slot></slot>
+<header class="header">
+  <div class="flex items-center">
+    <span>Cotowali</span>
   </div>
+  <nav>
+    <ul class="flex h-full">
+      {#each navs as { text, href, ...attrs} }
+        <li><a class="nav-item-anchor hover:bg-brand-red-lighten-1" {href} {...attrs}>{text}</a></li>
+      {/each}
+    </ul>
+  </nav>
+</header>
+
+<div class="page">
+  <slot></slot>
 
   <footer class="footer">
     <p class="text-sm">
-      Copyright &copy; 2021 The Cotowali Authors
+    Copyright &copy; 2021 The Cotowali Authors
     </p>
   </footer>
 </div>
 
 <style>
+  :global(body) {
+    @apply text-white;
+  }
   .page {
     @apply flex flex-col justify-between;
     @apply min-h-full;
     @apply bg-dark;
-    @apply text-white;
+    @apply pt-12;
   }
   .header {
     @apply flex justify-between;
@@ -55,8 +56,5 @@
   .nav-item-anchor {
     @apply h-full flex items-center; /* align text middle */
     @apply px-2;
-  }
-  .content {
-    @apply pt-12;
   }
 </style>
