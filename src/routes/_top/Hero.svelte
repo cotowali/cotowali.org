@@ -9,8 +9,9 @@
     <div class="mt-1 px-[3px]">
       <p>A statically typed script language that transpile into POSIX sh</p>
     </div>
-    <div class="mt-5">
+    <div class="mt-5 flex gap-x-4">
       <Button class="bg-brand-red hover:bg-brand-red-lighten-1" href="/docs/getting-started">Get Strated</Button>
+      <Button class="bg-brand-dark-red hover:bg-brand-dark-red-lighten-1" href="/playground">Try</Button>
     </div>
   </div>
   <img src={logo} class="h-60">
