@@ -1,7 +1,12 @@
 <script>
   const navs = [
     { text: 'Docs', href: '/docs' },
-    { text: 'GitHub', href: 'https://github.com/cotowali/cotowali', target: '_blank' },
+    {
+      text: 'GitHub',
+      href: 'https://github.com/cotowali/cotowali',
+      target: '_blank',
+      rel: 'external',
+    },
   ]
 </script>
 
