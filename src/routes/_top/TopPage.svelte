@@ -1,8 +1,11 @@
 <script>
+  import Page from '$components/Page.svelte'
   import Container from '$components/Container.svelte'
   import Hero from './Hero.svelte'
 </script>
 
-<Container>
-  <Hero />
-</Container>
+<Page>
+  <Container>
+    <Hero />
+  </Container>
+</Page>

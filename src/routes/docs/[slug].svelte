@@ -14,8 +14,12 @@
 </script>
 
 <script>
+  import Page from '$components/Page.svelte'
+
   export let entry
 </script>
 
-<h1>{entry.metadata.title}</h1>
-{@html entry.content}
+<Page>
+  <h1>{entry.metadata.title}</h1>
+  {@html entry.content}
+</Page>
