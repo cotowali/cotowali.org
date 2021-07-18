@@ -15,11 +15,12 @@
 
 <script>
   import Page from '$components/Page.svelte'
+  import Sidenav from './_Sidenav.svelte'
   export let entry
 </script>
 
 <Page>
-  <nav slot='left'>sidenav</nav>
+  <Sidenav slot='left' />
   <h1>{entry.metadata.title}</h1>
   {@html entry.content}
 </Page>
