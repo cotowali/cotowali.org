@@ -7,8 +7,8 @@ export async function get({ params }) {
   const { pages } = yaml.parse(await fs.readFile(`src/contents/${tree}/index.yaml`, 'utf-8'))
   const body = JSON.stringify(await Promise.all(
     pages.map(async (slug) => {
-      const path = `contents/${tree}/${slug}`
-      const obj = await process(`src/${path}.md`)
+      const path = `${tree}/${slug}`
+      const obj = await process(`src/contents/${path}.md`)
       obj.metadata.path = path
       return obj
     }),
