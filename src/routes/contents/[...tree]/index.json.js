@@ -9,7 +9,7 @@ export async function get({ params }) {
     pages.map(async (slug) => {
       const path = `${tree}/${slug}`
       const obj = await process(`src/contents/${path}.md`)
-      obj.metadata.path = path
+      obj.metadata.path = '/' + path
       return obj
     }),
   ))
