@@ -6,8 +6,9 @@
         return { status: r.status, error: new Error(r.status === 404 ? 'Not Found' : 'Faild to load') }
       }
       const entry = await r.json()
+      const entries = await fetch(`/contents/docs`).then((r) => r.json())
       return {
-        props: { entry },
+        props: { entry, entries },
       }
     })
   }
@@ -17,10 +18,11 @@
   import Page from '$components/Page.svelte'
   import Sidenav from './_Sidenav.svelte'
   export let entry
+  export let entries
 </script>
 
 <Page>
-  <Sidenav slot='left' />
+  <Sidenav slot='left' {entries} />
   <h1>{entry.metadata.title}</h1>
   {@html entry.content}
 </Page>
