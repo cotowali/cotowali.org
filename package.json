@@ -36,6 +36,7 @@
 		"remark-gfm": "^1.0.0",
 		"remark-parse": "^9.0.0",
 		"remark-rehype": "^8.1.0",
+		"remark-store-metadata-toc": "file:packages/remark-store-metadata-toc",
 		"start-server-and-test": "^1.12.6",
 		"svelte": "^3.34.0",
 		"svelte-preprocess": "^4.7.3",
