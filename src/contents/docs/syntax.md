@@ -1,5 +1,5 @@
 ---
-Title: Syntax
+title: Syntax
 ---
 
 # If
