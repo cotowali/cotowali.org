@@ -23,6 +23,8 @@
 
 <Page>
   <Sidenav slot='left' {entries} />
-  <h1>{entry.metadata.title}</h1>
-  {@html entry.content}
+  <article class="p-12">
+    <h1>{entry.metadata.title}</h1>
+    {@html entry.content}
+  </article>
 </Page>
