@@ -1,5 +1,5 @@
 module.exports = {
-  '*.{js,vue}': [
+  '*.{js,ts,vue}': [
     'npm run lint:fix',
   ],
 }
