@@ -24,7 +24,15 @@
 <Page>
   <Sidenav slot='left' {entries} />
   <article class="p-12">
-    <h1>{entry.metadata.title}</h1>
+    <h1 class="title">{entry.metadata.title}</h1>
     {@html entry.content}
   </article>
 </Page>
+
+<style>
+  .title {
+    @apply text-3xl text-brand-red font-black;
+    @apply pb-2;
+    @apply border-b-2;
+  }
+</style>
