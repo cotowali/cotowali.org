@@ -2,7 +2,7 @@
 title: Syntax
 ---
 
-# If
+## If
 
 ```
 if cond1 {
@@ -14,7 +14,7 @@ if cond1 {
 }
 ```
 
-# For
+## For
 
 ```
 for v in arr {
