@@ -9,7 +9,9 @@
 		"test": "NODE_OPTIONS=--experimental-vm-modules jest",
 		"lint": "eslint --ignore-path .gitignore .",
 		"lint:fix": "npm run lint -- --fix",
-		"prepare": "husky install"
+    "build:design": "cd packages/@cotowali/design && npm run build && cd ../..",
+    "build:remark-store-metadata-toc": "cd packages/remark-store-metadata-toc && npm run build && cd ..",
+		"prepare": "husky install && npm run build:design && npm run build:remark-store-metadata-toc"
 	},
 	"devDependencies": {
 		"@cotowali/design": "file:packages/@cotowali/design",
