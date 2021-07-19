@@ -1,6 +1,0 @@
-[submodule "packages/@cotowali/design"]
-	path = packages/@cotowali/design
-	url = git@github.com:cotowali/design
-[submodule "packages/remark-store-metadata-toc"]
-	path = packages/remark-store-metadata-toc
-	url = git@github.com:zakuro9715/remark-store-metadata-toc.git
