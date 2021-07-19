@@ -59,7 +59,7 @@ export default Vue.extend({
 <style scoped>
   .page {
     @apply flex justify-between;
-    @apply min-h-full w-full;
+    @apply min-h-screen w-full;
     @apply bg-dark;
     @apply pt-12;
   }
