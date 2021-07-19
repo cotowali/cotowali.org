@@ -8,10 +8,3 @@ export default {
   components: { Page },
 }
 </script>
-
-<style>
-  body {
-    @apply text-white;
-    @apply bg-dark;
-  }
-</style>

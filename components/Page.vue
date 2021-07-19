@@ -49,8 +49,14 @@ export default Vue.extend({
 })
 </script>
 
-
 <style>
+  body {
+    @apply text-white;
+    @apply bg-dark;
+  }
+</style>
+
+<style scoped>
   .page {
     @apply flex justify-between;
     @apply min-h-full w-full;
