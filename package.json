@@ -2,6 +2,7 @@
   "name": "cotowali.org",
   "version": "1.0.0",
   "private": true,
+  "workspaces": ["@cotowali/design"],
   "scripts": {
     "start": "npm run dev",
     "dev": "nuxt",
@@ -10,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint:fix": "npm run lint -- --fix",
-    "prepare": "husky install",
+    "prepare": "husky install && npm run build --workspace=@cotowali/design",
     "test": "jest"
   },
   "dependencies": {
