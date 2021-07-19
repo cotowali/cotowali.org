@@ -4,6 +4,7 @@ import parse from 'remark-parse'
 import gfm from 'remark-gfm'
 import remark2rehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
+import storeMetadataToc from 'remark-store-metadata-toc'
 import frontmatter from 'remark-frontmatter'
 import extractFrontmatter from 'remark-extract-frontmatter'
 import highlight from 'rehype-highlight'
@@ -12,6 +13,7 @@ import yaml from 'yaml'
 const base = unified()
   .use(parse)
   .use(gfm)
+  .use(storeMetadataToc)
   .use(frontmatter)
   .use(extractFrontmatter, { yaml: yaml.parse })
 
