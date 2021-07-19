@@ -13,9 +13,6 @@
     "prepare": "husky install",
     "test": "jest"
   },
-  "lint-staged": {
-    "*.{js,vue}": "eslint"
-  },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/pwa": "^3.3.5",
