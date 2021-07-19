@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import preprocess from "svelte-preprocess"
-import adapterStatic from '@sveltejs/adapter-static'
+import adapterVercel from '@sveltejs/adapter-vercel'
 
 const src = path.resolve('./src')
 
@@ -9,10 +9,7 @@ const src = path.resolve('./src')
 const config = {
   kit: {
     target: '#app',
-    adapter: adapterStatic({
-      pages: 'dist',
-      assets: 'dist',
-    }),
+    adapter: adapterVercel(),
 
     vite: {
       resolve: {

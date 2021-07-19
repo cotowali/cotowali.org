@@ -3,6 +3,7 @@ node_modules
 /.svelte-kit
 /package
 /dist
+/.vercel_build_output
 
 /cypress/videos
 /cypress/screenshots
