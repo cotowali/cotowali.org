@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  ci:
+    runs-on: ${{ ubuntu-latest }}
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node
+        with:
+          node-version: 14
+      - name: Cache node_modules
+        uses: actions/cache@v2.1.4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - run: npm ci --prefer-offline --no-audit
+      - run: npm run lint
+      - run: npm run test
+      - run: npm run build
