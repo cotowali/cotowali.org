@@ -28,7 +28,7 @@
           <slot />
         </main>
 
-        <footer class="footer text-sm">
+        <footer class="footer text-xs">
           <p>Copyright &copy; zakuro &lt;z@kuro.red&gt;</p>
           <p>Design by zakuro &amp; Yuki Amane (Pianoforte)</p>
         </footer>
