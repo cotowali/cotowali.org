@@ -3,11 +3,11 @@
     <nav class="fixed w-40 pt-6">
       <ul>
         <li v-for="page in pages" :key="page.slug">
-          <div>
-            <nuxt-link :to="page.path" class="hover:bg-dark-darken-1 px-6 block">{{ page.title }}</nuxt-link>
-            <ul v-if="page.toc.length > 0">
+          <div class="px-6">
+            <nuxt-link :to="page.path" class="hover:underline">{{ page.title }}</nuxt-link>
+            <ul v-if="page.toc.length > 0" class="px-2">
               <li v-for="link of page.toc" :key="link.id">
-                <nuxt-link :to="page.path + '#' + link.id" class="px-8">{{ link.text }}</nuxt-link>
+                <nuxt-link :to="page.path + '#' + link.id" class="hover:underline">{{ link.text }}</nuxt-link>
               </li>
             </ul>
           </div>
