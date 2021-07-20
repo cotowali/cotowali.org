@@ -13,7 +13,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint:fix": "npm run lint -- --fix",
-    "prepare": "husky install && npm run prepare --workspaces",
+    "prepare": "husky install && npm run prepare --workspace=@cotowali/design",
     "test": "jest"
   },
   "dependencies": {
