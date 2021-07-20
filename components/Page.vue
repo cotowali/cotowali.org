@@ -1,25 +1,8 @@
 <template>
   <div>
-    <header class="header">
-      <div class="flex items-center">
-        <span>Cotowali</span>
-      </div>
-      <nav>
-        <ul class="flex h-full">
-          <li><a class="nav-item-anchor" href="/docs">Docs</a></li>
-          <li>
-            <a
-              class="nav-item-anchor"
-              href="https://github.com/cotowali/cotowali"
-              target="_blank"
-              rel="external noopener noreferrer"
-            >GitHub</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <LiHeader class="h-12" />
 
-    <div class="page">
+    <div class="page pt-12">
       <template v-if="$slots.left">
         <slot name="left" />
       </template>
@@ -42,9 +25,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import LiHeader from '@/components/LiHeader.vue'
 
 export default Vue.extend({
   name: 'Page',
+  components: { LiHeader },
 })
 </script>
 
@@ -60,13 +45,6 @@ export default Vue.extend({
     @apply flex justify-between;
     @apply min-h-screen w-full;
     @apply bg-dark;
-    @apply pt-12;
-  }
-  .header {
-    @apply flex justify-between;
-    @apply fixed w-full h-12;
-    @apply px-4;
-    @apply bg-brand-red shadow;
   }
   .content {
     @apply flex flex-col justify-between;
@@ -75,11 +53,5 @@ export default Vue.extend({
   .footer {
     @apply text-center;
     @apply p-4;
-  }
-  .nav-item-anchor {
-    @apply h-full flex items-center; /* align text middle */
-    @apply hover:bg-brand-red-lighten-1;
-
-    @apply px-2;
   }
 </style>
