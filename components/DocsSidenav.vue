@@ -4,10 +4,21 @@
       <ul>
         <li v-for="page in pages" :key="page.slug">
           <div class="px-6">
-            <nuxt-link :to="page.path" class="hover:underline" active-class="text-brand-red">{{ page.title }}</nuxt-link>
+            <nuxt-link
+              :to="localePath(page.path)"
+              class="hover:underline"
+              active-class="text-brand-red"
+            >
+              {{ page.title }}
+            </nuxt-link>
             <scrollactive v-if="page.toc.length > 0" tag="ul" class="px-2" active-class="text-brand-red">
               <li v-for="link of page.toc" :key="link.id">
-                <nuxt-link :to="tocLinkTarget(page, link.id)" class="hover:underline scrollactive-item">{{ link.text }}</nuxt-link>
+                <nuxt-link
+                  :to="localePath(page.path + '#' + link.id)"
+                  class="hover:underline scrollactive-item"
+                >
+                  {{ link.text }}
+                </nuxt-link>
               </li>
             </scrollactive>
           </div>
@@ -26,16 +37,13 @@ export default Vue.extend({
   data: () => ({ pages: [] as Page[] }),
   async fetch() {
     const index = await this.$content('docs', 'index').fetch<Index>() as Index
-    const slugIndex = Object.fromEntries(index.pages.map((slug, i) => [slug, i]))
+    const slugs = index.pages.map((v) => [v, this.$i18n.locale].join('.'))
+    const slugIndex = Object.fromEntries(slugs.map((slug, i) => [slug, i]))
     this.pages = await this.$content('docs')
-      .where({ slug: { $in: index.pages }})
+      .where({ slug: { $in: slugs }})
       .fetch<Page>() as Page[]
+    this.pages = this.pages.map((page) => ({ ...page, path: page.path.split('.')[0] }))
     this.pages.sort((a, b) => slugIndex[a.slug] - slugIndex[b.slug])
-  },
-  computed: {
-    tocLinkTarget() {
-      return ({ path }: Page, id: string) => `${path}#${id}`
-    },
   },
 })
 </script>

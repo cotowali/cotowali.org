@@ -10,8 +10,8 @@ import Vue from 'vue'
 
 export default Vue.extend({
   layout: 'docs',
-  async asyncData({ $content, params: { slug }}) {
-    const entry = await $content('docs', slug).fetch()
+  async asyncData({ params: { slug }, $content, i18n: { locale }}) {
+    const entry = await $content('docs', [slug, locale].join('.')).fetch()
     return { entry }
   },
 })
