@@ -20,11 +20,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import LiButton from '@/components/LiButton.vue'
 
 export default Vue.extend({
   name: 'LiHero',
-  components: { LiButton },
 })
 </script>
 

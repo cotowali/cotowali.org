@@ -25,11 +25,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import LiHeader from '@/components/LiHeader.vue'
 
 export default Vue.extend({
   name: 'Page',
-  components: { LiHeader },
 })
 </script>
 
