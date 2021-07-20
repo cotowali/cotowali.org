@@ -5,11 +5,11 @@
         <li v-for="page in pages" :key="page.slug">
           <div class="px-6">
             <nuxt-link :to="page.path" class="hover:underline" active-class="text-brand-red">{{ page.title }}</nuxt-link>
-            <ul v-if="page.toc.length > 0" class="px-2">
+            <scrollactive v-if="page.toc.length > 0" tag="ul" class="px-2" active-class="text-brand-red">
               <li v-for="link of page.toc" :key="link.id">
-                <nuxt-link :to="tocLinkTarget(page, link.id)" class="hover:underline">{{ link.text }}</nuxt-link>
+                <nuxt-link :to="tocLinkTarget(page, link.id)" class="hover:underline scrollactive-item">{{ link.text }}</nuxt-link>
               </li>
-            </ul>
+            </scrollactive>
           </div>
         </li>
       </ul>
