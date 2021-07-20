@@ -1,5 +1,5 @@
 <template>
-  <a v-if="type === 'a'" class="button" :href="href"><slot /></a>
+  <a v-if="tag === 'a'" class="button" :href="href"><slot /></a>
   <button v-else class="button" :type="type">
     <slot />
   </button>
@@ -18,6 +18,15 @@ export default Vue.extend({
     href: {
       type: String,
       default: undefined,
+    },
+  },
+  computed: {
+    tag() {
+      if (this.href) {
+        return 'a'
+      } else {
+        return 'button'
+      }
     },
   },
 })
