@@ -5,4 +5,5 @@ export interface Index {
 export interface Page {
   title: string
   slug: string
+  path: string
 }
