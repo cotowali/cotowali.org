@@ -6,7 +6,7 @@
         <p>A statically typed script language that transpile into POSIX sh</p>
       </div>
       <div class="mt-5 flex gap-x-4">
-        <LiButton class="bg-brand-red hover:bg-brand-red-lighten-1" href="/docs/getting-started">
+        <LiButton class="bg-brand-red hover:bg-brand-red-lighten-1" :to="localePath('/docs/getting-started')">
           Get Strated
         </LiButton>
         <LiButton class="bg-brand-dark-red hover:bg-brand-dark-red-lighten-1" href="/playground">
