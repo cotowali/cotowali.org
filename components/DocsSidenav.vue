@@ -17,17 +17,20 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+import { Index, Page } from '@/lib/content'
+
+export default Vue.extend({
   name: 'DocsSidenav',
-  data: () => ({ pages: []}),
+  data: () => ({ pages: [] as Page[] }),
   async fetch() {
-    const index = await this.$content('docs', 'index').fetch()
+    const index = await this.$content('docs', 'index').fetch<Index>() as Index
     const slugIndex = Object.fromEntries(index.pages.map((slug, i) => [slug, i]))
     this.pages = await this.$content('docs')
       .where({ slug: { $in: index.pages }})
-      .fetch()
+      .fetch<Page>() as Page[]
     this.pages.sort((a, b) => slugIndex[a.slug] - slugIndex[b.slug])
   },
-}
+})
 </script>
