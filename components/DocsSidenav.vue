@@ -4,7 +4,7 @@
       <ul>
         <li v-for="page in pages" :key="page.slug">
           <div class="px-6">
-            <nuxt-link :to="page.path" class="hover:underline">{{ page.title }}</nuxt-link>
+            <nuxt-link :to="page.path" class="hover:underline" active-class="text-brand-red">{{ page.title }}</nuxt-link>
             <ul v-if="page.toc.length > 0" class="px-2">
               <li v-for="link of page.toc" :key="link.id">
                 <nuxt-link :to="page.path + '#' + link.id" class="hover:underline">{{ link.text }}</nuxt-link>
