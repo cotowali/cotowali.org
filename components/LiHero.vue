@@ -1,16 +1,30 @@
+<i18n>
+{
+  "en": {
+    "description": "A statically typed script language that transpile into POSIX sh",
+    "get-started": "Get Started",
+    "try": "Try"
+  },
+  "ja": {
+    "get-started": "はじめる"
+ }
+
+}
+</i18n>
+
 <template>
   <div class="hero">
     <div class="flex flex-col">
       <h1 class="text-brand-red text-4xl">Cotowali</h1>
       <div class="mt-1" style="padding-left: 3px;">
-        <p>A statically typed script language that transpile into POSIX sh</p>
+        <p>{{ $t('description') }}</p>
       </div>
       <div class="mt-5 flex gap-x-4">
         <LiButton class="bg-brand-red hover:bg-brand-red-lighten-1" :to="localePath('/docs/getting-started')">
-          Get Strated
+          {{ $t('get-started') }}
         </LiButton>
         <LiButton class="bg-brand-dark-red hover:bg-brand-dark-red-lighten-1" href="/playground">
-          Try
+          {{ $t('try') }}
         </LiButton>
       </div>
     </div>
