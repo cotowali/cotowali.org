@@ -53,6 +53,15 @@ export default {
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
 
+  // i18n
+  i18n: {
+    locales: [
+      { code: 'en', iso: 'en-US' },
+      { code: 'ja', iso: 'ja-JP' },
+    ],
+    defaultLocale: 'en',
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
