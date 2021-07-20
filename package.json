@@ -2,7 +2,9 @@
   "name": "cotowali.org",
   "version": "1.0.0",
   "private": true,
-  "workspaces": ["@cotowali/design"],
+  "workspaces": [
+    "@cotowali/design"
+  ],
   "scripts": {
     "start": "npm run dev",
     "dev": "nuxt",
