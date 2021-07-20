@@ -1,5 +1,12 @@
 <template>
-  <a v-if="tag === 'a'" class="button" :href="href"><slot /></a>
+  <a v-if="useAnchorTag" class="button" :href="href">
+    <slot />
+  </a>
+
+  <nuxt-link v-else-if="useNuxtLinkTag" class="button" :to="to">
+    <slot />
+  </nuxt-link>
+
   <button v-else class="button" :type="type">
     <slot />
   </button>
@@ -19,14 +26,17 @@ export default Vue.extend({
       type: String,
       default: undefined,
     },
+    to: {
+      type: [String, Object],
+      default: undefined,
+    },
   },
   computed: {
-    tag() {
-      if (this.href) {
-        return 'a'
-      } else {
-        return 'button'
-      }
+    useAnchorTag() {
+      return !!this.href
+    },
+    useNuxtLinkTag() {
+      return !!this.to
     },
   },
 })
