@@ -5,7 +5,7 @@
     </div>
     <nav>
       <ul class="flex h-full">
-        <li><nuxt-link class="nav-item-anchor" :to="localePath('/docs')">Docs</nuxt-link></li>
+        <li><nuxt-link class="nav-item-anchor" :to="localePath('/docs/getting-started')">Docs</nuxt-link></li>
         <li>
           <a
             class="nav-item-anchor"
