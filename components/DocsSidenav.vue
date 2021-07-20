@@ -3,25 +3,7 @@
     <nav class="fixed w-40 pt-6">
       <ul>
         <li v-for="page in pages" :key="page.slug">
-          <div class="px-6">
-            <nuxt-link
-              :to="localePath(page.path)"
-              class="hover:underline"
-              active-class="text-brand-red"
-            >
-              {{ page.title }}
-            </nuxt-link>
-            <scrollactive v-if="page.toc.length > 0" tag="ul" class="px-2" active-class="text-brand-red">
-              <li v-for="link of page.toc" :key="link.id">
-                <nuxt-link
-                  :to="localePath(page.path + '#' + link.id)"
-                  class="hover:underline scrollactive-item"
-                >
-                  {{ link.text }}
-                </nuxt-link>
-              </li>
-            </scrollactive>
-          </div>
+          <DocsSidenavItem class="px-6" :page="page" />
         </li>
       </ul>
     </nav>
