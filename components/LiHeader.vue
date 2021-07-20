@@ -5,7 +5,7 @@
     </div>
     <nav>
       <ul class="flex h-full">
-        <li><a class="nav-item-anchor" href="/docs">Docs</a></li>
+        <li><nuxt-link class="nav-item-anchor" to="/docs">Docs</nuxt-link></li>
         <li>
           <a
             class="nav-item-anchor"
