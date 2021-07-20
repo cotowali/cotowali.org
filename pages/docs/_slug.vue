@@ -9,6 +9,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+  layout: 'docs',
   async asyncData({ $content, params: { slug }}) {
     const entry = await $content('docs', slug).fetch()
     return { entry }
