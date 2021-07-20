@@ -41,6 +41,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxt/content',
     ['nuxt-i18n', {
+      vueI18nLoader: true,
       detectBrowserLanguage: {
         useCookie: true,
         cookieKey: 'i18n_redirected',
