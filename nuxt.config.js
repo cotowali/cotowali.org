@@ -38,10 +38,9 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    'nuxt-i18n',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
