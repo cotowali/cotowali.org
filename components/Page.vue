@@ -28,10 +28,9 @@
           <slot />
         </main>
 
-        <footer class="footer">
-          <p class="text-sm">
-            Copyright &copy; zakuro &lt;z@kuro.red&gt;.
-          </p>
+        <footer class="footer text-sm">
+          <p>Copyright &copy; zakuro &lt;z@kuro.red&gt;</p>
+          <p>Design by zakuro &amp; Yuki Amane (Pianoforte)</p>
         </footer>
       </div>
       <template v-if="$slots.right">
