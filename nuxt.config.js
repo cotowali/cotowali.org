@@ -40,7 +40,13 @@ export default {
   modules: [
     '@nuxtjs/pwa',
     '@nuxt/content',
-    'nuxt-i18n',
+    ['nuxt-i18n', {
+      detectBrowserLanguage: {
+        useCookie: true,
+        cookieKey: 'i18n_redirected',
+        onlyOnRoot: true,
+      },
+    }],
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
