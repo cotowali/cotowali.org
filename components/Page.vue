@@ -30,7 +30,7 @@
 
         <footer class="footer">
           <p class="text-sm">
-            Copyright &copy; 2021 The Cotowali Authors
+            Copyright &copy; zakuro &lt;z@kuro.red&gt;.
           </p>
         </footer>
       </div>
