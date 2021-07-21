@@ -11,7 +11,9 @@
     "lint": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "firebase": "firebase",
+    "firebase:deploy": "firebase deploy --only hosting"
   },
   "dependencies": {
     "@cotowali/design": "^0.1.0",
@@ -41,6 +43,7 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-vue": "^7.14.0",
+    "firebase-tools": "^9.16.0",
     "husky": "^6.0.0",
     "jest": "^27.0.5",
     "lint-staged": "^10.5.4",
