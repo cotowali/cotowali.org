@@ -1,3 +1,5 @@
+import highlighter from './lib/highlighter'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -58,7 +60,11 @@ export default {
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  content: {
+    markdown: {
+      highlighter,
+    },
+  },
 
   // i18n
   i18n: {
