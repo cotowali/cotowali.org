@@ -1,5 +1,6 @@
 ---
 title: Syntax
+version: 20210101
 ---
 
 ## If

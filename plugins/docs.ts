@@ -8,6 +8,7 @@ export interface Page {
   title: string
   slug: string
   path: string
+  version: string
 }
 
 declare module '@nuxt/types' {
