@@ -36,7 +36,7 @@ export default Vue.extend({
     @apply flex justify-between;
     @apply fixed w-full;
     @apply px-4;
-    @apply bg-brand-red shadow;
+    @apply bg-brand-red;
   }
   .nav-item-anchor {
     @apply h-full flex items-center; /* align text middle */

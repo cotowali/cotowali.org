@@ -1,5 +1,5 @@
 <template>
-  <div class="pr-40 min-h-full shadow">
+  <div class="pr-40 bg-dark-darken-1 min-h-full">
     <nav class="fixed w-40 pt-6">
       <ul>
         <li v-for="page in pages" :key="page.slug">

@@ -10,9 +10,6 @@ module.exports = {
   ],
   theme: {
     extend: {},
-    boxShadow: {
-      DEFAULT: '0 3px 1px 0 rgba(0, 0, 0, 0.3), 0 0 4px 0 rgba(0, 0, 0, 0.5)',
-    },
     borderRadius: {
       DEFAULT: '0.125rem',
     },

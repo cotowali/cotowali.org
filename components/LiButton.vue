@@ -45,6 +45,6 @@ export default Vue.extend({
 <style>
   .button {
     @apply px-6 py-3;
-    @apply rounded shadow;
+    @apply rounded;
   }
 </style>
