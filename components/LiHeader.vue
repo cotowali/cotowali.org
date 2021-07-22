@@ -12,7 +12,9 @@
             href="https://github.com/cotowali/cotowali"
             target="_blank"
             rel="external noopener noreferrer"
-          >GitHub</a>
+          >
+            <LiIcon :icon="mdiGithub" />
+          </a>
         </li>
       </ul>
     </nav>
@@ -21,9 +23,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mdiGithub } from '@mdi/js'
 
 export default Vue.extend({
   name: 'LiHeader',
+  data: () => ({ mdiGithub }),
 })
 </script>
 
