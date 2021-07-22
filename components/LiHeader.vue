@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="flex items-center">
-      <span>Cotowali</span>
+      <nuxt-link :to="localePath('/')">Cotowali</nuxt-link>
     </div>
     <nav>
       <ul class="flex h-full">
