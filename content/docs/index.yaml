@@ -2,3 +2,5 @@ pages:
   - getting-started
   - syntax
   - examples
+devPages:
+  - preview-theme
