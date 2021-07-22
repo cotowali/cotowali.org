@@ -12,14 +12,23 @@ export interface Page {
   version: string
 }
 
+
+interface $Docs {
+  fetch: {
+    (slug: string): Promise<Page>
+      (): Promise<Page[]>
+  }
+}
+
 declare module '@nuxt/types' {
   interface Context {
-    $docs: {
-      fetch: {
-        (slug: string): Promise<Page>
-        (): Promise<Page[]>
-      }
-    }
+    $docs: $Docs
+  }
+}
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    $docs: $Docs
   }
 }
 
