@@ -23,7 +23,8 @@ module.exports = {
         'dark-red': colors.brand.darkRed.hex(),
       },
       dark: colors.dark.hex(),
-      'dark-darken-1': colors.dark.lightness(1.8).hex(),
+      'dark-darken-1': colors.dark.darken(0.4).hex(),
+      black: '#000', // TODO
       white: colors.white.hex(),
     },
   },
