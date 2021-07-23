@@ -35,6 +35,11 @@ export default Vue.extend({
       default: 'default',
       validator: (v) => ['default', 'large', 'small'].includes(v),
     },
+    color: {
+      type: String,
+      default: 'red',
+      validator: (v) => ['red', 'dark-red'].includes(v),
+    },
   },
   computed: {
     useAnchorTag() {
@@ -47,6 +52,7 @@ export default Vue.extend({
       return {
         button: true,
         [`size-${this.size}`]: true,
+        [`color-${this.color}`]: true,
       }
     },
   },
@@ -66,5 +72,11 @@ export default Vue.extend({
   }
   .size-large {
     @apply px-6 h-12 min-w-12;
+  }
+  .color-red {
+    @apply bg-brand-red hover:bg-brand-red-lighten-1;
+  }
+  .color-dark-red {
+    @apply bg-brand-dark-red hover:bg-brand-dark-red-lighten-1;
   }
 </style>
