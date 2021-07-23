@@ -20,7 +20,7 @@ module.exports = {
     colors: {
       brand: {
         red: colors.brand.red.hex(),
-        'red-lighten-1': colors.brand.red.lightness(53).hex(),
+        'red-lighten-1': colors.brand.red.lighten(0.2).hex(),
         'dark-red': colors.brand.darkRed.hex(),
       },
       dark: colors.dark.hex(),
