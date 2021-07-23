@@ -39,13 +39,12 @@ export default Vue.extend({
       type: Boolean,
     },
 
-    // color
-    color: {
-      type: String,
-      default: 'red',
-      validator: (v) => ['red', 'dark-red'].includes(v),
+    red: {
+      type: Boolean,
     },
-
+    darkRed: {
+      type: Boolean,
+    },
   },
   computed: {
     useAnchorTag(): boolean {
@@ -59,6 +58,13 @@ export default Vue.extend({
         (this.large && 'large') ||
         (this.small && 'small') ||
         'default'
+      )
+    },
+    color(): string {
+      return (
+        (this.red && 'red') ||
+        (this.darkRed && 'dark-red') ||
+        'red'
       )
     },
     classes(): { [key:string]: boolean } {
