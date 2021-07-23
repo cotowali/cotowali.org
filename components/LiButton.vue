@@ -42,13 +42,13 @@ export default Vue.extend({
     },
   },
   computed: {
-    useAnchorTag() {
+    useAnchorTag(): boolean {
       return !!this.href
     },
-    useNuxtLinkTag() {
+    useNuxtLinkTag(): boolean {
       return !!this.to
     },
-    classes() {
+    classes(): { [key:string]: boolean } {
       return {
         button: true,
         [`size-${this.size}`]: true,
