@@ -20,10 +20,10 @@
         <p>{{ $t('description') }}</p>
       </div>
       <div class="mt-5 flex gap-x-4">
-        <LiButton class="bg-brand-red hover:bg-brand-red-lighten-1" :to="localePath('/docs/getting-started')">
+        <LiButton size="large" class="bg-brand-red hover:bg-brand-red-lighten-1" :to="localePath('/docs/getting-started')">
           {{ $t('get-started') }}
         </LiButton>
-        <LiButton class="bg-brand-dark-red hover:bg-brand-dark-red-lighten-1" href="/playground">
+        <LiButton size="large" class="bg-brand-dark-red hover:bg-brand-dark-red-lighten-1" href="/playground">
           {{ $t('try') }}
         </LiButton>
       </div>

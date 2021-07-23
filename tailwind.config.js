@@ -1,4 +1,5 @@
 const { colors } = require('@cotowali/design')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: [
@@ -9,7 +10,10 @@ module.exports = {
     './nuxt.config.{js,ts}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      minHeight: defaultTheme.spacing,
+      minWidth: defaultTheme.spacing,
+    },
     borderRadius: {
       DEFAULT: '0.125rem',
     },

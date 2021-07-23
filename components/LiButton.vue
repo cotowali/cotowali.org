@@ -1,13 +1,13 @@
 <template>
-  <a v-if="useAnchorTag" class="button" :href="href">
+  <a v-if="useAnchorTag" :class="classes" :href="href">
     <slot />
   </a>
 
-  <nuxt-link v-else-if="useNuxtLinkTag" class="button" :to="to">
+  <nuxt-link v-else-if="useNuxtLinkTag" :class="classes" :to="to">
     <slot />
   </nuxt-link>
 
-  <button v-else class="button" :type="type">
+  <button v-else :class="classes" :type="type">
     <slot />
   </button>
 </template>
@@ -30,6 +30,11 @@ export default Vue.extend({
       type: [String, Object],
       default: undefined,
     },
+    size: {
+      type: String,
+      default: 'default',
+      validator: (v) => ['default', 'large', 'small'].includes(v),
+    },
   },
   computed: {
     useAnchorTag() {
@@ -38,13 +43,28 @@ export default Vue.extend({
     useNuxtLinkTag() {
       return !!this.to
     },
+    classes() {
+      return {
+        button: true,
+        [`size-${this.size}`]: true,
+      }
+    },
   },
 })
 </script>
 
-<style>
+<style scoped>
   .button {
-    @apply px-6 py-3;
     @apply rounded;
+    @apply flex items-center;
+  }
+  .size-small {
+    @apply px-2 h-8 min-w-8;
+  }
+  .size-default {
+    @apply px-4 h-10 min-w-10;
+  }
+  .size-large {
+    @apply px-6 h-12 min-w-12;
   }
 </style>
