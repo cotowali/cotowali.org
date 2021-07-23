@@ -45,6 +45,14 @@ export default Vue.extend({
     darkRed: {
       type: Boolean,
     },
+
+    // shape
+    icon: {
+      type: Boolean,
+    },
+    circle: {
+      type: Boolean,
+    },
   },
   computed: {
     useAnchorTag(): boolean {
@@ -70,6 +78,8 @@ export default Vue.extend({
     classes(): { [key:string]: boolean } {
       return {
         button: true,
+        circle: this.circle,
+        icon: this.icon,
         [`size-${this.size}`]: true,
         [`color-${this.color}`]: true,
       }
@@ -91,21 +101,24 @@ export default Vue.extend({
   .size-small {
     @apply px-2 h-8 min-w-8;
   }
-  .size-small.circle {
+  .size-small.circle,
+  .size-small.icon {
     @apply w-8;
   }
 
   .size-default {
     @apply px-4 h-10 min-w-10;
   }
-  .size-default.circle {
+  .size-default.circle,
+  .size-default.icon {
     @apply w-10;
   }
 
   .size-large {
     @apply px-6 h-12 min-w-12;
   }
-  .size-large.circle {
+  .size-large.circle,
+  .size-large.icon {
     @apply w-12;
   }
 
