@@ -1,9 +1,9 @@
 <template>
-  <span class="fill-current size">
-    <svg role="img" viewBox="0 0 24 24" class="size">
+  <div class="fill-current" :style="{ width: size, height: size }">
+    <svg role="img" viewBox="0 0 24 24" :width="size" :height="size">
       <path :d="icon" />
     </svg>
-  </span>
+  </div>
 </template>
 
 <script lang="ts">
@@ -16,12 +16,10 @@ export default Vue.extend({
       type: String,
       required: true,
     },
+    size: {
+      type: String,
+      default: '1.5rem',
+    },
   },
 })
 </script>
-
-<style computed>
-.size {
-  @apply h-7 w-7;
-}
-</style>
