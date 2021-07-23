@@ -4,17 +4,21 @@
       <nuxt-link :to="localePath('/')">Cotowali</nuxt-link>
     </div>
     <nav>
-      <ul class="flex h-full">
-        <li><nuxt-link class="nav-item-anchor" :to="localePath('/docs/getting-started')">Docs</nuxt-link></li>
+      <ul class="nav-list">
+        <LiButton small :to="localePath('/docs/getting-started')">
+          Docs
+        </LiButton>
         <li>
-          <a
-            class="nav-item-anchor"
+          <LiButton
+            small
+            circle
+            icon
             href="https://github.com/cotowali/cotowali"
             target="_blank"
             rel="external noopener noreferrer"
           >
             <LiIcon :icon="mdiGithub" />
-          </a>
+          </LiButton>
         </li>
       </ul>
     </nav>
@@ -33,15 +37,12 @@ export default Vue.extend({
 
 <style scoped>
   .header {
-    @apply flex justify-between;
+    @apply flex justify-between items-center;
     @apply fixed w-full;
     @apply px-4;
     @apply bg-brand-red;
   }
-  .nav-item-anchor {
-    @apply h-full flex items-center; /* align text middle */
-    @apply hover:bg-brand-red-lighten-1;
-
-    @apply px-2;
+  .nav-list {
+    @apply flex items-center gap-x-2;
   }
 </style>
