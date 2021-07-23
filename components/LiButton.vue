@@ -30,16 +30,22 @@ export default Vue.extend({
       type: [String, Object],
       default: undefined,
     },
-    size: {
-      type: String,
-      default: 'default',
-      validator: (v) => ['default', 'large', 'small'].includes(v),
+
+    // size
+    large: {
+      type: Boolean,
     },
+    small: {
+      type: Boolean,
+    },
+
+    // color
     color: {
       type: String,
       default: 'red',
       validator: (v) => ['red', 'dark-red'].includes(v),
     },
+
   },
   computed: {
     useAnchorTag(): boolean {
@@ -47,6 +53,13 @@ export default Vue.extend({
     },
     useNuxtLinkTag(): boolean {
       return !!this.to
+    },
+    size(): string {
+      return (
+        (this.large && 'large') ||
+        (this.small && 'small') ||
+        'default'
+      )
     },
     classes(): { [key:string]: boolean } {
       return {
@@ -62,17 +75,34 @@ export default Vue.extend({
 <style scoped>
   .button {
     @apply rounded;
-    @apply flex items-center;
+    @apply flex items-center justify-center;
   }
+
+  .circle {
+    @apply rounded-full;
+  }
+
   .size-small {
     @apply px-2 h-8 min-w-8;
   }
+  .size-small.circle {
+    @apply w-8;
+  }
+
   .size-default {
     @apply px-4 h-10 min-w-10;
   }
+  .size-default.circle {
+    @apply w-10;
+  }
+
   .size-large {
     @apply px-6 h-12 min-w-12;
   }
+  .size-large.circle {
+    @apply w-12;
+  }
+
   .color-red {
     @apply bg-brand-red hover:bg-brand-red-lighten-1;
   }
