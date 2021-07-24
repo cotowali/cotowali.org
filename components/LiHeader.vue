@@ -5,9 +5,11 @@
     </div>
     <nav>
       <ul class="nav-list">
-        <LiButton small :to="localePath('/docs/getting-started')">
-          Docs
-        </LiButton>
+        <li>
+          <LiButton small :to="localePath('/docs/getting-started')">
+            Docs
+          </LiButton>
+        </li>
         <li>
           <LiButton
             small
