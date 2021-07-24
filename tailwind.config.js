@@ -16,6 +16,9 @@ module.exports = {
       borderRadius: {
         DEFAULT: '0.125rem',
       },
+      zIndex: {
+        front: '10',
+      },
       colors: {
         brand: {
           red: colors.brand.red.hex(),

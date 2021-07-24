@@ -38,7 +38,7 @@ export default Vue.extend({
 <style scoped>
   .header {
     @apply flex justify-between items-center;
-    @apply fixed w-full;
+    @apply fixed w-full z-front;
     @apply px-4;
     @apply bg-brand-red;
   }
