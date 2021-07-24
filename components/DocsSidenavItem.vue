@@ -2,16 +2,16 @@
   <div>
     <nuxt-link
       :to="localePath(page.path)"
-      class="hover:underline"
-      active-class="text-brand-red"
+      class="link"
+      active-class="link-active"
     >
       {{ page.title }}
     </nuxt-link>
-    <scrollactive v-if="page.toc.length > 0" tag="ul" class="px-2" active-class="text-brand-red">
+    <scrollactive v-if="page.toc.length > 0" tag="ul" class="px-2" active-class="link-active">
       <li v-for="link of page.toc" :key="link.id">
         <nuxt-link
           :to="localePath(page.path + '#' + link.id)"
-          class="hover:underline scrollactive-item"
+          class="link scrollactive-item"
         >
           {{ link.text }}
         </nuxt-link>
@@ -34,3 +34,12 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style scoped>
+.link {
+  @apply hover:underline;
+}
+.link-active {
+  @apply text-brand-red;
+}
+</style>
