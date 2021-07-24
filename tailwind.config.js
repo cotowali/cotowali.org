@@ -19,6 +19,9 @@ module.exports = {
       zIndex: {
         front: '10',
       },
+      fontSize: {
+        '2xs': '0.5rem',
+      },
       colors: {
         brand: {
           red: colors.brand.red.hex(),
