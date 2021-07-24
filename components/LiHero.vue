@@ -41,9 +41,9 @@ export default Vue.extend({
 </script>
 
 
-<style>
-  .hero {
-    @apply flex justify-center items-center;
-    @apply gap-x-16 py-24;
-  }
+<style scoped>
+.hero {
+  @apply flex justify-center items-center;
+  @apply gap-x-16 py-24;
+}
 </style>
