@@ -37,7 +37,7 @@ export default Vue.extend({
 
 <style scoped>
 .link {
-  @apply hover:underline;
+  @apply hover:underline hover:text-brand-red;
 }
 .link-active {
   @apply text-brand-red;
