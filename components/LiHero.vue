@@ -30,7 +30,7 @@
         </LiButton>
       </div>
     </div>
-    <img src="~/assets/cotowali.svg" height="240px" width="240px">
+    <img src="~/assets/cotowali.svg" height="240px" width="240px" alt="cotowali">
   </div>
 </template>
 
