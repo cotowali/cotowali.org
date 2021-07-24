@@ -42,8 +42,10 @@ export default Vue.extend({
   text-underline-offset: 3px;
   text-underline-thickness: 2px;
 }
+
 .link-active {
   @apply text-brand-red;
+  @apply font-bold;
 }
 
 .page-toc {
