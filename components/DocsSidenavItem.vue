@@ -57,5 +57,6 @@ export default Vue.extend({
 
 .section-link {
   @apply mt-1;
+  @apply text-sm
 }
 </style>
