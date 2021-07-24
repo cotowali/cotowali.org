@@ -1,6 +1,15 @@
 const { colors } = require('@cotowali/design')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
+const fontSans = [
+  'system-ui',
+  '-apple-system',
+  'BlinkMacSystemFont',
+  '"Yu Gothic"',
+  'YuGothic',
+  'sans-serif',
+]
+
 module.exports = {
   mode: 'jit',
   purge: [
@@ -24,14 +33,8 @@ module.exports = {
         '2xs': '0.5rem',
       },
       fontFamily: {
-        sans: [
-          'system-ui',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Yu Gothic"',
-          'YuGothic',
-          'sans-serif',
-        ],
+        sans: fontSans,
+        title: ['Montserrat', ...fontSans],
       },
       colors: {
         brand: {

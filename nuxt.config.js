@@ -29,6 +29,9 @@ export default {
 
   googleFonts: {
     display: 'swap',
+    families: {
+      Montserrat: [700],
+    },
   },
 
   modules: [
