@@ -6,16 +6,12 @@
       <template v-if="$slots.left">
         <slot name="left" />
       </template>
-      <div class="content">
-        <main>
-          <slot />
-        </main>
 
-        <footer class="footer text-xs">
-          <p>Copyright &copy; zakuro &lt;z@kuro.red&gt;</p>
-          <p>Design by zakuro &amp; Yuki Amane (Pianoforte)</p>
-        </footer>
+      <div class="content">
+        <main><slot /></main>
+        <LiFooter />
       </div>
+
       <template v-if="$slots.right">
         <slot name="right" />
       </template>
@@ -50,9 +46,5 @@ export default Vue.extend({
 .content {
   @apply flex flex-col justify-between;
   @apply flex-grow;
-}
-.footer {
-  @apply text-center;
-  @apply p-4;
 }
 </style>
