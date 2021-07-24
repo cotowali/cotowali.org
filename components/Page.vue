@@ -28,13 +28,12 @@ export default Vue.extend({
 </script>
 
 <style>
-  body {
-    @apply text-white;
-    @apply bg-dark;
-    @apply tracking-wide;
-    font-weight: 500;
-    font-family: "Yu Gothic", sans-serif;
-  }
+body {
+  @apply text-white;
+  @apply bg-dark;
+  @apply tracking-wide;
+  @apply font-sans;
+}
 </style>
 
 <style scoped>

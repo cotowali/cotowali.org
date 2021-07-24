@@ -23,6 +23,12 @@ module.exports = {
       fontSize: {
         '2xs': '0.5rem',
       },
+      fontFamily: {
+        sans: [
+          '"Yu Gothic"',
+          'sans-serif',
+        ],
+      },
       colors: {
         brand: {
           red: colors.brand.red.hex(),
