@@ -25,7 +25,11 @@ module.exports = {
       },
       fontFamily: {
         sans: [
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
           '"Yu Gothic"',
+          'YuGothic',
           'sans-serif',
         ],
       },
