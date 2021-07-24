@@ -35,6 +35,9 @@ export default Vue.extend({
   body {
     @apply text-white;
     @apply bg-dark;
+    @apply tracking-wide;
+    font-weight: 500;
+    font-family: "Yu Gothic", sans-serif;
   }
 </style>
 

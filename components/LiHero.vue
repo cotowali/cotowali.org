@@ -15,9 +15,11 @@
 <template>
   <div class="hero">
     <div class="flex flex-col">
-      <h1 class="text-brand-red text-4xl">Cotowali</h1>
+      <h1 class="text-brand-red text-4xl font-black">Cotowali</h1>
       <div class="mt-1" style="padding-left: 3px;">
-        <p>{{ $t('description') }}</p>
+        <p class="font-thin">
+          {{ $t('description') }}
+        </p>
       </div>
       <div class="mt-5 flex gap-x-4">
         <LiButton large :to="localePath('/docs/getting-started')">
