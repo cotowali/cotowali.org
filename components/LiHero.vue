@@ -23,7 +23,7 @@
         <LiButton large :to="localePath('/docs/getting-started')">
           {{ $t('get-started') }}
         </LiButton>
-        <LiButton large dark-red href="/playground">
+        <LiButton large dark-red :to="localePath('/play')">
           {{ $t('try') }}
         </LiButton>
       </div>
