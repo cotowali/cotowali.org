@@ -42,17 +42,17 @@ export default Vue.extend({
 </style>
 
 <style scoped>
-  .page {
-    @apply flex justify-between;
-    @apply min-h-screen w-full;
-    @apply bg-dark;
-  }
-  .content {
-    @apply flex flex-col justify-between;
-    @apply flex-grow;
-  }
-  .footer {
-    @apply text-center;
-    @apply p-4;
-  }
+.page {
+  @apply flex justify-between;
+  @apply min-h-screen w-full;
+  @apply bg-dark;
+}
+.content {
+  @apply flex flex-col justify-between;
+  @apply flex-grow;
+}
+.footer {
+  @apply text-center;
+  @apply p-4;
+}
 </style>
