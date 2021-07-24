@@ -24,7 +24,12 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
   ],
+
+  googleFonts: {
+    display: 'swap',
+  },
 
   modules: [
     '@nuxtjs/pwa',
