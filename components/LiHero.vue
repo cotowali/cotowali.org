@@ -17,7 +17,7 @@
     <div class="flex flex-col">
       <h1 class="text-brand-red text-4xl font-bold font-title">Cotowali</h1>
       <div class="mt-1" style="padding-left: 3px;">
-        <p class="font-thin">
+        <p>
           {{ $t('description') }}
         </p>
       </div>

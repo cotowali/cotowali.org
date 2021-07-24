@@ -30,6 +30,7 @@ export default {
   googleFonts: {
     display: 'swap',
     families: {
+      Lexend: [400, 700],
       Montserrat: [700],
     },
   },
