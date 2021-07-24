@@ -1,6 +1,6 @@
 <template>
-  <div class="pr-40 bg-dark-darken-1 min-h-full">
-    <nav class="fixed w-40 pt-6">
+  <div class="sidenav-wrapper">
+    <nav class="sidenav">
       <ul>
         <li v-for="page in pages" :key="page.slug">
           <DocsSidenavItem class="px-6" :page="page" />
@@ -22,3 +22,13 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style scoped>
+.sidenav-wrapper {
+  @apply pr-40 bg-dark-darken-1 min-h-full;
+}
+
+.sidenav {
+  @apply fixed w-40 pt-6;
+}
+</style>
