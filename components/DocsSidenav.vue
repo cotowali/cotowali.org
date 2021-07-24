@@ -25,10 +25,10 @@ export default Vue.extend({
 
 <style scoped>
 .sidenav-wrapper {
-  @apply pr-40 bg-dark-darken-1 min-h-full;
+  @apply pr-48 bg-dark-darken-1 min-h-full;
 }
 
 .sidenav {
-  @apply fixed w-40 pt-6;
+  @apply fixed w-48 pt-6;
 }
 </style>
