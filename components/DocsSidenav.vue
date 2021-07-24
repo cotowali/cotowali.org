@@ -30,5 +30,6 @@ export default Vue.extend({
 
 .sidenav {
   @apply fixed w-48 pt-6;
+  @apply overflow-y-scroll h-full;
 }
 </style>
