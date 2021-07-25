@@ -33,6 +33,7 @@ export default Vue.extend({
 }
 
 .sidenav {
+  @apply bg-dark-darken-1;
   @apply fixed w-64 pt-6;
   @apply overflow-y-scroll h-full;
   transition-property: transform;
