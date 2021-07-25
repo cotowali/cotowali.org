@@ -53,6 +53,7 @@ export default {
   },
 
   i18n: {
+    baseUrl: 'https://cotowali.web.app', // FIXME: set production domain
     seo: false,
     vueI18nLoader: true,
     detectBrowserLanguage: {
