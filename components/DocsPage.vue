@@ -1,6 +1,11 @@
 <template>
   <article class="px-12 pt-8">
-    <h1 class="title">{{ page.title }}</h1>
+    <div class="title-box">
+      <h1 class="title">{{ page.title }}</h1>
+      <div class="version">
+        ver{{ page.version }}
+      </div>
+    </div>
     <div class="content">
       <nuxt-content :document="page" />
     </div>
@@ -46,8 +51,15 @@ export default Vue.extend({
 </style>
 
 <style scoped>
+.title-box {
+  @apply flex items-end justify-between;
+  @apply mb-12;
+}
 .title {
   @apply text-3xl text-brand-red font-black;
-  @apply mb-12;
+}
+
+.version {
+  @apply text-sm;
 }
 </style>
