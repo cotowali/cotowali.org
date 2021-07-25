@@ -38,13 +38,13 @@ export default Vue.extend({
 <style scoped>
 .link {
   @apply inline-block;
-  @apply hover:underline hover:text-brand-red;
+  @apply hover:underline hover:text-red;
   text-underline-offset: 3px;
   text-underline-thickness: 2px;
 }
 
 .link-active {
-  @apply text-brand-red;
+  @apply text-red;
   @apply font-bold;
 }
 

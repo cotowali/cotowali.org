@@ -38,15 +38,13 @@ module.exports = {
         title: ['Montserrat', ...fontSans],
       },
       colors: {
-        brand: {
-          red: colors.brand.red.hex(),
-          'red-lighten-1': colors.brand.red.lighten(0.2).hex(),
-          'dark-red': colors.brand.darkRed.hex(),
-          'dark-red-lighten-1': colors.brand.darkRed.lighten(0.2).hex(),
-        },
+        red: colors.red.hex(),
+        'red-lighten-1': colors.red.lighten(0.2).hex(),
+        'dark-red': colors.darkRed.hex(),
+        'dark-red-lighten-1': colors.darkRed.lighten(0.2).hex(),
         dark: colors.dark.hex(),
         'dark-darken-1': colors.dark.darken(0.4).hex(),
-        black: '#000', // TODO
+        black: colors.black.hex(),
         white: colors.white.hex(),
       },
     },

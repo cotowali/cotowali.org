@@ -123,9 +123,9 @@ export default Vue.extend({
   }
 
   .color-red {
-    @apply bg-brand-red hover:bg-brand-red-lighten-1;
+    @apply bg-red hover:bg-red-lighten-1;
   }
   .color-dark-red {
-    @apply bg-brand-dark-red hover:bg-brand-dark-red-lighten-1;
+    @apply bg-dark-red hover:bg-dark-red-lighten-1;
   }
 </style>

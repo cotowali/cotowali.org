@@ -66,7 +66,7 @@ export default Vue.extend({
   @apply border-b border-opacity-75;
 }
 .title {
-  @apply text-3xl text-brand-red font-black;
+  @apply text-3xl text-red font-black;
 }
 
 .version {
