@@ -48,6 +48,15 @@ export default Vue.extend({
   @apply font-bold;
   @apply mt-4;
 }
+
+.nuxt-content code {
+  @apply px-1 rounded bg-black;
+}
+
+.nuxt-content .nuxt-content-highlight pre {
+  @apply rounded;
+  @apply !bg-black;
+}
 </style>
 
 <style scoped>
