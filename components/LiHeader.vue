@@ -19,7 +19,10 @@
             target="_blank"
             rel="external noopener noreferrer"
           >
-            <LiIcon :icon="mdiGithub" />
+            <LiIcon
+              aria-label="github"
+              :icon="mdiGithub"
+            />
           </LiButton>
         </li>
       </ul>

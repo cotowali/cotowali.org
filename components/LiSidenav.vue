@@ -4,7 +4,7 @@
       <slot />
     </nav>
     <LiButton icon dark-red class="menu-button" @click="closed = !closed">
-      <LiIcon :icon="mdiMenu" />
+      <LiIcon :icon="mdiMenu" :aria-label="closed ? 'open menu' : 'close menu'" />
     </LiButton>
   </div>
 </template>
