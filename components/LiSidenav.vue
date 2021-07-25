@@ -38,6 +38,22 @@ export default Vue.extend({
   @apply overflow-y-scroll h-full;
   transition-property: transform;
   @apply translate-x-0;
+  scrollbar-color: dark;
+  scrollbar-width: 0.5rem;
+}
+
+.sidenav::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0.3);
+  @apply w-2;
+}
+
+.sidenav::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  @apply rounded-lg;
+}
+
+.sidenav::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .sidenav.closed {
