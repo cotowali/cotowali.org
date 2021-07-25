@@ -1,7 +1,9 @@
 <template>
-  <article class="p-12 pt-6">
+  <article class="px-12 pt-8">
     <h1 class="title">{{ page.title }}</h1>
-    <nuxt-content :document="page" />
+    <div class="content">
+      <nuxt-content :document="page" />
+    </div>
   </article>
 </template>
 
@@ -46,7 +48,6 @@ export default Vue.extend({
 <style scoped>
 .title {
   @apply text-3xl text-brand-red font-black;
-  @apply pb-2;
-  @apply border-b-2;
+  @apply mb-12;
 }
 </style>
