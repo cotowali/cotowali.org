@@ -53,7 +53,8 @@ export default Vue.extend({
 <style scoped>
 .title-box {
   @apply flex items-end justify-between;
-  @apply mb-12;
+  @apply mb-12 pb-1;
+  @apply border-b border-opacity-75;
 }
 .title {
   @apply text-3xl text-brand-red font-black;
