@@ -61,6 +61,6 @@ export default Vue.extend({
 }
 
 .version {
-  @apply text-sm;
+  @apply text-sm opacity-75;
 }
 </style>
