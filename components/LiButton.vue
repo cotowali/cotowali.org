@@ -1,13 +1,13 @@
 <template>
-  <a v-if="useAnchorTag" :class="classes" :href="href">
+  <a v-if="useAnchorTag" :class="classes" :href="href" v-on="$listeners">
     <slot />
   </a>
 
-  <nuxt-link v-else-if="useNuxtLinkTag" :class="classes" :to="to">
+  <nuxt-link v-else-if="useNuxtLinkTag" :class="classes" :to="to" v-on="$listeners">
     <slot />
   </nuxt-link>
 
-  <button v-else :class="classes" :type="type">
+  <button v-else :class="classes" :type="type" v-on="$listeners">
     <slot />
   </button>
 </template>
