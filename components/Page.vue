@@ -24,6 +24,9 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Page',
+  head() {
+    return this.$nuxtI18nHead({ addSeoAttributes: true })
+  },
 })
 </script>
 

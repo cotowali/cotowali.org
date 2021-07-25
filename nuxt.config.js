@@ -53,6 +53,7 @@ export default {
   },
 
   i18n: {
+    seo: false,
     vueI18nLoader: true,
     detectBrowserLanguage: {
       useCookie: true,
