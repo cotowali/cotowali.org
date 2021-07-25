@@ -40,16 +40,9 @@ export default {
   },
 
   modules: [
-    '@nuxtjs/pwa',
     '@nuxt/content',
     'nuxt-i18n',
   ],
-
-  pwa: {
-    manifest: {
-      lang: 'en',
-    },
-  },
 
   content: {
     markdown: {
