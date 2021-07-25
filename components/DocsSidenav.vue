@@ -34,6 +34,7 @@ export default Vue.extend({
 <style scoped>
 .sidenav-wrapper {
   @apply pr-64 bg-dark-darken-1 min-h-full;
+  transition-property: padding-right;
 }
 
 .sidenav-wrapper.closed {
@@ -43,10 +44,16 @@ export default Vue.extend({
 .sidenav {
   @apply fixed w-64 pt-6;
   @apply overflow-y-scroll h-full;
+  transition-property: transform;
+  @apply translate-x-0;
 }
 
 .sidenav.closed {
-  @apply w-0;
+  @apply -translate-x-full;
+}
+
+.sidenav, .sidenav-wrapper {
+  @apply duration-300 ease-out;
 }
 
 .menu-button {
