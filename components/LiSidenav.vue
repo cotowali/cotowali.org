@@ -48,7 +48,7 @@ export default Vue.extend({
 }
 
 .menu-button {
-  @apply fixed;
+  @apply fixed z-front;
   @apply left-[20px] bottom-[20px];
 }
 </style>
