@@ -14,7 +14,7 @@ export default Vue.extend({
 
 <style scoped>
 .footer {
-  @apply text-center text-2xs;
+  @apply text-center text-2xs opacity-75;
   @apply p-4;
 }
 </style>
