@@ -1,5 +1,5 @@
 <template>
-  <article class="p-12 pt-6">
+  <article class="p-12 pt-6 prose">
     <h1 class="title">{{ page.title }}</h1>
     <nuxt-content :document="page" />
   </article>
