@@ -1,7 +1,7 @@
 <template>
   <LiSidenav>
     <DocsSidenavChapter
-      v-for="chapter in chapters"
+      v-for="chapter in docs.chapters"
       :key="chapter.title"
       class="px-6"
       :chapter="chapter"
@@ -10,14 +10,16 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { Chapter } from '@/plugins/docs'
+import Vue, { PropType } from 'vue'
+import { Docs } from '@/plugins/docs'
 
 export default Vue.extend({
   name: 'DocsSidenav',
-  data: () => ({ chapters: [] as Chapter[] }),
-  async fetch() {
-    this.chapters = await this.$docs.fetch().then((v) => v.chapters)
+  props: {
+    docs: {
+      type: Object as PropType<Docs>,
+      required: true,
+    },
   },
 })
 </script>

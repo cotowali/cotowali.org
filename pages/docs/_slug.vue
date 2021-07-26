@@ -1,15 +1,22 @@
 <template>
-  <DocsPage :page="page" />
+  <Page>
+    <template #left>
+      <DocsSidenav :docs="docs" />
+    </template>
+    <DocsPage :page="page" />
+  </Page>
 </template>
 
 <script>
 import Vue from 'vue'
 
 export default Vue.extend({
-  layout: 'docs',
+  layout: 'raw',
   async asyncData({ params: { slug }, $docs }) {
-    const page = await $docs.fetch(slug)
-    return { page }
+    return {
+      docs: await $docs.fetch(),
+      page: await $docs.fetch(slug),
+    }
   },
 })
 </script>
