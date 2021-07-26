@@ -31,13 +31,10 @@ declare module 'vue/types/vue' {
   }
 }
 
-const plugin: Plugin = ({ isDev, $content, i18n: { locale }}, inject) => {
+const plugin: Plugin = ({ $content, i18n: { locale }}, inject) => {
   async function fetchDocs(): Promise<Page[]> {
     const index = await $content('docs', 'index').fetch<Index>() as Index
     const slugs = index.pages.map((v) => [v, locale].join('.'))
-    if (isDev) {
-      slugs.push(...index.devPages.map((v) => [v, locale].join('.')))
-    }
     const slugIndex = Object.fromEntries(slugs.map((slug, i) => [slug, i]))
     const pages = await $content('docs')
       .where({ slug: { $in: slugs }})
