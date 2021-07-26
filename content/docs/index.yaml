@@ -1,4 +1,16 @@
-pages:
-  - getting-started
-  - syntax
-  - examples
+chapters:
+  - title:
+      ja: イントロダクション
+      en: Introduction
+    pages:
+      - getting-started
+  - title:
+      ja: 言語仕様
+      en: Language Reference
+    pages:
+      - syntax
+  - title:
+      ja: サンプル集
+      en: Examples
+    pages:
+      - examples

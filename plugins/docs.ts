@@ -1,7 +1,12 @@
 import { Plugin } from '@nuxt/types'
 
-export interface Index {
+interface ContentChapter {
+  title: { [key: string]: string }
   pages: string[]
+}
+
+interface ContentIndex {
+  chapters: ContentChapter[]
 }
 
 export interface Page {
@@ -11,11 +16,19 @@ export interface Page {
   version: string
 }
 
+export interface Chapter {
+  title: string
+  pages: Page[]
+}
+
+export interface Docs {
+  chapters: Chapter[]
+}
 
 interface $Docs {
   fetch: {
     (slug: string): Promise<Page>
-      (): Promise<Page[]>
+      (): Promise<Docs>
   }
 }
 
@@ -32,16 +45,26 @@ declare module 'vue/types/vue' {
 }
 
 const plugin: Plugin = ({ $content, i18n: { locale }}, inject) => {
-  async function fetchDocs(): Promise<Page[]> {
-    const index = await $content('docs', 'index').fetch<Index>() as Index
-    const slugs = index.pages.map((v) => [v, locale].join('.'))
-    const slugIndex = Object.fromEntries(slugs.map((slug, i) => [slug, i]))
-    const pages = await $content('docs')
-      .where({ slug: { $in: slugs }})
-      .fetch<Page>() as Page[]
-    return pages
-      .map((page) => ({ ...page, path: page.path.split('.')[0] }))
-      .sort((a, b) => slugIndex[a.slug] - slugIndex[b.slug])
+  async function fetchDocs(): Promise<Docs> {
+    const contentIndex = await $content('docs', 'index').fetch<ContentIndex>() as ContentIndex
+
+    const chapters = await Promise.all(
+      contentIndex.chapters.map(async (chapter): Promise<Chapter> => {
+        const slugs = chapter.pages.map((v) => [v, locale].join('.'))
+        const slugIndex = Object.fromEntries(slugs.map((slug, i) => [slug, i]))
+        const pages = await $content('docs')
+          .where({ slug: { $in: slugs }})
+          .fetch<Page>() as Page[]
+        return {
+          title: chapter.title[locale],
+          pages: pages
+            .map((page) => ({ ...page, path: page.path.split('.')[0] }))
+            .sort((a, b) => slugIndex[a.slug] - slugIndex[b.slug]),
+        }
+      }),
+    )
+
+    return { chapters }
   }
 
   async function fetchDoc(slug: string): Promise<Page> {

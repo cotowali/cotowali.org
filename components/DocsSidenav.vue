@@ -1,22 +1,23 @@
 <template>
   <LiSidenav>
-    <ul>
-      <li v-for="page in pages" :key="page.slug">
-        <DocsSidenavItem class="px-6" :page="page" />
-      </li>
-    </ul>
+    <DocsSidenavChapter
+      v-for="chapter in chapters"
+      :key="chapter.title"
+      class="px-6"
+      :chapter="chapter"
+    />
   </LiSidenav>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { Page } from '@/plugins/docs'
+import { Chapter } from '@/plugins/docs'
 
 export default Vue.extend({
   name: 'DocsSidenav',
-  data: () => ({ pages: [] as Page[] }),
+  data: () => ({ chapters: [] as Chapter[] }),
   async fetch() {
-    this.pages = await this.$docs.fetch()
+    this.chapters = await this.$docs.fetch().then((v) => v.chapters)
   },
 })
 </script>
