@@ -1,7 +1,14 @@
+const title = 'Cotowali'
+const description = 'Cotowali is a staticaly typed script language that transpile into POSIX sh'
+const baseUrl = 'https://cotowali.web.app' // FIXME: set production domain
+
 export default {
   target: 'static',
 
   head: {
+    htmlAttrs: {
+      prefix: 'og: http://ogp.me/ns#',
+    },
     title: 'Cotowali',
     meta: [
       { charset: 'utf-8' },
@@ -9,9 +16,16 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Cotowali is a staticaly typed script language that transpile into POSIX sh',
+        content: description,
       },
       { name: 'format-detection', content: 'telephone=no' },
+      { hid: 'og:type', propety: 'og:type', content: 'website' },
+      { hid: 'og:site_name', propety: 'og:site_name', content: 'Cotowali' },
+      { hid: 'og:title', propety: 'og:title', content: title },
+      { hid: 'og:description', propety: 'og:description', content: description },
+      { hid: 'og:url', propety: 'og:url', content: baseUrl },
+      { hid: 'og:image', property: 'og:image', content: 'https://raw.githubusercontent.com/cotowali/design/main/assets/cotowali.png' },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' },
@@ -53,7 +67,7 @@ export default {
   },
 
   i18n: {
-    baseUrl: 'https://cotowali.web.app', // FIXME: set production domain
+    baseUrl,
     seo: false,
     vueI18nLoader: true,
     detectBrowserLanguage: {
