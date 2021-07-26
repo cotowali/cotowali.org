@@ -2,7 +2,6 @@ import { Plugin } from '@nuxt/types'
 
 export interface Index {
   pages: string[]
-  devPages: string[]
 }
 
 export interface Page {
