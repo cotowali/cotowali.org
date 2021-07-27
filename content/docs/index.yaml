@@ -6,7 +6,7 @@ chapters:
       - getting-started
   - title:
       ja: 言語仕様
-      en: Language Reference
+      en: Syntax
     pages:
       - syntax
   - title:
