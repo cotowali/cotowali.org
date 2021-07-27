@@ -3,7 +3,6 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 const fontSans = [
   'Lexend',
-  'system-ui',
   '-apple-system',
   'BlinkMacSystemFont',
   '"Yu Gothic"',
