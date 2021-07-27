@@ -10,6 +10,7 @@ chapters:
     pages:
       - syntax/introduction
       - syntax/commens
+      - syntax/types
       - syntax/variables
       - syntax/control-flow
       - syntax/functions
