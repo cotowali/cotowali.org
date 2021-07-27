@@ -34,6 +34,11 @@ export default Vue.extend({
 .nuxt-content p {
   @apply mt-2;
 }
+.nuxt-content a {
+  @apply text-red;
+  @apply hover:underline;
+}
+
 .nuxt-content h2 {
   @apply text-2xl font-bold font-title;
   @apply mt-12 mb-6;
