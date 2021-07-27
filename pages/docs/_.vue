@@ -12,10 +12,10 @@ import Vue from 'vue'
 
 export default Vue.extend({
   layout: 'raw',
-  async asyncData({ params: { slug }, $docs }) {
+  async asyncData({ params: { pathMatch: path }, $docs }) {
     return {
       docs: await $docs.fetch(),
-      page: await $docs.fetch(slug),
+      page: await $docs.fetch(path),
     }
   },
 })
