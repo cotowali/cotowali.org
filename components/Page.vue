@@ -9,7 +9,7 @@
 
       <div class="content">
         <main><slot /></main>
-        <LiFooter />
+        <LiFooter v-if="!noFooter" />
       </div>
 
       <template v-if="$slots.right">
@@ -24,6 +24,11 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Page',
+  props: {
+    noFooter: {
+      type: Boolean,
+    },
+  },
   head() {
     return this.$nuxtI18nHead({ addSeoAttributes: true })
   },
