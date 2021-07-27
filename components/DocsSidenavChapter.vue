@@ -47,7 +47,6 @@ export default Vue.extend({
 
 .chapter-pages {
   @apply mt-4 mb-6;
-  @apply leading-tight;
 }
 
 .link {
