@@ -28,6 +28,12 @@ export default Vue.extend({
 </script>
 
 <style>
+.nuxt-content {
+  @apply leading-relaxed
+}
+.nuxt-content p {
+  @apply mt-2;
+}
 .nuxt-content h2 {
   @apply text-2xl font-bold font-title;
   @apply mt-12 mb-6;
