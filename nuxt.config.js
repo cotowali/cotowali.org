@@ -76,8 +76,8 @@ export default {
       onlyOnRoot: true,
     },
     locales: [
-      { code: 'en', iso: 'en-US' },
-      { code: 'ja', iso: 'ja-JP' },
+      { code: 'en', iso: 'en-US', name: 'English' },
+      { code: 'ja', iso: 'ja-JP', name: '日本語' },
     ],
     defaultLocale: 'en',
   },

@@ -10,6 +10,7 @@
             Docs
           </LiButton>
         </li>
+        <li><LiLanguageSwitcher /></li>
         <li>
           <LiButton
             small
