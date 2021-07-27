@@ -1,9 +1,9 @@
 ---
-title: 言語仕様
-version: 20210701
+title: Control Flow
+version: 20210101
 ---
 
-## If 文
+## If
 
 ```
 if cond1 {
@@ -15,7 +15,7 @@ if cond1 {
 }
 ```
 
-## For 文
+## For
 
 ```
 for v in arr {

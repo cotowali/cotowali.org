@@ -8,7 +8,7 @@ chapters:
       ja: 言語仕様
       en: Syntax
     pages:
-      - syntax
+      - syntax/control-flow
   - title:
       ja: サンプル集
       en: Examples

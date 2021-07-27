@@ -1,9 +1,9 @@
 ---
-title: Syntax
-version: 20210101
+title: 制御構文
+version: 20210701
 ---
 
-## If
+## If 文
 
 ```
 if cond1 {
@@ -15,7 +15,7 @@ if cond1 {
 }
 ```
 
-## For
+## For 文
 
 ```
 for v in arr {
