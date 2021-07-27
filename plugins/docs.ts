@@ -50,16 +50,16 @@ const plugin: Plugin = ({ $content, i18n: { locale }}, inject) => {
 
     const chapters = await Promise.all(
       contentIndex.chapters.map(async (chapter): Promise<Chapter> => {
-        const slugs = chapter.pages.map((v) => [v, locale].join('.'))
-        const slugIndex = Object.fromEntries(slugs.map((slug, i) => [slug, i]))
-        const pages = await $content('docs')
-          .where({ slug: { $in: slugs }})
+        const paths = chapter.pages.map((v) => '/docs/' + [v, locale].join('.'))
+        const pathIndex = Object.fromEntries(paths.map((path, i) => [path, i]))
+        const pages = await $content('docs', { deep: true })
+          .where({ path: { $in: paths }})
           .fetch<Page>() as Page[]
         return {
           title: chapter.title[locale],
           pages: pages
             .map((page) => ({ ...page, path: page.path.split('.')[0] }))
-            .sort((a, b) => slugIndex[a.slug] - slugIndex[b.slug]),
+            .sort((a, b) => pathIndex[a.path] - pathIndex[b.path]),
         }
       }),
     )
@@ -67,8 +67,8 @@ const plugin: Plugin = ({ $content, i18n: { locale }}, inject) => {
     return { chapters }
   }
 
-  async function fetchDoc(slug: string): Promise<Page> {
-    return await $content('docs', [slug, locale].join('.')).fetch<Page>() as Page
+  async function fetchDoc(path: string): Promise<Page> {
+    return await $content('docs', [path, locale].join('.')).fetch<Page>() as Page
   }
 
   inject('docs', {
