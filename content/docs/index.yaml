@@ -11,6 +11,7 @@ chapters:
       - syntax/introduction
       - syntax/variables
       - syntax/control-flow
+      - syntax/functions
   - title:
       ja: サンプル集
       en: Examples

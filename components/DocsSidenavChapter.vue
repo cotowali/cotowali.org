@@ -46,7 +46,7 @@ export default Vue.extend({
 }
 
 .chapter-pages {
-  @apply mt-4 mb-6;
+  @apply mx-4 mt-2 mb-6;
 }
 
 .link {
