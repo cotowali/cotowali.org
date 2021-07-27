@@ -43,11 +43,10 @@ export default Vue.extend({
 <style scoped>
 .chapter-title {
   @apply font-bold;
-
 }
 
 .chapter-pages {
-  @apply my-4;
+  @apply mt-4 mb-6;
   @apply leading-tight;
 }
 
