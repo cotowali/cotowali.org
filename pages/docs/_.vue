@@ -1,10 +1,10 @@
 <template>
-  <Page>
+  <LiPage>
     <template #left>
       <DocsSidenav :docs="docs" />
     </template>
     <DocsPage :page="page" />
-  </Page>
+  </LiPage>
 </template>
 
 <script>

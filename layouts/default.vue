@@ -1,3 +1,5 @@
 <template>
-  <Page><Nuxt /></Page>
+  <LiPage>
+    <Nuxt />
+  </LiPage>
 </template>

@@ -23,7 +23,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'Page',
+  name: 'LiPage',
   props: {
     noFooter: {
       type: Boolean,

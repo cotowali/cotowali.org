@@ -1,5 +1,5 @@
 <template>
-  <Page no-footer>
+  <LiPage no-footer>
     <div class="error-page">
       <div v-if="error.statusCode === 404" class="flex flex-col items-center">
         <h1 class="text-6xl font-bold text-red">404</h1>
@@ -13,7 +13,7 @@
     <div class="absolute w-full flex justify-center top-2/3">
       <nuxt-link to="/" class="font-bold text-red hover:underline">Go back to Home</nuxt-link>
     </div>
-  </Page>
+  </LiPage>
 </template>
 
 <script>
