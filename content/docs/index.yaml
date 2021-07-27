@@ -9,6 +9,7 @@ chapters:
       en: Syntax
     pages:
       - syntax/introduction
+      - syntax/commens
       - syntax/variables
       - syntax/control-flow
       - syntax/functions
