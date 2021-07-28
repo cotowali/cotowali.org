@@ -10,3 +10,4 @@ tasks:
   install: npm install $@
   lint.fix: npm run lint:fix $@
   repl: node --experimental-repl-await
+  docs.watch: npm run lint:docs:watch
