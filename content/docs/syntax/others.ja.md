@@ -3,7 +3,7 @@ title: その他
 version: 20210729
 ---
 
-# assert 文
+## assert 文
 
 assert 文は bool 型の式をとり、評価して偽だった場合にプログラムを即座に終了します。
 
