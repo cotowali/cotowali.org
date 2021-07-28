@@ -9,4 +9,6 @@ version: 20210728
 
 まだ cotowali の使い方を知らない場合は、先に [Introduction](/ja/docs/introduction) を読んで、Cotowali を使用する環境を整えてください。
 
+<!-- textlint-disable ja-technical-writing/no-exclamation-question-mark -->
+
 準備はできましたか？　それでは Cotowali の世界への旅立ちましょう！
