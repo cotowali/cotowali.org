@@ -15,7 +15,7 @@
     "lint:fix": "npm run lint -- --fix",
     "lint:docs:ja": "textlint --config ./.textlintrc.ja.js 'content/**/*.ja.md'",
     "lint:docs:en": "textlint --config ./.textlintrc.en.js 'content/**/*.en.md'",
-    "lint:docs": "npm run lint:text:ja && npm run lint:text:en",
+    "lint:docs": "npm run lint:docs:ja && npm run lint:docs:en",
     "prepare": "husky install",
     "test": "jest --passWithNoTests",
     "firebase": "firebase",
