@@ -23,3 +23,14 @@ var i int           // initialized by zero
 var n int = 'value' // Error
 var x               // Error
 ```
+
+## 代入
+
+`=` を使用して変数に値を代入できます。変数は宣言済みのものでなければなりません。また、異なる型の値は代入できません。
+
+```
+n = 0 // Error: undefined variable
+var n int
+n = 10
+n = 'string' // Error: mismatched types
+```
