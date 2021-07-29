@@ -12,6 +12,7 @@ chapters:
       - syntax/comments
       - syntax/types
       - syntax/variables
+      - syntax/expressions
       - syntax/control-flow
       - syntax/functions
       - syntax/others
