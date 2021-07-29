@@ -1,3 +1,14 @@
+<i18n>
+{
+  "en": {
+    "alert": "alert"
+  },
+  "ja": {
+    "alert": "注意"
+  }
+}
+</i18n>
+
 <template>
   <div class="alert">
     <LiIcon class="alert-icon" :icon="icon" :aria-label="iconLabel" />
@@ -11,16 +22,13 @@
 import Vue from 'vue'
 import { mdiAlert } from '@mdi/js'
 
-interface TypeDataMap {
+const typeDataMap: {
   [key: string]: {
     icon: string
-    iconLabel: string
   }
-}
-const typeDataMap: TypeDataMap = {
+} = {
   alert: {
     icon: mdiAlert,
-    iconLabel: 'alert',
   },
 }
 
@@ -36,6 +44,7 @@ export default Vue.extend({
   data() {
     return {
       ...typeDataMap[this.type],
+      iconLabel: this.$t(this.type),
     }
   },
 })
