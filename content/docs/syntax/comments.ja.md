@@ -30,7 +30,7 @@ echo('line comment') // comment
 echo(/* inline comment */ 'hello inline comment')
 ```
 
-## 行コメントとブロックコメントの混在
+## 異なる記法の混在
 
 コメント内に現れた他のコメントは、ネストされたブロックコメントの場合を除いて、単なるコメント文の一部として扱われます。
 
