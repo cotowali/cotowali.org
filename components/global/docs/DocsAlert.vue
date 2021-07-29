@@ -1,10 +1,12 @@
 <i18n>
 {
   "en": {
-    "alert": "alert"
+    "alert": "alert",
+    "unimplemented": "unimplemented"
   },
   "ja": {
-    "alert": "注意"
+    "alert": "注意",
+    "unimplemented": "未実装"
   }
 }
 </i18n>
@@ -20,10 +22,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mdiAlert } from '@mdi/js'
+import { mdiAlert, mdiTrafficCone } from '@mdi/js'
 
 const icons: { [key: string]: string } = {
   alert: mdiAlert,
+  unimplemented: mdiTrafficCone,
 }
 
 export default Vue.extend({
