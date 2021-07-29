@@ -69,6 +69,10 @@ export default Vue.extend({
   @apply px-1 rounded bg-black;
 }
 
+.nuxt-content .nuxt-content-highlight pre code {
+  @apply p-0; /* cancel `code { px-1 }` */
+}
+
 .nuxt-content .nuxt-content-highlight pre {
   @apply rounded;
   @apply !bg-black;
