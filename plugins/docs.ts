@@ -51,7 +51,6 @@ const plugin: Plugin = ({ $content, i18n: { locale }}, inject) => {
     const chapters = await Promise.all(
       contentIndex.chapters.map(async (chapter): Promise<Chapter> => {
         const paths = chapter.pages.map((v) => '/docs/' + v)
-        console.log(paths)
         const pathIndex = Object.fromEntries(paths.map((path, i) => [path, i]))
         const pages = (
           await $content('docs', { deep: true })
@@ -59,11 +58,6 @@ const plugin: Plugin = ({ $content, i18n: { locale }}, inject) => {
             .fetch<Page>() as Page[]
         ).map((page) => ({ ...page, path: page.path.split('.')[0] }))
         pages.sort((a, b) => pathIndex[a.path] - pathIndex[b.path])
-        console.log('---')
-        console.log(pages)
-        console.log(paths)
-        console.log(pathIndex)
-        console.log('---')
 
         return {
           title: chapter.title[locale],
