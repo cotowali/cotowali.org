@@ -11,7 +11,7 @@
         :icon="mdiTranslate"
       />
     </LiButton>
-    <ul v-show="showLanguageList" class="absolute right-0 bg-red w-24">
+    <ul v-show="showLanguageList" class="absolute right-0 bg-brand-red w-24">
       <li
         v-for="locale in $i18n.locales"
         :key="locale.code"

@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center w-full mt-8">
-    <h1 class="text-4xl text-red">Cotowali Playground</h1>
+    <h1 class="text-4xl text-brand-red">Cotowali Playground</h1>
     Comming Soon
   </div>
 </template>

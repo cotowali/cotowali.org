@@ -46,7 +46,7 @@ export default Vue.extend({
     @apply flex justify-between items-center;
     @apply fixed w-full z-front;
     @apply px-4;
-    @apply bg-red;
+    @apply bg-brand-red;
   }
   .nav-list {
     @apply flex items-center gap-x-2;

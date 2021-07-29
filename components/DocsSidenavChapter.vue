@@ -51,13 +51,13 @@ export default Vue.extend({
 
 .link {
   @apply inline-block;
-  @apply hover:underline hover:text-red;
+  @apply hover:underline hover:text-brand-red;
   text-underline-offset: 3px;
   text-underline-thickness: 2px;
 }
 
 .link-active {
-  @apply text-red;
+  @apply text-brand-red;
   @apply font-bold;
 }
 

@@ -35,7 +35,7 @@ export default Vue.extend({
   @apply mt-2;
 }
 .nuxt-content a {
-  @apply text-red;
+  @apply text-brand-red;
   @apply hover:underline;
 }
 
@@ -77,7 +77,7 @@ export default Vue.extend({
   @apply border-b border-opacity-75;
 }
 .title {
-  @apply text-3xl text-red font-black;
+  @apply text-3xl text-brand-red font-black;
 }
 
 .version {
