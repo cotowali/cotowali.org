@@ -4,6 +4,13 @@
       <p>We are currently working on the Japanese documentation.</p>
       <p>Documentation in other languages will be provided after the Japanese documentation is written.</p>
     </DocsAlert>
+    <DocsAlert v-if="page.locale !== page.latestVersionLocale">
+      <p>This documentation for current locale is out of date.</p>
+      <p>
+        The latest version document is available in
+        <nuxt-link class="font-bold hover:underline" :to="switchLocalePath(page.latestVersionLocale)">another locale</nuxt-link>
+      </p>
+    </DocsAlert>
 
     <div class="title-box">
       <h1 class="title">{{ page.title }}</h1>

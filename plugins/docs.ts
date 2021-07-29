@@ -14,6 +14,8 @@ export interface Page {
   slug: string
   path: string
   version: string
+  locale: string
+  latestVersionLocale: string
 }
 
 export interface Chapter {
@@ -44,7 +46,7 @@ declare module 'vue/types/vue' {
   }
 }
 
-const plugin: Plugin = ({ $content, i18n: { locale }}, inject) => {
+const plugin: Plugin = ({ $content, i18n: { locale, localeCodes }}, inject) => {
   async function fetchDocs(): Promise<Docs> {
     const contentIndex = await $content('docs', 'index').fetch<ContentIndex>() as ContentIndex
 
@@ -56,7 +58,7 @@ const plugin: Plugin = ({ $content, i18n: { locale }}, inject) => {
           await $content('docs', { deep: true })
             .where({ path: { $in: paths.map((v) => [v, locale].join('.')) }})
             .fetch<Page>() as Page[]
-        ).map((page) => ({ ...page, path: page.path.split('.')[0] }))
+        ).map((page) => ({ ...page, path: page.path.split('.')[0], locale }))
         pages.sort((a, b) => pathIndex[a.path] - pathIndex[b.path])
 
         return {
@@ -70,7 +72,30 @@ const plugin: Plugin = ({ $content, i18n: { locale }}, inject) => {
   }
 
   async function fetchDoc(path: string): Promise<Page> {
-    return await $content('docs', [path, locale].join('.')).fetch<Page>() as Page
+    async function fetchPage(path: string, locale: string) {
+      const v = await $content('docs', [path, locale].join('.')).fetch<Page>() as Page
+      v.locale = locale
+      return v
+    }
+
+    const page = await fetchPage(path, locale)
+    page.locale = locale
+    page.latestVersionLocale = locale
+    let latestVersion = page.version
+
+    console.log(localeCodes)
+    const pages = await Promise.all(localeCodes.map(async (locale) => await fetchPage(path, locale)))
+    console.log(page)
+    pages.forEach((v) => {
+      console.log(v)
+      console.log(v.version > latestVersion)
+      if (v.version > latestVersion) {
+        latestVersion = v.version
+        page.latestVersionLocale = v.locale
+      }
+    })
+
+    return page
   }
 
   inject('docs', {
