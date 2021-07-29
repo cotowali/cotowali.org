@@ -11,7 +11,7 @@
           {{ page.title }}
         </nuxt-link>
         <scrollactive v-if="page.toc.length > 0" tag="ul" class="page-toc" active-class="link-active">
-          <li v-for="link of page.toc" :key="link.id">
+          <li v-for="link of page.toc" :key="link.id" :class="`link-depth-${link.depth - 1}`">
             <nuxt-link
               :to="localePath(page.path + '#' + link.id)"
               class="link section-link scrollactive-item"
@@ -59,6 +59,10 @@ export default Vue.extend({
 .link-active {
   @apply text-brand-red;
   @apply font-bold;
+}
+
+.link-depth-2 {
+  @apply px-2 text-sm;
 }
 
 .page-toc {
