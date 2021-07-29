@@ -1,5 +1,10 @@
 <template>
   <article class="px-12 pt-8">
+    <DocsAlert v-if="$i18n.locale !== 'ja'">
+      <p>We are currently working on the Japanese documentation.</p>
+      <p>Documentation in other languages will be provided after the Japanese documentation is written.</p>
+    </DocsAlert>
+
     <div class="title-box">
       <h1 class="title">{{ page.title }}</h1>
       <div class="version">
