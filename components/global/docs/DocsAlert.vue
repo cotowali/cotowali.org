@@ -22,14 +22,8 @@
 import Vue from 'vue'
 import { mdiAlert } from '@mdi/js'
 
-const typeDataMap: {
-  [key: string]: {
-    icon: string
-  }
-} = {
-  alert: {
-    icon: mdiAlert,
-  },
+const icons: { [key: string]: string } = {
+  alert: mdiAlert,
 }
 
 export default Vue.extend({
@@ -38,12 +32,12 @@ export default Vue.extend({
     type: {
       type: String,
       default: 'alert',
-      validator: (v) => Object.keys(typeDataMap).includes(v),
+      validator: (v) => Object.keys(icons).includes(v),
     },
   },
   data() {
     return {
-      ...typeDataMap[this.type],
+      icon: icons[this.type],
       iconLabel: this.$t(this.type),
     }
   },
