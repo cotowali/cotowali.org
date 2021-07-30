@@ -26,6 +26,18 @@ assert fizzbuzz(5) == 'buzz'
 assert fizzbuzz(15) == 'fizzbuzz'
 ```
 
+`if` 文の条件式を `()` で囲う必要はありませんが、`(expr)` は正しい式であるため、`()` で囲っても動作します。
+
+```
+var n = 1
+if n == 1 {
+  echo("it works without ()")
+}
+if (n == 1) {
+  echo("it works with ()")
+}
+```
+
 ## For 文
 
 ```
