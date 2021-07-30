@@ -15,9 +15,9 @@ var 変数名 型 = 初期化式
 
 初期化式と型は少なくとも片方を指定する必要があります。また、初期化式と型の両方を指定した場合は型を一致させなければなりません。
 
-<docs-unimplemented>
+<unimplemented>
   初期化式と型の両方を指定する構文は未実装です。
-</docs-unimplemented>
+</unimplemented>
 
 ```
 var s = 'value'     // type will be string
