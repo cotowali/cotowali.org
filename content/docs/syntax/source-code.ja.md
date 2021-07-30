@@ -18,3 +18,18 @@ fn main() {
 
 main()
 ```
+
+## ファイルの読み込み
+
+他のファイルを読み込むために `require()` を使用できます。これはコンパイル時に解決される点で  `source` コマンドと異なります。
+
+```
+// math.li
+fn add(a int, b int) int {
+  return a + b
+}
+
+// main.li
+require('./math.li')
+assert add(1, 1) == 2
+```
