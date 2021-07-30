@@ -5,14 +5,25 @@ revision: 20210701
 
 ## If 文
 
+条件分岐には `if` 文を使用します。`if` 文は条件式を評価し、真であればブロックを実行します。`if` の後には `else if` を記述できます。条件式が偽の場合は続く `else if` の条件式を順番に評価し、その条件式が真の場合はブロックを実行します。すべての条件式が偽の場合、`else` が記述されていれば、そのブロックを実行します。
+
 ```
-if cond1 {
-    // ...
-} else if cond2 {
-    // ...
-} else {
-    // ...
+fn fizzbuzz(n int) string {
+  if n % 3 == 0 && n % 5 == 0 {
+    return 'fizzbuzz'
+  } else if n % 3 == 0 {
+    return 'fizz'
+  } else if n % 5 == 0 {
+    return 'buzz'
+  } else {
+    return n as string
+  }
 }
+
+assert fizzbuzz(1) == '1'
+assert fizzbuzz(3) == 'fizz'
+assert fizzbuzz(5) == 'buzz'
+assert fizzbuzz(15) == 'fizzbuzz'
 ```
 
 ## For 文
