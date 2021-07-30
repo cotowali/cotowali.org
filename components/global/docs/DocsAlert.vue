@@ -64,4 +64,8 @@ export default Vue.extend({
   @apply flex-grow;
   @apply ml-2;
 }
+
+.alert-content p {
+  @apply mt-0 mb-1;
+}
 </style>
