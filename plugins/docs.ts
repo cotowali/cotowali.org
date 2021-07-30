@@ -83,12 +83,8 @@ const plugin: Plugin = ({ $content, i18n: { locale, localeCodes }}, inject) => {
     page.latestRevisionLocale = locale
     let latestRevision = page.revision
 
-    console.log(localeCodes)
     const pages = await Promise.all(localeCodes.map(async (locale) => await fetchPage(path, locale)))
-    console.log(page)
     pages.forEach((v) => {
-      console.log(v)
-      console.log(v.revision > latestRevision)
       if (v.revision > latestRevision) {
         latestRevision = v.revision
         page.latestRevisionLocale = v.locale
