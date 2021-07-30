@@ -8,6 +8,7 @@ chapters:
       ja: 言語仕様
       en: Syntax
     pages:
+      - syntax/source-code
       - syntax/comments
       - syntax/types
       - syntax/variables
