@@ -13,9 +13,9 @@ export interface Page {
   title: string
   slug: string
   path: string
-  version: string
+  revision: string
   locale: string
-  latestVersionLocale: string
+  latestRevisionLocale: string
 }
 
 export interface Chapter {
@@ -80,18 +80,18 @@ const plugin: Plugin = ({ $content, i18n: { locale, localeCodes }}, inject) => {
 
     const page = await fetchPage(path, locale)
     page.locale = locale
-    page.latestVersionLocale = locale
-    let latestVersion = page.version
+    page.latestRevisionLocale = locale
+    let latestRevision = page.revision
 
     console.log(localeCodes)
     const pages = await Promise.all(localeCodes.map(async (locale) => await fetchPage(path, locale)))
     console.log(page)
     pages.forEach((v) => {
       console.log(v)
-      console.log(v.version > latestVersion)
-      if (v.version > latestVersion) {
-        latestVersion = v.version
-        page.latestVersionLocale = v.locale
+      console.log(v.revision > latestRevision)
+      if (v.revision > latestRevision) {
+        latestRevision = v.revision
+        page.latestRevisionLocale = v.locale
       }
     })
 

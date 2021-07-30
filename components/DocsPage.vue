@@ -4,18 +4,18 @@
       <p>We are currently working on the Japanese documentation.</p>
       <p>Documentation in other languages will be provided after the Japanese documentation is written.</p>
     </DocsAlert>
-    <DocsAlert v-if="page.locale !== page.latestVersionLocale">
+    <DocsAlert v-if="page.locale !== page.latestRevisionLocale">
       <p>This documentation for current locale is out of date.</p>
       <p>
-        The latest version document is available in
-        <nuxt-link class="font-bold hover:underline" :to="switchLocalePath(page.latestVersionLocale)">another locale</nuxt-link>
+        The latest document is available in
+        <nuxt-link class="font-bold hover:underline" :to="switchLocalePath(page.latestRevisionLocale)">another locale</nuxt-link>
       </p>
     </DocsAlert>
 
     <div class="title-box">
       <h1 class="title">{{ page.title }}</h1>
-      <div class="version">
-        ver{{ page.version }}
+      <div class="revision">
+        rev{{ page.revision }}
       </div>
     </div>
     <div class="content">
@@ -96,7 +96,7 @@ export default Vue.extend({
   @apply text-3xl text-brand-red font-black;
 }
 
-.version {
+.revision {
   @apply text-sm opacity-75;
 }
 </style>

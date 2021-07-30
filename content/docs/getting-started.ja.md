@@ -1,6 +1,6 @@
 ---
 title: はじめる
-version: 20210701
+revision: 20210701
 ---
 
 hello cotowali

@@ -1,6 +1,6 @@
 ---
 title: 式
-version: 0
+revision: 0
 ---
 
 ## 演算子

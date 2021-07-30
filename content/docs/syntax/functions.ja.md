@@ -1,6 +1,6 @@
 ---
 title: 関数
-version: 0
+revision: 0
 ---
 
 ## 関数宣言

@@ -1,6 +1,6 @@
 ---
 title: 型
-version: 0
+revision: 0
 ---
 
 ## 数値

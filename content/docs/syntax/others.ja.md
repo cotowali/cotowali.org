@@ -1,6 +1,6 @@
 ---
 title: その他
-version: 20210729
+revision: 20210729
 ---
 
 ## assert 文

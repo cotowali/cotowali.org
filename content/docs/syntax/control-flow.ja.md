@@ -1,6 +1,6 @@
 ---
 title: 制御構文
-version: 20210701
+revision: 20210701
 ---
 
 ## If 文

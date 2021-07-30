@@ -1,6 +1,6 @@
 ---
 title: コメント
-version: 20210729
+revision: 20210729
 ---
 
 Cotowali のコメントは C スタイルです。`// comment` 形式の行コメントと、`/* comment */` 形式のブロックコメントが使用できます。
