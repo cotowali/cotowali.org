@@ -45,6 +45,9 @@ export default Vue.extend({
     darkRed: {
       type: Boolean,
     },
+    plain: {
+      type: Boolean,
+    },
 
     // shape
     icon: {
@@ -70,6 +73,7 @@ export default Vue.extend({
     },
     color(): string {
       return (
+        (this.plain && 'plain') ||
         (this.red && 'red') ||
         (this.darkRed && 'dark-red') ||
         'red'
@@ -127,5 +131,8 @@ export default Vue.extend({
   }
   .color-dark-red {
     @apply bg-brand-dark-red hover:bg-brand-dark-red-lighten-1;
+  }
+  .color-plain {
+    @apply bg-opacity-0 hover:bg-white hover:bg-opacity-10;
   }
 </style>
