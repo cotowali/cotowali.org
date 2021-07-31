@@ -1,0 +1,5 @@
+{
+  "rules": {
+    "vue/match-component-file-name": "off"
+  }
+}
