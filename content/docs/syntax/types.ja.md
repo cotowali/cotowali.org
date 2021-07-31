@@ -3,7 +3,7 @@ title: 型
 revision: 0
 ---
 
-## 数値
+## 組み込み型
 
 <docs-wip></docs-wip>
 
@@ -15,24 +15,26 @@ revision: 0
 
 <docs-wip></docs-wip>
 
-## 真偽値
+### 真偽値
 
 <docs-wip></docs-wip>
 
-## 文字列
+### 文字列
 
 <docs-wip></docs-wip>
 
-## タプル
+### タプル
 
 <docs-wip></docs-wip>
 
-## 配列
+### 配列
 
 <docs-wip></docs-wip>
 
-## マップ
+### マップ
 
 <docs-wip></docs-wip>
 
-## シーケンス
+### シーケンス
+
+<docs-wip></docs-wip>
