@@ -91,7 +91,7 @@ export default Vue.extend({
 <style scoped>
   .button {
     @apply rounded;
-    @apply flex items-center justify-center;
+    @apply inline-flex items-center justify-center;
   }
 
   .circle {
