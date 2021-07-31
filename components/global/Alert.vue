@@ -30,7 +30,7 @@ const icons: { [key: string]: string } = {
 }
 
 export default Vue.extend({
-  name: 'DocsAlert',
+  name: 'Alert',
   props: {
     type: {
       type: String,
@@ -63,5 +63,9 @@ export default Vue.extend({
 .alert-content {
   @apply flex-grow;
   @apply ml-2;
+}
+
+.alert-content p {
+  @apply mt-0 mb-1;
 }
 </style>

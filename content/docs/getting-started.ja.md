@@ -1,6 +1,10 @@
 ---
 title: はじめる
-revision: 20210701
+revision: 20210730
 ---
 
-hello cotowali
+<wip></wip>
+
+<!-- textlint-disable ja-technical-writing/no-exclamation-question-mark -->
+
+準備はできましたか？　それでは Cotowali の世界への旅立ちましょう！
