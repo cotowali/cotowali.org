@@ -11,7 +11,7 @@
 
 <template>
   <Alert>
-    <p>{{ $t('wip') }}</p>
+    <span class="mt-1">{{ $t('wip') }} :</span>
     <slot />
   </Alert>
 </template>
