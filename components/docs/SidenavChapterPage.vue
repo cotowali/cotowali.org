@@ -100,6 +100,10 @@ export default Vue.extend({
   @apply text-sm
 }
 
+.icon-expand {
+  @apply transform-gpu transition-transform duration-300 ease-out;
+}
+
 .icon-expand.expanded {
   @apply rotate-90;
 }
