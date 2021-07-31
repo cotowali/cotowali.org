@@ -34,6 +34,10 @@ export default {
 
   components: true,
 
+  generate: {
+    fallback: true,
+  },
+
   plugins: [
     '@/plugins/vue-scrollactive',
     '@/plugins/docs',
