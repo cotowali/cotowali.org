@@ -4,21 +4,32 @@
     <ul class="chapter-pages">
       <li v-for="page in chapter.pages" :key="page.slug">
         <nuxt-link
+          v-slot="{ href, navigate, isActive }"
           :to="localePath(page.path)"
-          class="link page-link"
-          active-class="link-active"
+          custom
         >
-          {{ page.title }}
+          <div class="flex items-end justify-between">
+            <a class="link page-link" :class="{ 'link-active': isActive }" :href="href" @click="navigate">
+              {{ page.title }}
+            </a>
+            <LiButton text icon circle @click="pageTocExpanded[page.slug] = !pageTocExpanded[page.slug]">
+              <LiIcon :icon="mdiRight" aria-label="expand" />
+            </LiButton>
+          </div>
         </nuxt-link>
-        <scrollactive v-if="page.toc.length > 0" tag="ul" class="page-toc" active-class="link-active">
-          <li v-for="link of page.toc" :key="link.id" :class="`link-depth-${link.depth - 1}`">
-            <nuxt-link
-              :to="localePath(page.path + '#' + link.id)"
-              class="link section-link scrollactive-item"
-            >
-              {{ link.text }}
-            </nuxt-link>
-          </li>
+        <scrollactive v-if="page.toc.length > 0" active-class="link-active">
+          <LiCollapse :expanded="pageTocExpanded[page.slug]">
+            <ul class="page-toc">
+              <li v-for="link of page.toc" :key="link.id" :class="`link-depth-${link.depth - 1}`">
+                <nuxt-link
+                  :to="localePath(page.path + '#' + link.id)"
+                  class="link section-link scrollactive-item"
+                >
+                  {{ link.text }}
+                </nuxt-link>
+              </li>
+            </ul>
+          </LiCollapse>
         </scrollactive>
       </li>
     </ul>
@@ -28,6 +39,7 @@
 <script lang="ts">
 import Vue, { PropType } from 'vue'
 import { Chapter } from '@/plugins/docs'
+import { mdiChevronRight as mdiRight } from '@mdi/js'
 
 export default Vue.extend({
   name: 'DocsSidenavChapter',
@@ -36,6 +48,14 @@ export default Vue.extend({
       type: Object as PropType<Chapter>,
       required: true,
     },
+  },
+  data() {
+    return {
+      mdiRight,
+      pageTocExpanded: Object.fromEntries(
+        this.chapter.pages.map((p) => [p.slug, false]),
+      ),
+    }
   },
 })
 </script>
