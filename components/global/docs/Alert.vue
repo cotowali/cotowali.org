@@ -30,7 +30,7 @@ const icons: { [key: string]: string } = {
 }
 
 export default Vue.extend({
-  name: 'DocsAlert',
+  name: 'Alert',
   props: {
     type: {
       type: String,

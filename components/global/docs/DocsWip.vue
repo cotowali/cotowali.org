@@ -10,8 +10,8 @@
 </i18n>
 
 <template>
-  <DocsAlert>
+  <Alert>
     <p>{{ $t('wip') }}</p>
     <slot />
-  </DocsAlert>
+  </Alert>
 </template>

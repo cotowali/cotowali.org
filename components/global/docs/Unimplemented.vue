@@ -1,5 +1,5 @@
 <template>
-  <DocsAlert type="unimplemented">
+  <Alert type="unimplemented">
     <slot />
-  </DocsAlert>
+  </Alert>
 </template>
