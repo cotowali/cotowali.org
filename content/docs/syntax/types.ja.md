@@ -38,3 +38,14 @@ revision: 0
 ### シーケンス
 
 <docs-wip></docs-wip>
+
+## 型の性質
+
+<docs-wip></docs-wip>
+### 数値
+
+<docs-wip></docs-wip>
+
+### 反復可能
+
+<docs-wip></docs-wip>
