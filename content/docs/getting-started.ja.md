@@ -3,7 +3,7 @@ title: はじめる
 revision: 20210730
 ---
 
-<docs-wip></docs-wip>
+<wip></wip>
 
 <!-- textlint-disable ja-technical-writing/no-exclamation-question-mark -->
 

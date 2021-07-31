@@ -5,47 +5,47 @@ revision: 0
 
 ## 組み込み型
 
-<docs-wip></docs-wip>
+<wip></wip>
 
 ### 整数
 
-<docs-wip></docs-wip>
+<wip></wip>
 
 ### 小数
 
-<docs-wip></docs-wip>
+<wip></wip>
 
 ### 真偽値
 
-<docs-wip></docs-wip>
+<wip></wip>
 
 ### 文字列
 
-<docs-wip></docs-wip>
+<wip></wip>
 
 ### タプル
 
-<docs-wip></docs-wip>
+<wip></wip>
 
 ### 配列
 
-<docs-wip></docs-wip>
+<wip></wip>
 
 ### マップ
 
-<docs-wip></docs-wip>
+<wip></wip>
 
 ### シーケンス
 
-<docs-wip></docs-wip>
+<wip></wip>
 
 ## 型の性質
 
-<docs-wip></docs-wip>
+<wip></wip>
 ### 数値
 
-<docs-wip></docs-wip>
+<wip></wip>
 
 ### 反復可能
 
-<docs-wip></docs-wip>
+<wip></wip>

@@ -56,7 +56,7 @@ if n {
 
 ## For 文
 
-<docs-wip></docs-wip>
+<wip></wip>
 
 ```
 for v in arr {
