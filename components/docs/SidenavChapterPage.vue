@@ -9,14 +9,21 @@
         <a class="link page-link" :class="{ 'link-active': isActive }" :href="href" @click="navigate">
           {{ page.title }}
         </a>
-        <LiButton text icon circle @click="tocExpanded = !tocExpanded">
+        <LiButton
+          text
+          icon
+          circle
+          :aria-expanded="ariaExpanded"
+          :aria-controls="tocId"
+          @click="tocExpanded = !tocExpanded"
+        >
           <LiIcon :icon="mdiRight" aria-label="expand" />
         </LiButton>
       </div>
     </nuxt-link>
 
     <scrollactive v-if="page.toc.length > 0" active-class="link-active">
-      <LiCollapse :expanded="tocExpanded">
+      <LiCollapse :id="tocId" :expanded="tocExpanded">
         <ul class="page-toc">
           <li v-for="link of page.toc" :key="link.id" :class="`link-depth-${link.depth - 1}`">
             <nuxt-link
@@ -50,6 +57,15 @@ export default Vue.extend({
       mdiRight,
       tocExpanded: false,
     }
+  },
+  computed: {
+    tocId(): string {
+      return this.page.slug + '--toc'
+    },
+    ariaExpanded(): boolean | 'false' {
+      // return 'false' explicitly to avoid removal attirbute
+      return this.tocExpanded || 'false'
+    },
   },
 })
 </script>
