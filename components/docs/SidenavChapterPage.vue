@@ -55,7 +55,7 @@ export default Vue.extend({
   data() {
     return {
       mdiRight,
-      tocExpanded: false,
+      tocExpanded: this.localeRoute(this.page.path).path === this.$route.path,
     }
   },
   computed: {
