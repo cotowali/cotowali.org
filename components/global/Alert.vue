@@ -2,17 +2,19 @@
 {
   "en": {
     "alert": "alert",
+    "info": "info",
     "unimplemented": "unimplemented"
   },
   "ja": {
     "alert": "注意",
+    "info": "補足",
     "unimplemented": "未実装"
   }
 }
 </i18n>
 
 <template>
-  <div class="alert">
+  <div class="alert" :class="[color]">
     <LiIcon class="alert-icon" :icon="icon" :aria-label="iconLabel" />
     <div class="alert-content">
       <slot />
@@ -22,11 +24,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mdiAlert, mdiTrafficCone } from '@mdi/js'
+import { mdiAlert, mdiInformation, mdiTrafficCone } from '@mdi/js'
 
 const icons: { [key: string]: string } = {
   alert: mdiAlert,
   unimplemented: mdiTrafficCone,
+  info: mdiInformation,
 }
 
 export default Vue.extend({
@@ -42,6 +45,7 @@ export default Vue.extend({
     return {
       icon: icons[this.type],
       iconLabel: this.$t(this.type),
+      color: this.type === 'info' ? 'blue' : 'red',
     }
   },
 })
@@ -51,9 +55,16 @@ export default Vue.extend({
 .alert {
   @apply flex items-start;
   @apply p-4 my-4;
-  @apply bg-red-300 text-red-600;
   @apply border-2 border-current;
   @apply rounded;
+}
+
+.alert.red {
+  @apply bg-red-300 text-red-600;
+}
+
+.alert.blue {
+  @apply bg-blue-300 text-blue-600;
 }
 
 .alert-icon {
