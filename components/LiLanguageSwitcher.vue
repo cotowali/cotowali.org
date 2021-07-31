@@ -25,14 +25,15 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import { mdiTranslate } from '@mdi/js'
 
-export default {
+export default Vue.extend({
   name: 'LiLanguageSwitcher',
   data: () => ({
     mdiTranslate,
     showLanguageList: false,
   }),
-}
+})
 </script>
