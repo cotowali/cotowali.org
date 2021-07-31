@@ -45,6 +45,10 @@ export default Vue.extend({
     darkRed: {
       type: Boolean,
     },
+
+    text: {
+      type: Boolean,
+    },
     plain: {
       type: Boolean,
     },
@@ -68,14 +72,15 @@ export default Vue.extend({
       return (
         (this.large && 'large') ||
         (this.small && 'small') ||
+        (this.text && 'text') ||
         'default'
       )
     },
     color(): string {
       return (
-        (this.plain && 'plain') ||
         (this.red && 'red') ||
         (this.darkRed && 'dark-red') ||
+        ((this.plain || this.text) && 'plain') ||
         'red'
       )
     },
