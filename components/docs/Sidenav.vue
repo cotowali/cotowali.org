@@ -3,7 +3,6 @@
     <DocsSidenavChapter
       v-for="chapter in docs.chapters"
       :key="chapter.title"
-      class="px-6"
       :chapter="chapter"
     />
   </LiSidenav>
