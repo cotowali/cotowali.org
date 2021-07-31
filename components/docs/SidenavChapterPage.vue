@@ -17,7 +17,7 @@
           :aria-controls="tocId"
           @click="tocExpanded = !tocExpanded"
         >
-          <LiIcon :icon="mdiRight" aria-label="expand" />
+          <LiIcon :icon="mdiRight" aria-label="expand" class="icon-expand" :class="{ 'expanded': tocExpanded }" />
         </LiButton>
       </div>
     </nuxt-link>
@@ -98,5 +98,9 @@ export default Vue.extend({
 .section-link {
   @apply mt-1;
   @apply text-sm
+}
+
+.icon-expand.expanded {
+  @apply rotate-90;
 }
 </style>
