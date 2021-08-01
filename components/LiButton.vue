@@ -60,6 +60,9 @@ export default Vue.extend({
     circle: {
       type: Boolean,
     },
+    rounded: {
+      type: Boolean,
+    },
 
     // behavior
     hover: {
@@ -98,6 +101,7 @@ export default Vue.extend({
         hover: this.hover,
         [`size-${this.size}`]: true,
         [`color-${this.color}`]: true,
+        rounded: this.rounded,
       }
     },
   },
@@ -110,7 +114,7 @@ export default Vue.extend({
     @apply inline-flex items-center justify-center;
   }
 
-  .circle {
+  .circle, .rounded {
     @apply rounded-full;
   }
 
