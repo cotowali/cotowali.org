@@ -31,15 +31,13 @@ export default Vue.extend({
     }
   },
   computed: {
-    outputBoxContent() {
+    outputBoxContent(): string {
       if (this.status === 'compiling') {
         return 'Compiling... Wait a minute'
       } else if (this.status === 'error') {
         return 'ERROR! Reload your brouwser'
-      } else if (this.status === 'active') {
-        return this.output
       }
-      return '...'
+      return this.output
     },
   },
   methods: {
@@ -53,14 +51,12 @@ export default Vue.extend({
           'Content-Type': 'text/plain',
         },
         body: this.code,
-      }).then(async (r) => await r.text())
-        .catch(() => {
-          this.status = 'error'
-        })
-
-      if (this.status !== 'error') {
+      }).then(async (r) => {
         this.status = 'active'
-      }
+        return await r.text()
+      }).catch(() => {
+        this.status = 'error'
+      }) || 'ERROR'
     },
   },
 })
