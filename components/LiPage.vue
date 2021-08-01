@@ -8,7 +8,9 @@
       </template>
 
       <div class="content">
-        <main><slot /></main>
+        <main class="flex-grow">
+          <slot />
+        </main>
         <LiFooter v-if="!noFooter" />
       </div>
 
