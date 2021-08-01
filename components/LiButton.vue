@@ -125,6 +125,7 @@ export default Vue.extend({
 <style scoped>
   .button {
     @apply rounded;
+    @apply no-underline hover:no-underline;
     @apply inline-flex items-center justify-center;
   }
 
@@ -166,13 +167,13 @@ export default Vue.extend({
   }
 
   .color-red {
-    @apply bg-brand-red;
+    @apply text-white bg-brand-red;
   }
   .color-red.hover {
     @apply hover:bg-brand-red-lighten-1;
   }
   .color-dark-red {
-    @apply bg-brand-dark-red;
+    @apply text-white bg-brand-dark-red;
   }
   .color-dark-red.hover {
     hover:bg-brand-dark-red-lighten-1;
