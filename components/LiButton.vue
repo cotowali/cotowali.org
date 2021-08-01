@@ -60,6 +60,12 @@ export default Vue.extend({
     circle: {
       type: Boolean,
     },
+
+    // behavior
+    hover: {
+      type: Boolean,
+      default: true, // eslint-disable-line  vue/no-boolean-default
+    },
   },
   computed: {
     useAnchorTag(): boolean {
@@ -89,6 +95,7 @@ export default Vue.extend({
         button: true,
         circle: this.circle,
         icon: this.icon,
+        hover: this.hover,
         [`size-${this.size}`]: true,
         [`color-${this.color}`]: true,
       }
@@ -132,12 +139,21 @@ export default Vue.extend({
   }
 
   .color-red {
-    @apply bg-brand-red hover:bg-brand-red-lighten-1;
+    @apply bg-brand-red;
+  }
+  .color-red.hover {
+    @apply hover:bg-brand-red-lighten-1;
   }
   .color-dark-red {
-    @apply bg-brand-dark-red hover:bg-brand-dark-red-lighten-1;
+    @apply bg-brand-dark-red;
+  }
+  .color-dark-red.hover {
+    hover:bg-brand-dark-red-lighten-1;
   }
   .color-plain {
-    @apply bg-opacity-0 hover:bg-white hover:bg-opacity-10;
+    @apply bg-opacity-0 hover:bg-white;
+  }
+  .color-plain.hover {
+    @apply hover:bg-opacity-10;
   }
 </style>
