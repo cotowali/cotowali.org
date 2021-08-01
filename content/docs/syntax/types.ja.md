@@ -49,6 +49,14 @@ revision: 0
 
 <wip></wip>
 
+### 基本型
+
+<wip></wip>
+
+### 拡張型
+
+<wip></wip>
+
 ### 数値型
 
 <wip></wip>
