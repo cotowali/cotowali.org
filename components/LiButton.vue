@@ -1,5 +1,9 @@
 <template>
-  <a v-if="useAnchorTag" :class="classes" :href="href" v-on="$listeners">
+  <span v-if="!clickable" class="cursor-default" :class="classes" :href="href" v-on="$listeners">
+    <slot />
+  </span>
+
+  <a v-else-if="useAnchorTag" :class="classes" :href="href" v-on="$listeners">
     <slot />
   </a>
 
@@ -67,6 +71,10 @@ export default Vue.extend({
     // behavior
     hover: {
       type: Boolean,
+      default: undefined, // eslint-disable-line  vue/no-boolean-default
+    },
+    clickable: {
+      type: Boolean,
       default: true, // eslint-disable-line  vue/no-boolean-default
     },
   },
@@ -94,11 +102,13 @@ export default Vue.extend({
       )
     },
     classes(): { [key:string]: boolean } {
+      const hover = this.hover ||
+        (this.hover === undefined && this.clickable) // when hover is not specified, hover is true if clickable
       return {
         button: true,
         circle: this.circle,
         icon: this.icon,
-        hover: this.hover,
+        hover: hover,
         [`size-${this.size}`]: true,
         [`color-${this.color}`]: true,
         rounded: this.rounded,
