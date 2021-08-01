@@ -67,6 +67,9 @@ export default Vue.extend({
     rounded: {
       type: Boolean,
     },
+    dense: {
+      type: Boolean,
+    },
 
     // behavior
     hover: {
@@ -108,7 +111,8 @@ export default Vue.extend({
         button: true,
         circle: this.circle,
         icon: this.icon,
-        hover: hover,
+        hover,
+        dense: this.dense,
         [`size-${this.size}`]: true,
         [`color-${this.color}`]: true,
         rounded: this.rounded,
@@ -131,6 +135,9 @@ export default Vue.extend({
   .size-small {
     @apply px-2 h-8 min-w-8;
   }
+  .size-small.dense {
+    @apply h-6
+  }
   .size-small.circle,
   .size-small.icon {
     @apply w-8;
@@ -139,6 +146,9 @@ export default Vue.extend({
   .size-default {
     @apply px-4 h-10 min-w-10;
   }
+  .size-default.dense {
+    @apply h-8
+  }
   .size-default.circle,
   .size-default.icon {
     @apply w-10;
@@ -146,6 +156,9 @@ export default Vue.extend({
 
   .size-large {
     @apply px-6 h-12 min-w-12;
+  }
+  .size-large.dense {
+    @apply h-10;
   }
   .size-large.circle,
   .size-large.icon {
