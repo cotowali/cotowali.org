@@ -9,5 +9,8 @@ module.exports = merge(base, {
         dict2: { disabled: true },
       },
     },
+    'ja-technical-writing/max-kanji-continuous-len': {
+      allow: ['浮動小数点数', '浮動小数点数型'],
+    },
   },
 })
