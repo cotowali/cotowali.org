@@ -46,7 +46,14 @@ var small = 1.0-E9
 
 真偽値型 `bool` は `true` または `false` を表します。
 
-<wip></wip>
+#### リテラル
+
+真偽値リテラルは `true` と `false` です。
+
+```
+var b1 = true
+var b2 = false
+```
 
 ### 文字列型
 
