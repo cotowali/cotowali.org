@@ -29,6 +29,19 @@ var n = 65535
 
 浮動小数点数型 `float` は環境依存の精度を持つ浮動小数点数を表します。
 
+### リテラル
+
+浮動小数点数リテラルは以下のように記述します。
+
+```
+var zero = 0.0
+var n = 1.5
+var big = 1.0+e9
+var small = 1.0-E9
+```
+
+<unimplemented>指数表記は未実装です。</unimplemented>
+
 ### 真偽値型
 
 <wip></wip>
