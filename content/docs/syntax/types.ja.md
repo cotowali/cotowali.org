@@ -44,6 +44,8 @@ var small = 1.0-E9
 
 ### 真偽値型
 
+真偽値型 `bool` は `true` または `false` を表します。
+
 <wip></wip>
 
 ### 文字列型
