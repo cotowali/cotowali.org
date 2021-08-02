@@ -1,19 +1,13 @@
 <template>
-  <div class="flex flex-col items-center w-full h-full pt-8 px-12 gap-y-2">
+  <div class="flex flex-col items-stretch w-full h-full pt-8 px-12 gap-y-2">
     <h1 class="text-4xl text-brand-red">Cotowali Playground</h1>
+    <textarea v-model="code" class="code-block rounded-bl text-black" />
     <div class="self-start">
       <LiButton @click="compile">
         Compile
       </LiButton>
     </div>
-    <div class="flex w-full flex-grow flex-shrink">
-      <div class="w-1/2">
-        <textarea v-model="code" class="code-block rounded-bl text-black" />
-      </div>
-      <div class="w-1/2">
-        <pre class="code-block rounded-r bg-black"><code class="w-full">{{ outputBoxContent }}</code></pre>
-      </div>
-    </div>
+    <pre class="code-block rounded-r bg-black"><code>{{ outputBoxContent }}</code></pre>
   </div>
 </template>
 
@@ -65,8 +59,7 @@ export default Vue.extend({
 <style scoped>
 
 .code-block {
-  @apply block h-full w-full p-2;
-  @apply overflow-x-scroll;
+  @apply block min-h-64 w-full p-2;
 }
 
 </style>
