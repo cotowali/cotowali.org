@@ -73,8 +73,6 @@ var b2 = false
 
 シングルクォートリテラルは、`\\` と `\'` を除いて文字列の解釈は行われません。
 
-<unimplemented>エスケープシーケンスは未実装です。</unimplemented>
-
 ```
 echo('abc')  // => abc
 echo('\r\n') // => \r\n
