@@ -5,7 +5,7 @@ revision: 20210701
 
 ## If 文
 
-条件分岐には `if` 文を使用します。`if` 文は条件式を評価し、真であればブロックを実行します。`if` の後には `else if` を記述できます。条件式が偽の場合は続く `else if` の条件式を順番に評価し、その条件式が真の場合はブロックを実行します。すべての条件式が偽の場合、`else` が記述されていれば、そのブロックを実行します。
+条件分岐には `if` 文を使用します。
 
 ```
 fn fizzbuzz(n int) string {
@@ -31,14 +31,14 @@ assert fizzbuzz(15) == 'fizzbuzz'
 ```
 var n = 1
 if n == 1 {
-  echo("it works without ()")
+  echo("it works")
 }
 if (n == 1) {
-  echo("it works with ()")
+  echo("it also works")
 }
 ```
 
-また、条件式の型は `bool` でなければなりません。
+条件式の型は `bool` でなければなりません。
 
 ```
 var n = 1
