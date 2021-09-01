@@ -5,7 +5,7 @@ revision: 20210701
 
 ## If / Else
 
-条件分岐には `if` 文を使用します。
+`if` / `else` 文は条件分岐を行います。
 
 ```
 fn fizzbuzz(n int) string {
@@ -54,12 +54,16 @@ if n {
 }
 ```
 
-## For In
+## For
 
-<wip></wip>
+### For In
+
+`for in` は列挙可能値の反復処理を行います。
 
 ```
-for v in arr {
-    // ...
+var n = 0
+for v in [1, 2, 3] {
+    n += v
 }
+assert n == 6
 ```
