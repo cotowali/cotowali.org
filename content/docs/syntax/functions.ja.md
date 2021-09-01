@@ -19,6 +19,22 @@ fn assert_zero(v: int) {
 assert_zero()
 ```
 
+### 可変長引数
+
+関数は末尾に配列型の可変長引数を持つことができます。
+
+```
+fn sum(vals: ...int) int {
+  var ret = 0
+  for v in vals {
+    ret += v
+  }
+  return ret
+}
+
+assert sum(1, 2, 3) == 6
+```
+
 ## パイプライン
 
 関数はパイプライン入力を持つことができます。入力は `read` 関数を使用して受け取ります。
