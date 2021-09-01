@@ -30,9 +30,9 @@ import { mdiAlert, mdiInformation, mdiBug, mdiTrafficCone } from '@mdi/js'
 
 const icons: { [key: string]: string } = {
   alert: mdiAlert,
+  info: mdiInformation,
   bug: mdiBug,
   unimplemented: mdiTrafficCone,
-  info: mdiInformation,
 }
 
 export default Vue.extend({
