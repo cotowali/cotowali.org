@@ -58,6 +58,10 @@ if n {
 }
 ```
 
+### Switch 文
+
+<undecided></undecided>
+
 ## 反復処理
 
 ### For In 文
