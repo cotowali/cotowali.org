@@ -12,4 +12,9 @@ fn add(a: int, b: int) int {
   return a + b
 }
 assert add(1, 2) == 3
+
+fn assert_zero(v: int) {
+  assert v == 0
+}
+assert_zero()
 ```
