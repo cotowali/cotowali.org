@@ -3,7 +3,7 @@ title: 制御構文
 revision: 20210701
 ---
 
-## If 文
+## If / Else
 
 条件分岐には `if` 文を使用します。
 
@@ -54,7 +54,7 @@ if n {
 }
 ```
 
-## For 文
+## For In
 
 <wip></wip>
 
