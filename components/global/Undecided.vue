@@ -1,3 +1,14 @@
+<i18n>
+{
+  "en": {
+    "default": "Details ofThis feature is undecided."
+  },
+  "ja": {
+    "default": "この機能の詳細は未決定です"
+  }
+}
+</i18n>
+
 <template>
   <Alert type="undecided">
     <template v-if="hasSlot">
@@ -5,7 +16,7 @@
     </template>
     <template v-else>
       <span>
-        この機能の詳細は未決定です
+        {{ $t('default') }}
       </span>
     </template>
   </Alert>
