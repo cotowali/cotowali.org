@@ -1,7 +1,7 @@
 <i18n>
 {
   "en": {
-    "default": "Details ofThis feature is undecided."
+    "default": "Details of this feature is undecided."
   },
   "ja": {
     "default": "この機能の詳細は未決定です"
