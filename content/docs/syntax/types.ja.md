@@ -101,7 +101,7 @@ assert r"\n" == "\\\n"
 
 ###### エスケープシーケンス
 
-<wip></wip>
+<unimplemented></unimplemeted>
 
 ### タプル型
 
@@ -116,25 +116,5 @@ assert r"\n" == "\\\n"
 <wip></wip>
 
 ### シーケンス型
-
-<wip></wip>
-
-## 型の性質
-
-<wip></wip>
-
-### 基本型
-
-<wip></wip>
-
-### 拡張型
-
-<wip></wip>
-
-### 数値型
-
-<wip></wip>
-
-### 反復可能型
 
 <wip></wip>
