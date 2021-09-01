@@ -43,3 +43,13 @@ echo('not a comment')
 
 /* // line comment in block comment */ echo('not a comment')
 ```
+
+## ドキュメントコメント
+
+ドキュメントコメントは `///` で始まるコメントであり、生成物にコメントとして出力されます。通常のコメントは単に削除されます。
+
+```
+/// doc comment (This will be retain to output)
+
+// Normal comment will be removed
+```
