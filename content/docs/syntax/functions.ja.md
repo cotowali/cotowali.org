@@ -44,3 +44,27 @@ assert (1 |> inc()) == 2
 assert ((1, 2) |> add_in) == 3
 ```
 
+### シーケンス型
+
+シーケンス型の入力を持つ関数では、`read` は値を1つづつ受け取ります。入力が終端に達した場合、`read` は `false` を返します。
+シーケンス型の戻り値を持つ関数では、`yield` 文を使用してひとつづつ要素を返します。
+
+```
+fn ...int |> twice_each() |> ...int {
+  var n int
+  while(read(&n)) {
+    yield n * 2
+  }
+}
+
+fn ...int |> sum() |> int {
+  var ret = 0
+  var v int
+  whire read(&v) {
+    ret += v
+  }
+  return ret
+}
+
+assert (seq(3) |> twice_each() |> sum()) == 12
+```
