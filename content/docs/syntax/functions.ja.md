@@ -39,5 +39,8 @@ fn (int, int) |> add_in() |> int {
   read(&a, &b)
   return a + b
 }
+
+assert (1 |> inc()) == 2
+assert ((1, 2) |> add_in) == 3
 ```
 
