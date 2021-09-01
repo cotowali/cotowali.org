@@ -109,6 +109,17 @@ assert r"\n" == "\\\n"
 
 <info>ネストされたタプル型は将来サポートされる可能性があります</info>
 
+タプル内で `...` を使用することでタプルを展開できます。エイリアスされたタプルにも適用可能です。
+
+```
+var int3: (...(int, int), int)
+assert typeof(int3) == '(int, int, int)'
+
+type int_pair = (int, int)
+var int4 = (...int_pair, ...int_pair)
+assert typeof(int4) == '(int, int, int, int)'
+```
+
 #### リテラル
 
 タプルリテラルは以下のように記述します。
