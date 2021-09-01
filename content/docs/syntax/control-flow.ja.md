@@ -3,7 +3,7 @@ title: 制御構文
 revision: 20210701
 ---
 
-## If / Else
+## If / Else 文
 
 `if` / `else` 文は条件分岐を行います。
 
@@ -56,7 +56,7 @@ if n {
 
 ## For
 
-### For In
+### For In 文
 
 `for in` は列挙可能値の反復処理を行います。
 
