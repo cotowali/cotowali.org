@@ -32,6 +32,11 @@ export default {
     ],
   },
 
+  build: {
+    parallel: true,
+    cache: true,
+  },
+
   components: true,
 
   generate: {
