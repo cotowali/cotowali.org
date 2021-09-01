@@ -4,12 +4,14 @@
     "alert": "alert",
     "info": "info",
     "bug": "bug",
+    "undecided": "undecided",
     "unimplemented": "unimplemented"
   },
   "ja": {
     "alert": "注意",
     "info": "補足",
     "bug": "バグ",
+    "undecided": "未決定",
     "unimplemented": "未実装"
   }
 }
@@ -26,12 +28,13 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mdiAlert, mdiInformation, mdiBug, mdiTrafficCone } from '@mdi/js'
+import { mdiAlert, mdiInformation, mdiBug, mdiArrowDecision, mdiTrafficCone } from '@mdi/js'
 
 const icons: { [key: string]: string } = {
   alert: mdiAlert,
   info: mdiInformation,
   bug: mdiBug,
+  undecided: mdiArrowDecision,
   unimplemented: mdiTrafficCone,
 }
 
