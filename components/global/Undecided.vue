@@ -1,6 +1,6 @@
 <template>
   <Alert type="undecided">
-    <template v-if="$slots.default.text.trim()">
+    <template v-if="hasSlot">
       <slot />
     </template>
     <template v-else>
@@ -10,3 +10,12 @@
     </template>
   </Alert>
 </template>
+
+<script>
+export default {
+  name: 'Undecided',
+  data: (vm) => ({
+    hasSlot: !!vm.$slots.default.map((v) => v.text.trim()).join(''),
+  }),
+}
+</script>
