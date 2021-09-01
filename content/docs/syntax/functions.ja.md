@@ -3,14 +3,13 @@ title: 関数
 revision: 0
 ---
 
-## 関数宣言
+## 基本
 
-### パイプ入力
+関数は以下のように定義します。
 
-### ストリーム入出力
-
-## 関数定義
-
-### return 文
-
-### yield 文
+```
+fn add(a: int, b: int) int {
+  return a + b
+}
+assert add(1, 2) == 3
+```
