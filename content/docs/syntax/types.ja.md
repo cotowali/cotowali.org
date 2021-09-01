@@ -101,7 +101,7 @@ assert r"\n" == "\\\n"
 
 ###### エスケープシーケンス
 
-<unimplemented></unimplemeted>
+<unimplemented></unimplemented>
 
 ### タプル型
 
