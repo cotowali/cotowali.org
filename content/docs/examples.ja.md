@@ -5,6 +5,5 @@ revision: 20210701
 
 ## Hello World
 
-```
-echo('hello world')
+```li file=cotowali/examples/hello_world.li
 ```

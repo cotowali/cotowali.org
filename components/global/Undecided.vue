@@ -1,16 +1,16 @@
 <i18n>
 {
   "en": {
-    "default": "This feature is unimplemented."
+    "default": "Details of this feature is undecided."
   },
   "ja": {
-    "default": "この機能は未実装です"
+    "default": "この機能の詳細は未決定です"
   }
 }
 </i18n>
 
 <template>
-  <Alert type="unimplemented">
+  <Alert type="undecided">
     <template v-if="hasSlot">
       <slot />
     </template>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'Unimplemented',
+  name: 'Undecided',
   data: (vm) => ({
     hasSlot: !!vm.$slots.default.map((v) => v.text.trim()).join(''),
   }),

@@ -7,6 +7,7 @@ module.exports = merge(base, {
     'ja-technical-writing/ja-no-redundant-expression': {
       dictOptions: {
         dict2: { disabled: true },
+        dict5: { disabled: true },
       },
     },
     'ja-technical-writing/max-kanji-continuous-len': {

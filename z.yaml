@@ -11,3 +11,7 @@ tasks:
   lint.fix: npm run lint:fix $@
   repl: node --experimental-repl-await
   docs.watch: npm run lint:docs:watch
+  commit.docs: |
+    git commit -m "docs: $*"
+  commit.docs.ja: |
+    git commit -m "docs.ja: $*"

@@ -3,14 +3,84 @@ title: 関数
 revision: 0
 ---
 
-## 関数宣言
+## 基本
 
-### パイプ入力
+関数は以下のように定義します。
 
-### ストリーム入出力
+```
+fn add(a: int, b: int) int {
+  return a + b
+}
+assert add(1, 2) == 3
 
-## 関数定義
+fn assert_zero(v: int) {
+  assert v == 0
+}
+assert_zero()
+```
 
-### return 文
+### 可変長引数
 
-### yield 文
+関数は末尾に配列型の可変長引数を持つことができます。
+
+```
+fn sum(vals: ...int) int {
+  var ret = 0
+  for v in vals {
+    ret += v
+  }
+  return ret
+}
+
+assert sum(1, 2, 3) == 6
+```
+
+## パイプライン
+
+関数はパイプライン入力を持つことができます。入力は `read` 関数を使用して受け取ります。
+
+<undecided>パイプライン入力の受け取り方法は変更される可能性があります</undecided>
+
+可読性のために、戻り値の型の前に `|>` を記述することができます。この記述は動作に一切影響を与えません。
+
+```
+fn int |> inc() |> int {
+  var n
+  read(&n)
+  return n + 1
+}
+
+fn (int, int) |> add_in() |> int {
+  var (a, b): (int, int)
+  read(&a, &b)
+  return a + b
+}
+
+assert (1 |> inc()) == 2
+assert ((1, 2) |> add_in) == 3
+```
+
+### シーケンス型
+
+シーケンス型の入力を持つ関数では、`read` は値を1つづつ受け取ります。入力が終端に達した場合、`read` は `false` を返します。
+シーケンス型の戻り値を持つ関数では、`yield` 文を使用してひとつづつ要素を返します。
+
+```
+fn ...int |> twice_each() |> ...int {
+  var n int
+  while(read(&n)) {
+    yield n * 2
+  }
+}
+
+fn ...int |> sum() |> int {
+  var ret = 0
+  var v int
+  whire read(&v) {
+    ret += v
+  }
+  return ret
+}
+
+assert (seq(3) |> twice_each() |> sum()) == 12
+```

@@ -3,9 +3,13 @@ title: 制御構文
 revision: 20210701
 ---
 
-## If 文
+## 条件分岐
 
-条件分岐には `if` 文を使用します。`if` 文は条件式を評価し、真であればブロックを実行します。`if` の後には `else if` を記述できます。条件式が偽の場合は続く `else if` の条件式を順番に評価し、その条件式が真の場合はブロックを実行します。すべての条件式が偽の場合、`else` が記述されていれば、そのブロックを実行します。
+### If / Else 文
+
+`if` は与えられた条件式を評価し、真であればブロックを実行します。
+偽の場合は後続の `else if` の条件式を順番に評価し、最初に真であるブロックを実行します。
+すべての条件が偽の場合、`else` ブロックを実行します。`else` ブロックは省略可能です。
 
 ```
 fn fizzbuzz(n int) string {
@@ -31,14 +35,14 @@ assert fizzbuzz(15) == 'fizzbuzz'
 ```
 var n = 1
 if n == 1 {
-  echo("it works without ()")
+  echo("it works")
 }
 if (n == 1) {
-  echo("it works with ()")
+  echo("it also works")
 }
 ```
 
-また、条件式の型は `bool` でなければなりません。
+条件式の型は `bool` でなければなりません。
 
 ```
 var n = 1
@@ -54,12 +58,20 @@ if n {
 }
 ```
 
-## For 文
+### Switch 文
 
-<wip></wip>
+<undecided></undecided>
+
+## 反復処理
+
+### For In 文
+
+`for in` は列挙可能値の反復処理を行います。
 
 ```
-for v in arr {
-    // ...
+var n = 0
+for v in [1, 2, 3] {
+    n += v
 }
+assert n == 6
 ```
