@@ -26,6 +26,7 @@
     "@cotowali/design": "^0.3.0",
     "@mdi/js": "^5.9.55",
     "@nuxt/content": "^1.14.0",
+    "@nuxtjs/firebase": "^7.6.1",
     "@nuxtjs/tailwindcss": "^4.2.0",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",

@@ -64,6 +64,7 @@ export default {
 
   modules: [
     '@nuxt/content',
+    '@nuxtjs/firebase',
     'nuxt-i18n',
   ],
 
@@ -73,6 +74,21 @@ export default {
         theme: 'prism-themes/themes/prism-vsc-dark-plus.css',
       },
       remarkPlugins: ['~/plugins/remark-code-import.js'],
+    },
+  },
+
+  firebase: {
+    config: {
+      apiKey: 'AIzaSyB9kRgqc6K3N6b2oX-N9QfQTZGD86uguaU',
+      authDomain: 'cotowali.firebaseapp.com',
+      projectId: 'cotowali',
+      storageBucket: 'cotowali.appspot.com',
+      messagingSenderId: '156438306367',
+      appId: '1:156438306367:web:e1e6e0081397104f26a28a',
+      measurementId: 'G-5P9SZXBNXN',
+    },
+    services: {
+      analytics: true,
     },
   },
 
