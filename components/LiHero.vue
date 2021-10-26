@@ -6,9 +6,7 @@
     "try": "Try"
   },
   "ja": {
-    "get-started": "はじめる"
- }
-
+  }
 }
 </i18n>
 
