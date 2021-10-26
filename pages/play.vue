@@ -1,18 +1,22 @@
 <template>
-  <div class="flex flex-col items-stretch w-full h-full pt-8 px-12 gap-y-2">
+  <div class="flex flex-col items-stretch w-full h-full pt-8 px-12 gap-y-3">
     <h1 class="text-4xl text-brand-red">Cotowali Playground (experimental)</h1>
     <textarea v-model="code" class="code-block rounded-bl text-black" />
-    <div class="self-start flex gap-x-2">
-      <LiButton @click="compile">
-        Compile
-      </LiButton>
-      <div class="flex items-center bg-black rounded w-full overflow-hidden">
-        <LiButton plain class="!rounded-r-none" icon @click="copyCliCommand">
-          <LiIcon size="1rem" :icon="mdiCopy" aria-label="copy cli command" />
+
+    <div class="flex flex-col gap-y-1">
+      <div v-for="mode in modes" :key="mode" class="self-start flex">
+        <LiButton class="w-24" @click="run(mode)">
+          <span class="capitalize">{{ mode }}</span>
         </LiButton>
-        <pre class="px-1"><code>{{ cliCommandBase }} "..."</code></pre>
+        <div class="flex items-center bg-black rounded w-full overflow-hidden">
+          <LiButton plain class="!rounded-r-none" icon @click="copyCliCommand(mode)">
+            <LiIcon size="1rem" :icon="mdiCopy" aria-label="copy cli command" />
+          </LiButton>
+          <pre class="px-1"><code>{{ cliCommandBase(mode) }} "..."</code></pre>
+        </div>
       </div>
     </div>
+
     <pre class="code-block rounded-r bg-black"><code>{{ outputBoxContent }}</code></pre>
   </div>
 </template>
@@ -22,6 +26,10 @@ import Vue from 'vue'
 import { mdiContentCopy as mdiCopy } from '@mdi/js'
 
 type Status = 'active' | 'compiling' | 'error'
+type RunMode = 'compile' | 'run'
+
+const licUrl = (mode: RunMode) =>
+  `https://lic-cotowali.herokuapp.com/${mode === 'run' ? 'run' : ''}`
 
 export default Vue.extend({
   data() {
@@ -30,6 +38,7 @@ export default Vue.extend({
       code: "echo('hello cotowali')",
       output: '',
       status: 'active' as Status,
+      modes: (['compile', 'run'] as RunMode[]),
     }
   },
   computed: {
@@ -46,22 +55,22 @@ export default Vue.extend({
       const replacer = (s: string) => s === '\n' ? ';' : '\\' + s
       return this.code.replaceAll(pattern, replacer)
     },
-    cliCommandBase(): string {
-      return 'curl https://lic-cotowali.herokuapp.com/ -X POST -d'
-    },
-    cliCommand(): string {
-      return `${this.cliCommandBase} "${this.escapedCode}"`
-    },
   },
   methods: {
-    async copyCliCommand() {
-      await navigator.clipboard.writeText(this.cliCommand)
+    cliCommandBase(mode: RunMode): string {
+      return `curl ${licUrl(mode)} -X POST -d`
     },
-    async compile() {
+    cliCommand(mode: RunMode): string {
+      return `${this.cliCommandBase(mode)} "${this.escapedCode}"`
+    },
+    async copyCliCommand(mode: RunMode) {
+      await navigator.clipboard.writeText(this.cliCommand(mode))
+    },
+    async run(mode: RunMode) {
       this.status = 'compiling'
       await this.$nextTick()
 
-      this.output = await fetch('https://lic-cotowali.herokuapp.com/', {
+      this.output = await fetch(licUrl(mode), {
         method: 'POST',
         headers: {
           'Content-Type': 'text/plain',
