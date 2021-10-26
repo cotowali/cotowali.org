@@ -12,7 +12,7 @@
           <LiButton plain class="!rounded-r-none" icon @click="copyCliCommand(mode)">
             <LiIcon size="1rem" :icon="mdiCopy" aria-label="copy cli command" />
           </LiButton>
-          <pre class="px-1"><code>{{ cliCommandBase(mode) }} "..."</code></pre>
+          <pre class="px-1"><code>{{ cliCommandToShow(mode) }}</code></pre>
         </div>
       </div>
     </div>
@@ -28,8 +28,8 @@ import { mdiContentCopy as mdiCopy } from '@mdi/js'
 type Status = 'active' | 'compiling' | 'error'
 type RunMode = 'compile' | 'run'
 
-const licUrl = (mode: RunMode) =>
-  `http://lic.cotowali.org/${mode === 'run' ? 'run' : ''}`
+const licUrl = 'http://lic.cotowali.org/'
+const cliCommandBase = `curl ${licUrl} -X POST -d`
 
 export default Vue.extend({
   data() {
@@ -57,11 +57,15 @@ export default Vue.extend({
     },
   },
   methods: {
-    cliCommandBase(mode: RunMode): string {
-      return `curl ${licUrl(mode)} -sSL -X POST -d`
-    },
     cliCommand(mode: RunMode): string {
-      return `${this.cliCommandBase(mode)} "${this.escapedCode}"`
+      const command = `${cliCommandBase} "${this.escapedCode}"`
+      if (mode === 'run') {
+        return command + ' | sh'
+      }
+      return command
+    },
+    cliCommandToShow(mode: RunMode) {
+      return `${cliCommandBase} "..."${mode === 'run' ? ' | sh' : ''}`
     },
     async copyCliCommand(mode: RunMode) {
       await navigator.clipboard.writeText(this.cliCommand(mode))
@@ -70,7 +74,7 @@ export default Vue.extend({
       this.status = 'compiling'
       await this.$nextTick()
 
-      this.output = await fetch(licUrl(mode), {
+      this.output = await fetch(`${licUrl}${mode === 'run' ? 'run' : ''}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'text/plain',
