@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-stretch w-full h-full pt-8 px-12 gap-y-2">
-    <h1 class="text-4xl text-brand-red">Cotowali Playground</h1>
+    <h1 class="text-4xl text-brand-red">Cotowali Playground (experimental)</h1>
     <textarea v-model="code" class="code-block rounded-bl text-black" />
     <div class="self-start flex gap-x-2">
       <LiButton @click="compile">
