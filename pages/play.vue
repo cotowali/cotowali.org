@@ -29,6 +29,7 @@ type Status = 'active' | 'compiling' | 'error'
 type RunMode = 'compile' | 'run'
 
 const licUrl = 'http://lic.cotowali.org/'
+const licHerokuUrl = 'https://lic-cotowali.herokuapp.com/'
 const cliCommandBase = `curl ${licUrl} -X POST -d`
 
 export default Vue.extend({
@@ -74,7 +75,7 @@ export default Vue.extend({
       this.status = 'compiling'
       await this.$nextTick()
 
-      this.output = await fetch(`${licUrl}${mode === 'run' ? 'run' : ''}`, {
+      this.output = await fetch(`${licHerokuUrl}${mode === 'run' ? 'run' : ''}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'text/plain',
