@@ -1,5 +1,5 @@
 const title = 'Cotowali'
-const description = 'Cotowali is a staticaly typed script language that transpile into POSIX sh'
+const description = 'Cotowali is a staticaly typed scripting language that transpile into POSIX sh'
 const baseUrl = 'https://cotowali.org'
 
 export default {
