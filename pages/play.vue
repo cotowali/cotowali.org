@@ -58,7 +58,7 @@ export default Vue.extend({
   },
   methods: {
     cliCommandBase(mode: RunMode): string {
-      return `curl ${licUrl(mode)} -X POST -d`
+      return `curl ${licUrl(mode)} -sSL -X POST -d`
     },
     cliCommand(mode: RunMode): string {
       return `${this.cliCommandBase(mode)} "${this.escapedCode}"`
