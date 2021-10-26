@@ -29,7 +29,7 @@ type Status = 'active' | 'compiling' | 'error'
 type RunMode = 'compile' | 'run'
 
 const licUrl = (mode: RunMode) =>
-  `https://lic-cotowali.herokuapp.com/${mode === 'run' ? 'run' : ''}`
+  `https://lic.cotowali.org/${mode === 'run' ? 'run' : ''}`
 
 export default Vue.extend({
   data() {
