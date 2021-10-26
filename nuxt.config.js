@@ -1,6 +1,6 @@
 const title = 'Cotowali'
 const description = 'Cotowali is a staticaly typed script language that transpile into POSIX sh'
-const baseUrl = 'https://cotowali.web.app' // FIXME: set production domain
+const baseUrl = 'https://cotowali.org'
 
 export default {
   target: 'static',
