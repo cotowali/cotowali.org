@@ -23,7 +23,7 @@
     "firebase:deploy": "firebase deploy --only hosting"
   },
   "dependencies": {
-    "@cotowali/design": "^0.3.2",
+    "@cotowali/design": "^0.3.4",
     "@mdi/js": "^5.9.55",
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/firebase": "^7.6.1",
