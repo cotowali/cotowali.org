@@ -13,7 +13,9 @@
 <template>
   <div class="hero">
     <div class="flex flex-col">
-      <h1 class="text-brand-red text-4xl font-bold font-title">Cotowali</h1>
+      <h1 class="text-brand-red text-4xl">
+        <CotowaliLogoText />
+      </h1>
       <div class="mt-1" style="padding-left: 3px;">
         <p>
           {{ $t('description') }}

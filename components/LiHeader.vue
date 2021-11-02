@@ -1,7 +1,7 @@
 <template>
   <header class="header">
-    <div class="flex items-center font-bold font-title">
-      <nuxt-link :to="localePath('/')">Cotowali</nuxt-link>
+    <div class="flex items-center">
+      <nuxt-link :to="localePath('/')"><CotowaliLogoText /></nuxt-link>
     </div>
     <nav>
       <ul class="nav-list">
