@@ -42,7 +42,7 @@ export default Vue.extend({
     const code = this.$route.query.code as string
     return {
       mdiCopy,
-      code: code || "echo('hello cotowali')",
+      code: code || "println('hello cotowali')",
       output: '',
       status: 'active' as Status,
       modes: (['compile', 'run'] as RunMode[]),
