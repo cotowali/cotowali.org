@@ -1,7 +1,12 @@
 <template>
   <div class="flex flex-col items-stretch w-full h-full pt-8 px-12 gap-y-3">
     <h1 class="text-4xl text-brand-red">Cotowali Playground (experimental)</h1>
-    <textarea v-model="code" class="code-block rounded-bl text-black" />
+    <div class="relative">
+      <textarea v-model="code" class="code-block rounded-bl text-black" />
+      <LiButton small class="absolute top-0 right-0" @click="share">
+        Share
+      </LiButton>
+    </div>
 
     <div class="flex flex-col gap-y-1">
       <div v-for="mode in modes" :key="mode" class="self-start flex">
@@ -34,9 +39,10 @@ const cliCommandBase = `curl ${licUrl} -X POST -d`
 
 export default Vue.extend({
   data() {
+    const code = this.$route.query.code as string
     return {
       mdiCopy,
-      code: "echo('hello cotowali')",
+      code: code || "echo('hello cotowali')",
       output: '',
       status: 'active' as Status,
       modes: (['compile', 'run'] as RunMode[]),
@@ -87,6 +93,15 @@ export default Vue.extend({
       }).catch(() => {
         this.status = 'error'
       }) || 'ERROR'
+    },
+    async share() {
+      if (this.code.length > 2000) {
+        alert('Failed to cerate url. Source code is too big.')
+        return
+      }
+      const resolved = this.$router.resolve({ query: { code: this.code }})
+      await navigator.clipboard.writeText(location.origin + resolved.route.fullPath)
+      this.$router.replace(resolved.location)
     },
   },
 })
