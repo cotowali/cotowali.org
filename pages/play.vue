@@ -2,7 +2,7 @@
   <div class="flex flex-col items-stretch w-full h-full pt-8 px-12 gap-y-3">
     <h1 class="text-4xl text-brand-red">Cotowali Playground (experimental)</h1>
     <div class="relative">
-      <textarea v-model="code" spellcheck="false" class="code-block rounded-bl text-black" />
+      <textarea v-model="code" spellcheck="false" class="code-block rounded text-black" />
       <LiButton small class="absolute top-0 right-0" @click="share">
         Share
       </LiButton>
