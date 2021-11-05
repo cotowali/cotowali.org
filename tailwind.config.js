@@ -10,6 +10,17 @@ const fontSans = [
   'sans-serif',
 ]
 
+const fontMono = [
+  'Source Code Pro',
+  'SFMono-Regular',
+  'Menlo',
+  'Monaco',
+  'Consolas',
+  'Liberation Mono',
+  'Courier New',
+  'monospace',
+]
+
 module.exports = {
   mode: 'jit',
   purge: [
@@ -34,6 +45,7 @@ module.exports = {
       },
       fontFamily: {
         sans: fontSans,
+        mono: fontMono,
         title: ['Montserrat', ...fontSans],
       },
       colors: {

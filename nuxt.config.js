@@ -59,6 +59,7 @@ export default {
     families: {
       Lexend: [400, 700],
       Montserrat: [700],
+      'Source Code Pro': [400],
     },
   },
 

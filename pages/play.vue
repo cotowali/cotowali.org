@@ -110,7 +110,7 @@ export default Vue.extend({
 <style scoped>
 
 .code-block {
-  @apply block min-h-64 w-full p-2 rounded;
+  @apply block min-h-64 w-full p-2 rounded font-mono;
 }
 
 </style>
