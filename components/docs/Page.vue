@@ -84,6 +84,10 @@ export default Vue.extend({
   @apply rounded;
   @apply !bg-black;
 }
+
+.nuxt-content-editor {
+  @apply bg-black;
+}
 </style>
 
 <style scoped>
