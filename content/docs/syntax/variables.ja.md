@@ -26,16 +26,8 @@ assert n == 11
 
 タプル使用することで、複数の変数の宣言と分割ができます。
 
-<unimplemented>
-  分割代入の型チェックは未実装です
-</unimplemented>
-
-<unimplemented>
-  複数の変数の宣言は未実装です
-</unimplemented>
-
 ```
-var (a, b) = (1, 2)
+var (a, b): (int, int) = (1, 2)
 assert a == 1 && b == 2
 (a, b) = (b, a)
 assert a == 2 && b == 1
