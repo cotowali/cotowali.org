@@ -4,10 +4,12 @@
     "alert": "alert",
     "info": "info",
     "bug": "bug",
+    "portability": "portability alert",
     "undecided": "undecided",
     "unimplemented": "unimplemented",
 
     "defaultTexts": {
+      "portability": "Use of this feature will compromise portability.",
       "undecided": "Details of this feature is undecided."
     }
   },
@@ -15,10 +17,12 @@
     "alert": "注意",
     "info": "補足",
     "bug": "バグ",
+    "portability": "ポータビリティアラート",
     "undecided": "未決定",
     "unimplemented": "未実装",
 
     "defaultTexts": {
+      "portability": "この機能の利用はポータビリティを損ねます。",
       "undecided": "この機能の詳細は未決定です"
     }
   }
@@ -43,12 +47,19 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mdiAlert, mdiInformation, mdiBug, mdiArrowDecision, mdiTrafficCone } from '@mdi/js'
+import {
+  mdiAlert,
+  mdiInformation,
+  mdiBug,
+  mdiArrowDecision,
+  mdiTrafficCone,
+} from '@mdi/js'
 
 const icons: { [key: string]: string } = {
   alert: mdiAlert,
   info: mdiInformation,
   bug: mdiBug,
+  portability: mdiAlert,
   undecided: mdiArrowDecision,
   unimplemented: mdiTrafficCone,
 }
