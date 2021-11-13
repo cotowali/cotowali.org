@@ -21,7 +21,7 @@ main()
 
 ## ファイルの読み込み
 
-他のファイルを読み込むためには `require()` を使用します。これはコンパイル時に解決される点で  `source` コマンドと異なります。
+他のファイルを読み込むためには `require` を使用します。これはコンパイル時に解決される点で  `source` コマンドと異なります。
 
 ```
 // math.li
@@ -30,6 +30,6 @@ fn add(a int, b int) int {
 }
 
 // main.li
-require('./math.li')
+require './math.li'
 assert add(1, 1) == 2
 ```
