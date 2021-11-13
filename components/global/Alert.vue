@@ -75,7 +75,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      hasSlot: !!(this.$slots.default ?? []).map((v) => (v.text ?? '').trim()).join(''),
+      hasSlot: !!(this.$slots.default ?? []).map((v) => ((v.tag ?? '') + (v.text ?? '')).trim()).join(''),
       icon: icons[this.type],
       iconLabel: this.$t(this.type),
       color: this.type === 'info' ? 'blue' : 'red',
