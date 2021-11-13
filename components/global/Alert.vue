@@ -10,7 +10,8 @@
 
     "defaultTexts": {
       "portability": "Use of this feature will compromise portability.",
-      "undecided": "Details of this feature is undecided."
+      "undecided": "Details of this feature is undecided.",
+      "wip": "Work In Progress"
     }
   },
   "ja": {
@@ -23,7 +24,8 @@
 
     "defaultTexts": {
       "portability": "この機能の利用はポータビリティを損ねます。",
-      "undecided": "この機能の詳細は未決定です"
+      "undecided": "この機能の詳細は未決定です",
+      "wip": "執筆中"
     }
   }
 }
@@ -52,6 +54,7 @@ import {
   mdiInformation,
   mdiBug,
   mdiArrowDecision,
+  mdiPencil,
   mdiTrafficCone,
 } from '@mdi/js'
 
@@ -62,6 +65,7 @@ const icons: { [key: string]: string } = {
   portability: mdiAlert,
   undecided: mdiArrowDecision,
   unimplemented: mdiTrafficCone,
+  wip: mdiPencil,
 }
 
 export default Vue.extend({
