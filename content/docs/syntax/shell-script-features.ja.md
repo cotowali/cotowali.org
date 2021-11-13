@@ -22,3 +22,24 @@ assert ((1.1 |> @awk('{print $1 * 2}')) as float) == 2.2
 ```
 
 Cotowali は外部コマンド呼び出しの安全性を保障しません。外部コマンド呼び出しは実行時エラーとなる可能性を常に伴い、ポータビリティを損ねる要因となるため、最低限の利用にとどめることを推奨します。
+
+## 統合インラインシェルスクリプト
+
+`sh` ブロックを使用することで、ソースコード内にシェルスクリプトを直接記述できます。これを統合インラインシェルスクリプトと呼びます。
+
+```
+sh {
+  echo 'this is shell script'
+}
+```
+
+統合インラインシェルスクリプトでは、`%var` で cotowali の変数名を使用することができます。これにより、cotowali の変数の値を参照したり、更新したりできます。
+
+```
+var s = 'cotowali'
+sh {
+  echo $%s   # print 'cotowali'
+  %s="shell" # update variable
+}
+assert(s == 'shell') // updated in inline shell
+```
