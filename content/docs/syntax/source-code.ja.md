@@ -47,3 +47,15 @@ require 'https://raw.githubusercontent.com/cotowali/cotowali/main/examples/hello
 // github
 require 'github:cotowali/cotowali@main/examples/hello_world.li'
 ```
+
+### チェックサム検証
+
+`require` にはチェックサムを指定できます。チェックサムを指定した場合、読み込み対象のファイルが正しいチェックサムを持つことをコンパイル時に検証します。チェックサムのアルゴリズムには `md5`, `sha1` および `sha256` が使用できます。
+
+```
+require 'github:cotowali/cotowali@main/tests/empty.li' {
+  md5   : 'd41d8cd98f00b204e9800998ecf8427e',
+  sha1  : 'da39a3ee5e6b4b0d3255bfef95601890afd80709',
+  sha256: 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
+}
+```
