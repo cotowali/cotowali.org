@@ -5,14 +5,22 @@
     "info": "info",
     "bug": "bug",
     "undecided": "undecided",
-    "unimplemented": "unimplemented"
+    "unimplemented": "unimplemented",
+
+    "defaultTexts": {
+      "undecided": "Details of this feature is undecided."
+    }
   },
   "ja": {
     "alert": "注意",
     "info": "補足",
     "bug": "バグ",
     "undecided": "未決定",
-    "unimplemented": "未実装"
+    "unimplemented": "未実装",
+
+    "defaultTexts": {
+      "undecided": "この機能の詳細は未決定です"
+    }
   }
 }
 </i18n>
@@ -21,7 +29,14 @@
   <div class="alert" :class="[color]">
     <LiIcon class="alert-icon" :icon="icon" :aria-label="iconLabel" />
     <div class="alert-content">
-      <slot />
+      <template v-if="hasSlot">
+        <slot />
+      </template>
+      <template v-else>
+        <span>
+          {{ defaultText }}
+        </span>
+      </template>
     </diV>
   </div>
 </template>
@@ -49,10 +64,16 @@ export default Vue.extend({
   },
   data() {
     return {
+      hasSlot: !!(this.$slots.default ?? []).map((v) => (v.text ?? '').trim()).join(''),
       icon: icons[this.type],
       iconLabel: this.$t(this.type),
       color: this.type === 'info' ? 'blue' : 'red',
     }
+  },
+  computed: {
+    defaultText() {
+      return this.$t(`defaultTexts.${this.type}`)
+    },
   },
 })
 </script>
