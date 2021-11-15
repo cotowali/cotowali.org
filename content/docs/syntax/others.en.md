@@ -1,4 +1,4 @@
 ---
-Title: Others
+title: Others
 revision: 0
 ---
