@@ -24,7 +24,7 @@ export default Vue.extend({
 
 <style scoped>
 .sidenav-wrapper {
-  @apply pr-64 min-h-full;
+  @apply w-60 lg:w-72 min-h-full;
   transition-property: padding-right;
 }
 
@@ -34,7 +34,7 @@ export default Vue.extend({
 
 .sidenav {
   @apply bg-dark-darken-1;
-  @apply fixed w-64 pt-6 pl-6 pr-2;
+  @apply fixed w-60 lg:w-72 pt-6 pl-6 pr-2;
   @apply overflow-y-scroll h-full;
   transition-property: transform;
   @apply translate-x-0;
