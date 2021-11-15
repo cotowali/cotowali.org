@@ -10,6 +10,7 @@ chapters:
     pages:
       - syntax/source-code
       - syntax/comments
+      - syntax/compiler-directives
       - syntax/types
       - syntax/variables
       - syntax/control-flow
