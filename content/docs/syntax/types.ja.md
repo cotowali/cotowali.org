@@ -118,12 +118,28 @@ var int_pair: (int, int) = (10, 20)
 
 ### 配列型
 
-<wip></wip>
+配列型 `[]Type` は任意長の要素を持つ配列を表します。
+
+#### リテラル
+
+配列リテラルには `[v1, v2, ...]` と `[]Type{len: n, init: v}` の 2つの記述方法があります。前者の記法では少なくとも1つの要素含む必要があります。
+
+```
+var arr1 = [1, 1, 1]
+var arr2 = []int{len: 3, init: 1}
+assert(arr1 == arr2)
+```
 
 ### マップ型
 
-<wip></wip>
+マップ型 `map[KeyType]ValueType` はキーと値のペアのコレクションを表します。
 
-### シーケンス型
+#### リテラル
 
-<wip></wip>
+マップリテラルは以下のように記述します。いずれの記述方法でも同じ値が得られます。
+
+```
+var map1 = { 'key': 'value' }
+var map2 = map{ 'key': 'value' }
+var map3 = map[string]string{ 'key: 'value' }
+```
