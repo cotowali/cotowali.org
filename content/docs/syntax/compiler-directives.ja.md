@@ -59,3 +59,19 @@ revision: 20211116
 #if !(a && b || c)
 #endif
 ```
+
+## エラーと警告
+
+`#error` ディレクティブでコンパイルエラーを、`#warning` ディレクティブで警告を生成できます。
+
+```
+#if pwsh
+  #error PowerShell backend is not supported.
+#endif
+```
+
+```
+#if pwsh
+  #warning PowerShell backend is experimental.
+#endif
+```
