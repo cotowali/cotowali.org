@@ -13,6 +13,8 @@ revision: 20211116
 
 ```
 #define one 1
+#define v one // 定義済みのシンボルを値として使用できます
+
 #define no  false
 #define ok  // 値を省略した場合、true になります
 ```
