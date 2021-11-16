@@ -38,3 +38,24 @@ revision: 20211116
 | ------------------ | -- |
 |`sh`                | sh バックエンドの場合 true |
 |`pwsh` `powershell` | powershell バックエンドの場合 true |
+
+## 条件付きコンパイル
+
+`#if` `#else` `#endif` ディレクティブを使用して、条件付きコンパイルを行えます。
+
+```
+#if sh
+  println('sh backend')
+#else
+  println('non-sh backend')
+#fi
+```
+
+### 条件式
+
+`#if` ディレクティブの条件式には、`&&`, `||` 及び `!` が使用できます。
+
+```
+#if !(a && b || c)
+#endif
+```
