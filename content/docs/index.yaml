@@ -16,7 +16,7 @@ chapters:
       - syntax/control-flow
       - syntax/functions
       - syntax/shell-script-features
-      - syntax/others
+      - syntax/testing
   - title:
       ja: サンプル集
       en: Examples
