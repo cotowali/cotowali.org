@@ -1,10 +1,22 @@
 ---
 title: はじめる
-revision: 20210730
+revision: 20211203
 ---
 
-<wip></wip>
+## インストール
 
-<!-- textlint-disable ja-technical-writing/no-exclamation-question-mark -->
+Cotowali のインストールには、Cotowali自身で書かれたバージョンマネージャである Konryu を使用します。
+下記のコマンドを実行し表示される指示に従うと、lic コマンド(lic)、lish コマンド(REPL) が利用できます。
 
-準備はできましたか？　それでは Cotowali の世界への旅立ちましょう！
+```
+curl -sSL https://konryu.cotowali.org | sh
+# 以下を .bashrc 等に追加ます
+# export PATH="$HOME/.konryu/bin:$PATH"
+# eval "$(konryu init)"
+```
+
+正常にインストールが完了し、PATH を正しく通していれば、以下のコマンドで Hello World が実行できます。
+
+```
+echo 'println("Hello World")' | lic run
+```
