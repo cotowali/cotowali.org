@@ -10,7 +10,7 @@ Cotowali のインストールには、Cotowali 自身で書かれたバージ�
 
 ```
 curl -sSL https://konryu.cotowali.org | sh
-# 以下を .bashrc 等に追加ます
+# 以下を .bashrc 等に追加します
 # export PATH="$HOME/.konryu/bin:$PATH"
 # eval "$(konryu init)"
 ```
