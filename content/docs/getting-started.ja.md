@@ -5,7 +5,7 @@ revision: 20211203
 
 ## インストール
 
-Cotowali のインストールには、Cotowali自身で書かれたバージョンマネージャである Konryu を使用します。
+Cotowali のインストールには、Cotowali 自身で書かれたバージョンマネージャ [Konryu](https://github.com/cotowali/konryu) を使用します。
 下記のコマンドを実行し表示される指示に従うと、lic コマンド(lic)、lish コマンド(REPL) が利用できます。
 
 ```
