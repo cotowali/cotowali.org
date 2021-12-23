@@ -24,7 +24,7 @@ export default Vue.extend({
 
 <style scoped>
 .sidenav-wrapper {
-  @apply w-60 lg:w-72 min-h-full;
+  @apply pr-60 lg:pr-72 min-h-full;
   transition-property: padding-right;
 }
 
