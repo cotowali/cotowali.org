@@ -3,6 +3,8 @@ title: ビルトイン
 revision: 20210114
 ---
 
+<wip></wip>
+
 ## グローバル関数
 
 ### print / println
