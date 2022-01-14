@@ -18,6 +18,11 @@ chapters:
       - syntax/shell-script-features
       - syntax/testing
   - title:
+      ja: 標準ライブラリ
+      en: Standard Libraries
+    pages:
+      - std/builtin
+  - title:
       ja: サンプル集
       en: Examples
     pages:
