@@ -143,3 +143,12 @@ var map1 = { 'key': 'value' }
 var map2 = map{ 'key': 'value' }
 var map3 = map[string]string{ 'key: 'value' }
 ```
+
+## 型エイリアス
+
+`type TypeName = TargetType` で型エイリアスを定義できます。
+
+```
+type Vec2 = (int, int)
+var v: Vec2 = (1, 2)
+```
