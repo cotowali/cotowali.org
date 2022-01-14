@@ -152,3 +152,17 @@ var map3 = map[string]string{ 'key: 'value' }
 type Vec2 = (int, int)
 var v: Vec2 = (1, 2)
 ```
+
+### メソッド
+
+型に対してメソッドを定義できます。レシーバ以外は[通常の関数](./functions)と同様です。レシーバは値であり、レシーバを変更しても元の変数は変更されません。
+
+```
+type Num = int
+fn (n: Num) twice(): Num {
+  return n * 2
+}
+
+var two: Num = 2
+assert(two.twice().twice() == 4)
+```
