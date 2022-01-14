@@ -166,3 +166,29 @@ fn (n: Num) twice(): Num {
 var two: Num = 2
 assert(two.twice().twice() == 4)
 ```
+
+### 演算子オーバーロード
+
+型に対して二項演算子および単項演算子のオーバーロードができます。
+
+```
+type Vec2 = (int, int)
+
+fn (lhs: Vec2) + (rhs: Vec2): Vec2 {
+  return (lhs[0] + rhs[0], lhs[1] + rhs[1])
+}
+
+fn (v: Vec2) * (n: int): Vec2 {
+  return (v[0] * n, v[1] * n)
+}
+
+fn -(v: Vec2): Vec2 {
+  return v * -1
+}
+
+var v1: Vec2 = (1, 2)
+var v2: Vec2 = (2, 1)
+assert(v1 + v2 == (3, 3))
+assert(v1 * 2 == (2, 4))
+assert(-v1 == (-1, -2))
+```
