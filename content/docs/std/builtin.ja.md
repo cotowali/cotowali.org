@@ -79,6 +79,14 @@ for i in range(1, 4) {
 assert(v == 3)
 ```
 
+### count
+
+```
+fn ...any |> count() |> int
+```
+
+シーケンスの要素数を返します。
+
 ## string
 
 ### head
