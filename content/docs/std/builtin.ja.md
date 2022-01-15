@@ -113,6 +113,14 @@ fn ...string |> last() |> string
 
 文字列シーケンスの最後の要素を返します。
 
+### string#substr
+
+```
+fn (s: string) substr(i: int, n: int): string
+```
+
+インデックス i から n 文字の部分文字列を返します。n がマイナス値の場合、i 以降の全体を返します。
+
 ### replace
 
 ```
