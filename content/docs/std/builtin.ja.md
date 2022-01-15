@@ -35,6 +35,19 @@ revision: 20210114
 
 プロンプトを表示し、tty から入力を受け取ります。
 
+### `range(int, int) |> ...int`
+
+指定された範囲の連続した数値のシーケンスを返します。
+
+```
+var v: int
+// range(begin, end)
+for i in range(1, 4) {
+  v += i
+}
+assert(v == 3)
+```
+
 ## UNIX commands
 
 - `basename(string): string`
