@@ -26,3 +26,11 @@ revision: 20210114
 ### `isatty(int): bool`
 
 指定されたファイルディスクリプタが tty か判別します。
+
+### `input(string): string`
+
+プロンプトを表示し、標準入力から入力を受け取ります。
+
+### `input_tty(string): string`
+
+プロンプトを表示し、tty から入力を受け取ります。
