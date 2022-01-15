@@ -169,6 +169,31 @@ fn (s: string) trim_suffix(suffix: string): string
 
 文字列の末尾から部分文字列を削除した文字列を返します。
 
+### string#trim
+
+```
+fn (s: string) trim(): string
+```
+
+文字列の先頭と末尾から空白を削除した文字列を返します。
+
+
+### string#trim_start
+
+```
+fn (s: string) trim_start(): string
+```
+
+文字列の先頭から空白を削除した文字列を返します。
+
+### string#trim_end
+
+```
+fn (s: string) trim_end(): string
+```
+
+文字列の先頭から空白を削除した文字列を返します。
+
 ### lines
 
 ```
