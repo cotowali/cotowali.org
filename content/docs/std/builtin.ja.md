@@ -79,6 +79,24 @@ for i in range(1, 4) {
 assert(v == 3)
 ```
 
+## string
+
+### head
+
+```
+fn ...string |> head(n: int) |> ...string
+```
+
+文字列シーケンスの先頭から、指定された個数の文字列を取り出します。
+
+### tail
+
+```
+fn ...string |> tail(n: int) |> ...string
+```
+
+文字列シーケンスの末尾から、指定された個数の文字列を取り出します。
+
 ## UNIX commands
 
 - `basename(string): string`
