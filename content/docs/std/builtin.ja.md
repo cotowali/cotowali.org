@@ -137,6 +137,23 @@ fn (s: string) last_index(t: string): int
 
 指定された部分文字列が文字列内に含まれる場合、その最後のインデックスを返します。見つからなかった場合は `-1` を返します。
 
+### lines
+
+```
+fn string |> lines() |> ...string
+```
+
+文字列を行ごとのシーケンスに変換します。
+
+
+### string#lines
+
+```
+fn (s: string) lines() |> ...string
+```
+
+文字列を行ごとのシーケンスに変換します。
+
 
 ### replace
 
