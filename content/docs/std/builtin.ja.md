@@ -89,6 +89,14 @@ fn ...string |> head(n: int) |> ...string
 
 文字列シーケンスの先頭から、指定された個数の文字列を取り出します。
 
+### first
+
+```
+fn ...string |> first() |> string
+```
+
+文字列シーケンスの最初の要素を返します。
+
 ### tail
 
 ```
@@ -96,6 +104,15 @@ fn ...string |> tail(n: int) |> ...string
 ```
 
 文字列シーケンスの末尾から、指定された個数の文字列を取り出します。
+
+### last
+
+```
+fn ...string |> last() |> string
+```
+
+文字列シーケンスの最後の要素を返します。
+
 
 ## UNIX commands
 
