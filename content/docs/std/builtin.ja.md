@@ -270,6 +270,15 @@ fn ...string |> filter(pat: string) |> ...string
 
 文字列シーケンスから正規表現(ERE)にマッチする要素を抜き出します。
 
+## Array
+
+### []any#len
+
+```
+fn (arr: []any) len(): int
+```
+
+配列の要素数を返します。
 
 ## UNIX commands
 
