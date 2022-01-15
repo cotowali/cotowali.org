@@ -113,6 +113,22 @@ fn ...string |> last() |> string
 
 文字列シーケンスの最後の要素を返します。
 
+### replace
+
+```
+fn ...string |> replace(old: string, new: string) |> ...string
+```
+
+文字列シーケンスの各要素を正規表現(ERE)で置換します。
+
+### string#replace
+
+
+```
+fn (s: string) replace(old: string, new: string): string
+```
+
+文字列を正規表現(ERE)で置換します。
 
 ## UNIX commands
 
