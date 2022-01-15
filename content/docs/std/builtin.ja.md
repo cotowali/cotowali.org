@@ -34,3 +34,22 @@ revision: 20210114
 ### `input_tty(string): string`
 
 プロンプトを表示し、tty から入力を受け取ります。
+
+## UNIX commands
+
+- `basename(string): string`
+- `...string |> cat(...string) |> ...string`
+- `cd(string)`
+- `cp(...string)`
+- `cp_r(...string)`
+- `dirname(string): string`
+- `exit(int)`
+- `ls(...string) |> ...string`
+- `mkdir(...string)`
+- `mkdir_p(...string)`
+- `pwd(): string`
+- `rm(...string)`
+- `rm_r(...string)`
+- `seq(int) |> ...int`
+- `touch(...string)`
+- `which(string): string`
