@@ -121,6 +121,14 @@ fn (s: string) substr(i: int, n: int): string
 
 インデックス i から n 文字の部分文字列を返します。n がマイナス値の場合、i 以降の全体を返します。
 
+### string#contains
+
+```
+fn (s: string) contains(substr: string): bool
+```
+
+指定された部分文字列が文字列内に含まれる場合 `true` を返します。
+
 ### string#index
 
 ```
