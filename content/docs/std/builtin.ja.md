@@ -130,6 +130,15 @@ fn (s: string) replace(old: string, new: string): string
 
 文字列を正規表現(ERE)で置換します。
 
+### filter
+
+```
+fn ...string |> filter(pat: string) |> ...string
+```
+
+文字列シーケンスから正規表現(ERE)にマッチする要素を抜き出します。
+
+
 ## UNIX commands
 
 - `basename(string): string`
