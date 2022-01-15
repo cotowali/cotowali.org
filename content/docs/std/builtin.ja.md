@@ -137,6 +137,22 @@ fn (s: string) last_index(t: string): int
 
 指定された部分文字列が文字列内に含まれる場合、その最後のインデックスを返します。見つからなかった場合は `-1` を返します。
 
+### string#starts_with
+
+```
+fn (s: string) starts_with(ss: string): bool
+```
+
+文字列が指定された文字列から開始する場合に `true` を返します。
+
+### string#ends_with
+
+```
+fn (s: string) ends_with(ss: string): bool
+```
+
+文字列が指定された文字列で終了する場合に `true` を返します。
+
 ### lines
 
 ```
