@@ -113,6 +113,23 @@ fn ...string |> last() |> string
 
 文字列シーケンスの最後の要素を返します。
 
+### join
+
+
+```
+fn ...string |> join(sep: string) |> string
+```
+
+文字列シーケンスを sep で結合した文字列を返します。
+
+### []string#join
+
+```
+fn (ss: []string) join(sep: string): string
+```
+
+文字列配列を sep で結合した文字列を返します。
+
 ### string#substr
 
 ```
