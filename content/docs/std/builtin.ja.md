@@ -153,6 +153,22 @@ fn (s: string) ends_with(ss: string): bool
 
 文字列が指定された文字列で終了する場合に `true` を返します。
 
+### string#trim_prfix
+
+```
+fn (s: string) trim_prefix(prefix: string): string
+```
+
+文字列の先頭から部分文字列を削除した文字列を返します。
+
+### string#trim_suffix
+
+```
+fn (s: string) trim_suffix(suffix: string): string
+```
+
+文字列の末尾から部分文字列を削除した文字列を返します。
+
 ### lines
 
 ```
