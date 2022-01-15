@@ -87,6 +87,14 @@ fn ...any |> count() |> int
 
 シーケンスの要素数を返します。
 
+### sequence
+
+```
+fn sequence(elements: ...any) |> ...any
+```
+
+引数からシーケンスを生成します。
+
 ## string
 
 ### head
