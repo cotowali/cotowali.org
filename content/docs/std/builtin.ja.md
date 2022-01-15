@@ -7,41 +7,72 @@ revision: 20210114
 
 ## グローバル関数
 
-### `print(string)`
+### print
+
+```
+fn print(s: string)
+```
 
 文字列を標準出力に出力します。
 
-### `println(string)`
+### println(string)
+
+```
+fn println(s: string)
+```
 
 文字列を標準出力に改行とともに出力します。
 
-### `eprint(string)`
+### eprint
+
+```
+fn eprint(s: string)
+```
 
 文字列を標準エラー出力に出力します。
 
-### `eprintln(string)`
+### eprintln
+
+```
+fn eprintln(s: string)
+```
 
 文字列を標準エラー出力に改行とともに出力します。
 
-### `isatty(int): bool`
+### isatty
+
+```
+fn isatty(fd: int): bool
+```
 
 指定されたファイルディスクリプタが tty か判別します。
 
-### `input(string): string`
+### input
+
+```
+fn input(prompt: string): string
+```
 
 プロンプトを表示し、標準入力から入力を受け取ります。
 
-### `input_tty(string): string`
+### input_tty
+
+```
+fn input_tty(prompt: string): string
+```
 
 プロンプトを表示し、tty から入力を受け取ります。
 
-### `range(int, int) |> ...int`
+### range
+
+```
+fn range(begin: int, end: int) |> int
+```
 
 指定された範囲の連続した数値のシーケンスを返します。
 
 ```
 var v: int
-// range(begin, end)
 for i in range(1, 4) {
   v += i
 }
