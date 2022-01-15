@@ -130,6 +130,14 @@ fn (ss: []string) join(sep: string): string
 
 文字列配列を sep で結合した文字列を返します。
 
+### string#len
+
+```
+fn (s: string) len(): int
+```
+
+文字列の長さを返します。
+
 ### string#substr
 
 ```
