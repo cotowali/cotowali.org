@@ -13,16 +13,18 @@
 
 <template>
   <div class="hero">
-    <div class="flex flex-col">
-      <h1 class="text-brand-red text-4xl">
-        <CotowaliLogoText />
-      </h1>
-      <div class="mt-1" style="padding-left: 3px;">
-        <p>
-          {{ $t('description') }}
-        </p>
+    <div class="h-[240px] flex flex-col justify-between">
+      <div>
+        <h1 class="text-brand-red leading-none" style="font-size: 76px; margin: 65px 240px 0 -6px; ">
+          <CotowaliLogoText />
+        </h1>
+        <div class="font-medium" style="font-size: 16px; margin-top: 0px;">
+          <p>
+            {{ $t('description') }}
+          </p>
+        </div>
       </div>
-      <div class="mt-5 flex gap-x-4">
+      <div class="flex gap-x-4">
         <LiButton large :to="localePath('/docs/getting-started')">
           {{ $t('get-started') }}
         </LiButton>
