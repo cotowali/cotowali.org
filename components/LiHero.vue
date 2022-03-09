@@ -1,7 +1,7 @@
 <i18n>
 {
   "en": {
-    "description": "A statically typed script language that transpile into POSIX sh",
+    "description": "A statically typed scripting language that is transpiled into shell script",
     "get-started": "Get Started",
     "try": "Try"
   },
