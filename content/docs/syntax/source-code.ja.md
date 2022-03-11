@@ -36,9 +36,9 @@ assert add(1, 1) == 2
 
 ### リモートファイル読み込み
 
-`require()` では `http`, `https` 及び `github` を使用して、リモートファイルを読み込めます。
+`require` では `http`, `https` 及び `github` を使用して、リモートファイルを読み込めます。
 
-`http` 及び `https` では url を指定します。`github` の場合は `require('github:user/repo@ref/path'`) のように指定します。`ref` は省略できません。
+`http` 及び `https` では url を指定します。`github` の場合は `require 'github:user/repo@ref/path'` のように指定します。`ref` は省略できません。
 
 ```
 // https
