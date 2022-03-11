@@ -1,14 +1,13 @@
 ---
 title: コメント
-revision: 20210729
+revision: 20220311
 ---
 
-Cotowali のコメントは C スタイルです。`// comment` 形式の行コメントと、`/* comment */` 形式のブロックコメントが使用できます。
+Cotowali のコメントは C スタイルです。
 
 ## 行コメント
 
-行コメントは `//` ではじまり、行末までがコメントとして扱われます。
-
+行コメントは `//` ではじまり、行末で終了します。
 
 ```
 // comment
@@ -17,18 +16,30 @@ echo('line comment') // comment
 
 ## ブロックコメント
 
-ブロックコメントは `/*` `*/` で囲まれた範囲がコメントとして扱われます。ブロックコメントには改行を含むことができ、ブロックコメント内にネストしたブロックコメントを記述できます。
+ブロックコメントは `/*` `*/` で囲まれた範囲です。ブロックコメントは複数行にでき、ネストもできます。
 
 ```
 /* comment */
 
 /* multi
  * line
+ * /* nested */
  * comment
  */
 
 echo(/* inline comment */ 'hello inline comment')
 ```
+
+## ドキュメントコメント
+
+`///` から始まる行コメントはドキュメントコメントであり、出力にコメントとして残ります。他のコメントは単に削除されます。
+
+```
+/// doc comment (出力にもコメントとして残る)
+
+// 出力からは削除される
+```
+
 
 ## 異なる記法の混在
 
@@ -38,18 +49,8 @@ echo(/* inline comment */ 'hello inline comment')
 
 ```
 // /*
-echo('not a comment')
+println('コメントではない')
 // */
 
-/* // line comment in block comment */ echo('not a comment')
-```
-
-## ドキュメントコメント
-
-ドキュメントコメントは `///` で始まるコメントであり、生成物にコメントとして出力されます。通常のコメントは単に削除されます。
-
-```
-/// doc comment (This will be retain to output)
-
-// Normal comment will be removed
+/* // ブロックコメント内の行コメント記法 */ println('コメントではない')
 ```
