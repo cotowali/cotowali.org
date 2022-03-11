@@ -24,10 +24,10 @@ fn fizzbuzz(n int) string {
   }
 }
 
-assert fizzbuzz(1) == '1'
-assert fizzbuzz(3) == 'fizz'
-assert fizzbuzz(5) == 'buzz'
-assert fizzbuzz(15) == 'fizzbuzz'
+assert(fizzbuzz(1) == '1')
+assert(fizzbuzz(3) == 'fizz')
+assert(fizzbuzz(5) == 'buzz')
+assert(fizzbuzz(15) == 'fizzbuzz')
 ```
 
 `if` 文の条件式を `()` で囲う必要はありませんが、`(expr)` は正しい式であるため、`()` で囲っても動作します。
@@ -69,5 +69,5 @@ var n = 0
 for v in [1, 2, 3] {
     n += v
 }
-assert n == 6
+assert(n == 6)
 ```
