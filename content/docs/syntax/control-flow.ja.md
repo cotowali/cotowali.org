@@ -72,6 +72,18 @@ for v in [1, 2, 3] {
 assert(n == 6)
 ```
 
+### while 文
+
+`while` は条件を満たす間、反復処理を行います。
+
+```
+var i = 0
+while i < 10 {
+  i += 1
+}
+assert(i == 10)
+```
+
 ### continue / break 文
 
 `continue` は現在のループを中断し、ループの先頭に戻ります。
