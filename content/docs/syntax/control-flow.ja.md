@@ -1,6 +1,6 @@
 ---
 title: 制御構文
-revision: 20210701
+revision: 20220311
 ---
 
 ## 条件分岐
@@ -57,10 +57,6 @@ if n {
   echo(n)
 }
 ```
-
-### Switch 文
-
-<undecided></undecided>
 
 ## 反復処理
 
