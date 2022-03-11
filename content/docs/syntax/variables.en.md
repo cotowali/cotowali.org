@@ -1,5 +1,5 @@
 ---
-title: 変数
+title: Variables
 revision: 20211113
 ---
 

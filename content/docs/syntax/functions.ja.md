@@ -1,6 +1,6 @@
 ---
 title: 関数
-revision: 0
+revision: 20220311
 ---
 
 ## 基本
