@@ -71,3 +71,36 @@ for v in [1, 2, 3] {
 }
 assert(n == 6)
 ```
+
+### continue / break 文
+
+`continue` は現在のループを中断し、ループの先頭に戻ります。
+
+`break` は現在のループを終了します。
+
+```
+for i in [1, 2, 3, 4, 5] {
+  if i > 3 {
+    break
+  }
+  if i % 2 == 0 {
+    continue
+  }
+  assert(i <= 3 && i % 2 == 1)
+}
+```
+
+`continue` と `break` は、最も内側のループに対して適用されます。
+
+```
+var n = 0
+for v in [1, 2, 3] {
+  while true {
+    break
+    assert(false)
+  }
+
+  n += v
+}
+assert(n == 6)
+```
