@@ -46,6 +46,35 @@ export default Vue.extend({
 .nuxt-content p {
   @apply mt-2;
 }
+.nuxt-content a {
+  @apply text-brand-red;
+  @apply hover:underline;
+}
+
+.nuxt-content h2 {
+  @apply text-2xl font-bold font-title;
+  @apply mt-12 mb-6;
+}
+.nuxt-content h3 {
+  @apply text-xl font-bold font-title;
+  @apply mt-6 mb-2;
+}
+.nuxt-content h4 {
+  @apply text-lg font-bold;
+  @apply mt-6;
+}
+.nuxt-content h5 {
+  @apply font-bold;
+  @apply mt-4;
+}
+.nuxt-content h6 {
+  @apply font-bold;
+  @apply mt-4;
+}
+
+.nuxt-content code {
+  @apply px-1 rounded bg-black;
+}
 
 .nuxt-content .nuxt-content-highlight pre code {
   @apply p-0; /* cancel `code { px-1 }` */
