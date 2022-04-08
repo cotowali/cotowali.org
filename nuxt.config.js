@@ -109,4 +109,8 @@ export default {
     ],
     defaultLocale: 'en',
   },
+
+  tailwindcss: {
+    cssPath: '~/assets/global.css',
+  },
 }
