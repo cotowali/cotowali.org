@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-hero mx-auto">
     <LiHero />
   </div>
 </template>

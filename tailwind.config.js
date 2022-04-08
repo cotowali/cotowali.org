@@ -59,6 +59,9 @@ module.exports = {
         black: colors.black.hex(),
         white: colors.white.hex(),
       },
+      spacing: {
+        hero: '876px',
+      },
     },
   },
   plugins: [],
