@@ -17,7 +17,7 @@ fn main() {
 }
 
 main()
-```:
+```
 
 ## Load files
 
