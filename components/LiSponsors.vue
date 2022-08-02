@@ -37,6 +37,19 @@
           small
         />
       </div>
+      <div class="mt-6">
+        <h1 class="text-xl text-brand-red">Personal Suponsors</h1>
+        <div class="mt-4 flex gap-4">
+          <LiSponsor
+            v-for="sponsor in personalSponsors"
+            :key="sponsor.name"
+            :name="sponsor.name"
+            :image="sponsor.image"
+            :url="sponsor.url"
+            small
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -65,6 +78,15 @@ export default Vue.extend({
       name: 'Krouton',
       image: 'https://github.com/Krout0n.png',
       url: 'https://github.com/Krout0n',
+    }, {
+      name: 'Kazuki Chigita',
+      image: 'https://pbs.twimg.com/profile_images/1480844416462225409/aiBGMxvt.jpg',
+      url: 'https://kazuki.chigita.net/profile',
+    }],
+    personalSponsors: [{
+      name: 'くろぐろ',
+      image: 'https://github.com/k-kuroguro.png',
+      url: 'https://twitter.com/k_kuroguro',
     }],
   }),
 })
