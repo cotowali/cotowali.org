@@ -11,12 +11,12 @@ revision: 20220311
 fn add(a: int, b: int): int {
   return a + b
 }
-assert add(1, 2) == 3
+assert(add(1, 2) == 3)
 
 fn assert_zero(v: int) {
-  assert v == 0
+  assert(v == 0)
 }
-assert_zero()
+assert_zero(0)
 ```
 
 ### 可変長引数
@@ -32,7 +32,7 @@ fn sum(vals: ...int): int {
   return ret
 }
 
-assert sum(1, 2, 3) == 6
+assert(sum(1, 2, 3) == 6)
 ```
 
 ## パイプライン
@@ -52,8 +52,8 @@ fn (int, int) |> add_in() |> int {
   return a + b
 }
 
-assert (1 |> inc()) == 2
-assert ((1, 2) |> add_in) == 3
+assert((1 |> inc()) == 2)
+assert(((1, 2) |> add_in()) == 3)
 ```
 
 ### シーケンス型
@@ -63,20 +63,20 @@ assert ((1, 2) |> add_in) == 3
 
 ```
 fn ...int |> twice_each() |> ...int {
-  var n int
-  while(read(&n)) {
+  var n: int
+  while read(&n) {
     yield n * 2
   }
 }
 
 fn ...int |> sum() |> int {
   var ret = 0
-  var v int
+  var v: int
   whire read(&v) {
     ret += v
   }
   return ret
 }
 
-assert (seq(3) |> twice_each() |> sum()) == 12
+assert((seq(3) |> twice_each() |> sum()) == 12)
 ```
