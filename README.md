@@ -1,23 +1,31 @@
 # cotowali.org
 
-## Build Setup
+## Development
 
-```bash
-# install dependencies
-$ npm install
+### Requirements
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+- [pnpm](https://github.com/pnpm/pnpm)
+- [z](https://github.com/zakuro9715/z)
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+### Setup
 
-# generate static project
-$ npm run generate
+```
+z install
 ```
 
-## How to write documents
+### Run DevServer on localhost:3000
+
+```
+z dev
+```
+
+### Generate as static website
+
+```
+z generate
+```
+
+## How to write documents (Outdated)
 
 - `/contents/docs` - document root
     - `index.yaml` - metadata (Chapters, pages, etc)

@@ -3,15 +3,8 @@ tasks:
   main: |
     if [ $# -eq 0 ]
     then
-      npm start
+      pnpm dev
     else
-      npm run "$(echo "$*" | tr ' ' ':')"
+      pnpm run "$(echo "$*" | tr ' ' ':')"
     fi
-  install: npm install $@
-  lint.fix: npm run lint:fix $@
-  repl: node --experimental-repl-await
-  docs.watch: npm run lint:docs:watch
-  commit.docs: |
-    git commit -m "docs: $*"
-  commit.docs.ja: |
-    git commit -m "docs.ja: $*"
+  install: pnpm install --shamefully-hoist $@
