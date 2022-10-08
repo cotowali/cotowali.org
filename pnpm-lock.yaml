@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@cotowali/design': ^0.3.4
+  '@nuxtjs/google-fonts': 3.0.0-0
   '@nuxtjs/tailwindcss': ^5.3.5
   nuxt: 3.0.0-rc.11
 
@@ -9,6 +10,7 @@ dependencies:
   '@cotowali/design': 0.3.4
 
 devDependencies:
+  '@nuxtjs/google-fonts': 3.0.0-0
   '@nuxtjs/tailwindcss': 5.3.5_webpack@5.74.0
   nuxt: 3.0.0-rc.11
 
@@ -616,6 +618,16 @@ packages:
       - vti
     dev: true
 
+  /@nuxtjs/google-fonts/3.0.0-0:
+    resolution: {integrity: sha512-ZVq2Yqgmi/6duUQig1Zme8s/CbTkTT1jA1o4f+Bc9su/8jZMnIBz0VUw5TSHCupZurhOi3aUYNEfYt8VFjljfg==}
+    dependencies:
+      '@nuxt/kit': 3.0.0-rc.11
+      google-fonts-helper: 3.1.0
+      pathe: 0.3.9
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@nuxtjs/tailwindcss/5.3.5_webpack@5.74.0:
     resolution: {integrity: sha512-d6noacVfcN88R6Iqd5/kl7YyumE+EIsz6ky26JvidHtkTeAPxZt8XN/KFEMJ6xwSvhsUndrNW94XYPKv7l79jg==}
     dependencies:
@@ -747,13 +759,13 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.4.6
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
     dev: true
 
   /@types/eslint/8.4.6:
     resolution: {integrity: sha512-/fqTbjxyFUaYNO7VcW5g+4npmqVACz1bB7RTHYuLj+PRjw9hrCwrUXVQFpChUS0JsyEFvMZ7U/PfmvWgxJhI9g==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
     dev: true
 
@@ -2675,6 +2687,16 @@ packages:
       ignore: 5.2.0
       merge2: 1.4.1
       slash: 4.0.0
+    dev: true
+
+  /google-fonts-helper/3.1.0:
+    resolution: {integrity: sha512-ePLjDSRnk75R64szIiBUwJuW+emHqyshe8dWZcI7xIVBiy75rNdd9lzh4iskZw6DoMDgZ+jj2R4aTyLOVBim8A==}
+    dependencies:
+      deepmerge: 4.2.2
+      fs-extra: 10.1.0
+      hookable: 5.3.0
+      ohmyfetch: 0.4.19
+      ufo: 0.8.5
     dev: true
 
   /graceful-fs/4.2.10:
