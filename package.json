@@ -19,6 +19,7 @@
     "nuxt": "3.0.0-rc.11"
   },
   "dependencies": {
-    "@cotowali/design": "^0.3.4"
+    "@cotowali/design": "^0.3.4",
+    "@mdi/js": "^7.0.96"
   }
 }
