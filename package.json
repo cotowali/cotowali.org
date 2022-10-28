@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@cotowali/design": "^0.3.4",
-    "@mdi/js": "^7.0.96"
+    "@mdi/js": "^7.0.96",
+    "@nuxtjs/i18n": "8.0.0-beta.1"
   }
 }

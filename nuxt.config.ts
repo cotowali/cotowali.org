@@ -1,8 +1,9 @@
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
+const baseUrl = 'https://cotowali.org'
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
+    '@nuxtjs/i18n',
   ],
 
   googleFonts: {
@@ -13,5 +14,20 @@ export default defineNuxtConfig({
       Montserrat: [700],
       'Source Code Pro': [400],
     },
+  },
+
+  i18n: {
+    baseUrl,
+    seo: false,
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true,
+    },
+    locales: [
+      { code: 'en', iso: 'en-US', name: 'English' },
+      { code: 'ja', iso: 'ja-JP', name: '日本語' },
+    ],
+    defaultLocale: 'en',
   },
 })
