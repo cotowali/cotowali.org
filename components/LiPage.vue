@@ -27,9 +27,11 @@ export default {
 }
 </script>
 <script setup lang="ts">
-defineProps<{
-  noFooter: boolean,
-}>()
+defineProps({
+  noFooter: {
+    type: Boolean,
+  },
+})
 </script>
 
 <style>
