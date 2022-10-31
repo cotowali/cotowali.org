@@ -18,6 +18,7 @@ export default defineNuxtConfig({
 
   i18n: {
     baseUrl,
+    langDir: 'locales',
     seo: false,
     detectBrowserLanguage: {
       useCookie: true,
@@ -25,9 +26,12 @@ export default defineNuxtConfig({
       onlyOnRoot: true,
     },
     locales: [
-      { code: 'en', iso: 'en-US', name: 'English' },
-      { code: 'ja', iso: 'ja-JP', name: '日本語' },
+      { code: 'en', file: 'en.json', iso: 'en-US', name: 'English' },
+      { code: 'ja', file: 'ja.json', iso: 'ja-JP', name: '日本語' },
     ],
     defaultLocale: 'en',
+    vueI18n: {
+      legacy: false,
+    },
   },
 })

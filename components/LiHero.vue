@@ -20,16 +20,16 @@
         </h1>
         <div class="font-medium" style="font-size: 16px; margin-top: 0px;">
           <p>
-            {{ $t('description') }}
+            {{ t('description') }}
           </p>
         </div>
       </div>
       <div class="flex gap-x-4">
         <LiButton large :to="localePath('/docs/getting-started')">
-          {{ $t('get-started') }}
+          {{ t('get-started') }}
         </LiButton>
         <LiButton large dark-red :to="localePath('/play')">
-          {{ $t('try') }}
+          {{ t('try') }}
         </LiButton>
       </div>
     </div>
@@ -44,6 +44,7 @@ export default {
 </script>
 
 <script setup lang="ts">
+const { t } = useI18n({ useScope: 'local' })
 </script>
 
 <style scoped>
