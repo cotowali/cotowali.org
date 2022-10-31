@@ -19,7 +19,6 @@ export default defineNuxtConfig({
   i18n: {
     baseUrl,
     langDir: 'locales',
-    seo: false,
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
