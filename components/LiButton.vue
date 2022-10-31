@@ -1,17 +1,17 @@
 <template>
-  <span v-if="!clickable" class="cursor-default" :class="classes" :href="href" v-on="$listeners">
+  <span v-if="!clickable" class="cursor-default" :class="classes">
     <slot />
   </span>
 
-  <a v-else-if="useAnchorTag" :class="classes" :href="href" v-on="$listeners">
+  <a v-else-if="useAnchorTag" :class="classes" :href="href">
     <slot />
   </a>
 
-  <nuxt-link v-else-if="useNuxtLinkTag" :class="classes" :to="to" v-on="$listeners">
+  <nuxt-link v-else-if="useNuxtLinkTag" :class="classes" :to="to">
     <slot />
   </nuxt-link>
 
-  <button v-else :class="classes" :type="type" v-on="$listeners">
+  <button v-else :class="classes" :type="type">
     <slot />
   </button>
 </template>
@@ -23,9 +23,11 @@ export default {
 </script>
 
 <script setup lang="ts">
+import { PropType } from 'vue'
+
 const props = defineProps({
   type: {
-    type: String,
+    type: String as PropType<'button' | 'submit' | 'reset'>,
     default: 'button',
   },
   href: {
