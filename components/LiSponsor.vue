@@ -25,10 +25,21 @@ export default {
 </script>
 
 <script setup lang="ts">
-defineProps<{
-  name: String,
-  image: String,
-  url: String,
-  small: Boolean,
-}>()
+defineProps({
+  name: {
+    type: String,
+    required: true
+  },
+  image: {
+    type: String,
+    required: true
+  },
+  url: {
+    type: String,
+    required: true
+  },
+  small: {
+    type: Boolean,
+  },
+})
 </script>
