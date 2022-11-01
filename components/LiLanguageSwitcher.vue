@@ -16,7 +16,7 @@
     </LiButton>
     <ul v-show="isLanguageListVisible" class="absolute right-0 bg-brand-red w-24">
       <li
-        v-for="locale in $i18n.locales"
+        v-for="locale in locales"
         :key="locale.code"
         class="w-full"
       >
@@ -36,6 +36,9 @@ export default {
 
 <script setup lang="ts">
 import { mdiTranslate } from '@mdi/js'
+
+const { locale, locales } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
 
 const isLanguageListVisible = ref(false)
 </script>
