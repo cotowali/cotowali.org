@@ -1,12 +1,10 @@
 <i18n lang="json">
 {
   "en": {
-    "description": "A statically typed scripting language that is transpiled into shell script",
     "get-started": "Get Started",
     "try": "Try"
   },
   "ja": {
-    "description": "シェルスクリプトにコンパイルする静的型付きスクリプト言語"
   }
 }
 </i18n>
@@ -20,7 +18,7 @@
         </h1>
         <div class="font-medium" style="font-size: 16px; margin-top: 0px;">
           <p>
-            {{ t('description') }}
+            {{ t('cotowali.description') }}
           </p>
         </div>
       </div>
