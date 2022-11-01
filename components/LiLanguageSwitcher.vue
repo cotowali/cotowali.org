@@ -1,17 +1,20 @@
 <template>
-  <div class="relative" @mouseleave="showLanguageList = false">
+  <div
+    class="relative"
+    @mouseenter="isLanguageListVisible = true"
+    @mouseleave="isLanguageListVisible = false"
+  >
     <LiButton
       small
       circle
       icon
-      @mouseenter="showLanguageList = true"
     >
       <LiIcon
         aria-label="switch-language"
         :icon="mdiTranslate"
       />
     </LiButton>
-    <ul v-show="showLanguageList" class="absolute right-0 bg-brand-red w-24">
+    <ul v-show="isLanguageListVisible" class="absolute right-0 bg-brand-red w-24">
       <li
         v-for="locale in $i18n.locales"
         :key="locale.code"
@@ -33,4 +36,6 @@ export default {
 
 <script setup lang="ts">
 import { mdiTranslate } from '@mdi/js'
+
+const isLanguageListVisible = ref(false)
 </script>
