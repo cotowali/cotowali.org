@@ -6,6 +6,8 @@
     "node": "18.x"
   },
   "scripts": {
+    "updates": "ncu",
+    "do-updates": "ncu -u",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "lint": "echo 'TODO: lint'",
@@ -19,6 +21,7 @@
     "@nuxtjs/google-fonts": "^3.0.0-0",
     "@nuxtjs/i18n": "^8.0.0-beta.1",
     "@nuxtjs/tailwindcss": "^5.3.5",
+    "npm-check-updates": "^16.3.16",
     "nuxt": "rc"
   }
 }
