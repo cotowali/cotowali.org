@@ -31,12 +31,6 @@
   </header>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'LiHeader',
-}
-</script>
-
 <script setup lang="ts">
 import { mdiGithub } from '@mdi/js'
 </script>

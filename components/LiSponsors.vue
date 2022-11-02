@@ -54,12 +54,6 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'LiSponsors',
-}
-</script>
-
 <script setup lang="ts">
 const sponsors = [{
   name: 'CubeSoft, Inc.',

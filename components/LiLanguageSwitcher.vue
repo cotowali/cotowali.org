@@ -28,12 +28,6 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'LiLanguageSwitcher',
-}
-</script>
-
 <script setup lang="ts">
 import { mdiTranslate } from '@mdi/js'
 

@@ -16,12 +16,6 @@
   </button>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'LiButton',
-}
-</script>
-
 <script setup lang="ts">
 import { PropType } from 'vue'
 

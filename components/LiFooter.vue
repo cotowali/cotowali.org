@@ -5,12 +5,6 @@
   </footer>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'LiFooter',
-}
-</script>
-
 <style scoped>
 .footer {
   @apply text-center text-2xs opacity-75;

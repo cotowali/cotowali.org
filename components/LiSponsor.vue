@@ -18,12 +18,6 @@
   </a>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'LiSponsor',
-}
-</script>
-
 <script setup lang="ts">
 defineProps({
   name: {

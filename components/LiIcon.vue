@@ -1,4 +1,4 @@
-<template>
+<template inheritAttrs="false">
   <div class="fill-current" :style="{ width: size, height: size }">
     <svg
       v-bind="$attrs"
@@ -11,13 +11,6 @@
     </svg>
   </div>
 </template>
-
-<script lang="ts">
-export default {
-  name: 'LiIcon',
-  inheritAttrs: false,
-}
-</script>
 
 <script setup lang="ts">
 defineProps({
