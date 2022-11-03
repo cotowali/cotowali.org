@@ -10,6 +10,7 @@
     "do-updates": "ncu -u",
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "check": "nuxt typecheck",
     "lint": "echo 'TODO: lint'",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -22,6 +23,8 @@
     "@nuxtjs/i18n": "^8.0.0-beta.1",
     "@nuxtjs/tailwindcss": "^6.1.2",
     "npm-check-updates": "^16.3.16",
-    "nuxt": "rc"
+    "nuxt": "rc",
+    "typescript": "^4.8.4",
+    "vue-tsc": "^1.0.9"
   }
 }
