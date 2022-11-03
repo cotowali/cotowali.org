@@ -1,11 +1,9 @@
-import { Plugin } from '@nuxt/types'
-
-interface ContentChapter {
+export interface ContentChapter {
   title: { [key: string]: string }
   pages: string[]
 }
 
-interface ContentIndex {
+export interface ContentIndex {
   chapters: ContentChapter[]
 }
 

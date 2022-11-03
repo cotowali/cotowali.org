@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { Docs, Page } from '@/plugins/docs'
+import type { Docs, Page } from '@/types/docs'
 definePageMeta({ layout: 'raw' })
 
 // TODO: It's dummy data
