@@ -11,20 +11,7 @@
 import type { Docs, Page } from '@/types/docs'
 definePageMeta({ layout: 'raw' })
 
-// TODO: It's dummy data
-const page: Page = {
-  title: 'page',
-  slug: 'page',
-  path: '/docs/page',
-  revision: '0',
-  locale: 'en',
-  latestRevisionLocale: 'en',
-}
-
-const docs: Docs = {
-  chapters: [{
-    title: 'chapter',
-    pages: [page],
-  }]
-}
+const { fetchDocs, fetchDoc } = useDocs()
+const { data: docs } = await useAsyncData(() => fetchDocs())
+const { data: page } = await useAsyncData(() => fetchDoc('/getting-started'))
 </script>

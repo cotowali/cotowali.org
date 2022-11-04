@@ -1,9 +1,10 @@
-export interface ContentChapter {
+import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
+export interface ContentChapter extends ParsedContent {
   title: { [key: string]: string }
   pages: string[]
 }
 
-export interface ContentIndex {
+export interface ContentIndex extends ParsedContent {
   chapters: ContentChapter[]
 }
 
