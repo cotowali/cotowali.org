@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="content">
-      <!-- <nuxt-content :document="page" /> -->
+      <ContentRenderer :value="page" />
     </div>
   </article>
 </template>
