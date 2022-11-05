@@ -5,7 +5,7 @@ module.exports = {
     node: true,
   },
   extends: [
-    'eslint:recommended',
+    'standard',
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
     'plugin:nuxt/recommended',
@@ -24,5 +24,16 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'no-undef': 'off', // for auto-import
     'comma-dangle': ['error', 'always-multiline'],
+    'space-before-function-paren': ['error', {
+      'anonymous': 'never',
+      'named': 'never',
+      'asyncArrow': 'always',
+    }],
+    'no-mixed-operators': 'off',
+    'template-curly-spacing': ['error', 'always'],
+    '@typescript-eslint/no-unused-vars': ['error', {
+      'varsIgnorePattern': '^_',
+      'argsIgnorePattern': '^_',
+    }]
   }
 }
