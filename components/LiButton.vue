@@ -1,17 +1,33 @@
 <template>
-  <span v-if="!clickable" class="cursor-default" :class="classes">
+  <span
+    v-if="!clickable"
+    class="cursor-default"
+    :class="classes"
+  >
     <slot />
   </span>
 
-  <a v-else-if="useAnchorTag" :class="classes" :href="href">
+  <a
+    v-else-if="useAnchorTag"
+    :class="classes"
+    :href="href"
+  >
     <slot />
   </a>
 
-  <nuxt-link v-else-if="useNuxtLinkTag" :class="classes" :to="to">
+  <nuxt-link
+    v-else-if="useNuxtLinkTag"
+    :class="classes"
+    :to="to"
+  >
     <slot />
   </nuxt-link>
 
-  <button v-else :class="classes" :type="type">
+  <button
+    v-else
+    :class="classes"
+    :type="type"
+  >
     <slot />
   </button>
 </template>
@@ -105,8 +121,8 @@ const classes = computed(() => {
     icon: props.icon,
     hover,
     dense: props.dense,
-    [`size-${size}`]: true,
-    [`color-${color}`]: true,
+    [`size-${ size }`]: true,
+    [`color-${ color }`]: true,
     rounded: props.rounded,
   }
 })

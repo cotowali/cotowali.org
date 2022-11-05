@@ -1,17 +1,29 @@
 <template>
-  <div class="sidenav-wrapper" :class="{ closed }">
-    <nav class="sidenav" :class="{ closed }">
+  <div
+    class="sidenav-wrapper"
+    :class="{ closed }"
+  >
+    <nav
+      class="sidenav"
+      :class="{ closed }"
+    >
       <slot />
     </nav>
-    <LiButton icon dark-red class="menu-button" @click="closed = !closed">
-      <LiIcon :icon="mdiMenu" :aria-label="closed ? 'open menu' : 'close menu'" />
+    <LiButton
+      icon
+      dark-red
+      class="menu-button"
+      @click="closed = !closed"
+    >
+      <LiIcon
+        :icon="mdiMenu"
+        :aria-label="closed ? 'open menu' : 'close menu'"
+      />
     </LiButton>
   </div>
 </template>
 
 <script setup lang="ts">
-import Vue from 'vue'
-
 const closed = ref(false)
 </script>
 

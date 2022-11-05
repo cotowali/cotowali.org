@@ -4,12 +4,19 @@
       <p>This documentation for current locale is out of date.</p>
       <p>
         The latest document is available in
-        <nuxt-link class="font-bold hover:underline" :to="switchLocalePath(page.latestRevisionLocale)">another locale</nuxt-link>
+        <nuxt-link
+          class="font-bold hover:underline"
+          :to="switchLocalePath(page.latestRevisionLocale)"
+        >
+          another locale
+        </nuxt-link>
       </p>
     </Alert>
 
     <div class="title-box">
-      <h1 class="title">{{ page.title }}</h1>
+      <h1 class="title">
+        {{ page.title }}
+      </h1>
       <div class="revision">
         rev{{ page.revision }}
       </div>
@@ -21,7 +28,6 @@
 </template>
 
 <script setup lang="ts">
-import Vue, { PropType } from 'vue'
 import { Page } from '@/plugins/docs'
 
 const switchLocalePath = useSwitchLocalePath()

@@ -17,6 +17,7 @@ const title = name + (route.meta.title && ` - ${ route.meta.title }}` || '')
 useHead({
   title,
   htmlAttrs: {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     lang: i18nHead.value.htmlAttrs!.lang,
     prefix: 'og: http://ogp.me/ns#',
   },

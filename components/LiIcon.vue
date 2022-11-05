@@ -1,5 +1,8 @@
 <template inheritAttrs="false">
-  <div class="fill-current" :style="{ width: size, height: size }">
+  <div
+    class="fill-current"
+    :style="{ width: size, height: size }"
+  >
     <svg
       v-bind="$attrs"
       role="img"
@@ -14,13 +17,13 @@
 
 <script setup lang="ts">
 defineProps({
- icon: {
-   type: String,
-   required: true,
- },
- size: {
-   type: String,
-   default: '1.5rem',
- },
+  icon: {
+    type: String,
+    required: true,
+  },
+  size: {
+    type: String,
+    default: '1.5rem',
+  },
 })
 </script>

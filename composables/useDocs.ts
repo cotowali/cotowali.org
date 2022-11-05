@@ -4,14 +4,14 @@ import type { ContentIndex } from '@/types/docs'
 export const useDocs = () => {
   const i18n = useI18n()
   async function fetchDocs(): Promise<Docs> {
-    const contentIndex = await queryContent<ContentIndex>().where({ _path: '/docs'}).findOne()
+    const contentIndex = await queryContent<ContentIndex>().where({ _path: '/docs' }).findOne()
 
     const fetchChapter = async (contentChapter: ContentChapter, locale: string) => {
       const paths = contentChapter.pages.map((v) => '/docs/' + v)
       const pathIndex = Object.fromEntries(paths.map((path, i) => [path, i]))
       const pages = (
         await queryContent<Page>('docs')
-          .where({ _path: { $in: paths.map((v) => [v, locale].join('.')) }})
+          .where({ _path: { $in: paths.map((v) => [v, locale].join('.')) } })
           .find()
       ).map((page) => {
         return ({ ...page, path: page._path.split('.')[0], locale })
@@ -24,9 +24,8 @@ export const useDocs = () => {
       }
     }
     const chapters = await Promise.all(
-      contentIndex.chapters.map((c) => fetchChapter(c, i18n.locale.value))
+      contentIndex.chapters.map((c) => fetchChapter(c, i18n.locale.value)),
     )
-    console.log(chapters)
     return { chapters }
   }
 
@@ -37,7 +36,6 @@ export const useDocs = () => {
     page.locale = locale
     return page
   }
-
 
   async function fetchDoc(path: string): Promise<Page> {
     const locale = i18n.locale.value

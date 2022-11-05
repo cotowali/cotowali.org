@@ -6,7 +6,12 @@
       custom
     >
       <div class="flex items-end justify-between">
-        <a class="link page-link" :class="{ 'link-active': isActive }" :href="href" @click="navigate">
+        <a
+          class="link page-link"
+          :class="{ 'link-active': isActive }"
+          :href="href"
+          @click="navigate"
+        >
           {{ page.title }}
         </a>
         <LiButton
@@ -17,29 +22,35 @@
           :aria-controls="tocId"
           @click="tocExpanded = !tocExpanded"
         >
-          <LiIcon :icon="mdiRight" aria-label="expand" class="icon-expand" :class="{ 'expanded': tocExpanded }" />
+          <LiIcon
+            :icon="mdiRight"
+            aria-label="expand"
+            class="icon-expand"
+            :class="{ 'expanded': tocExpanded }"
+          />
         </LiButton>
       </div>
     </nuxt-link>
 
-    <!--
-    <scrollactive v-if="page.toc.length > 0" active-class="link-active">
-    -->
-      <LiCollapse :id="tocId" :expanded="tocExpanded">
-        <ul class="page-toc">
-          <li v-for="link of page.toc" :key="link.id" :class="`link-depth-${link.depth - 1}`">
-            <nuxt-link
-              :to="localePath(page.path + '#' + link.id)"
-              class="link section-link scrollactive-item"
-            >
-              {{ link.text }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </LiCollapse>
-    <!--
-    </scrollactive>
-    -->
+    <LiCollapse
+      :id="tocId"
+      :expanded="tocExpanded"
+    >
+      <ul class="page-toc">
+        <li
+          v-for="link of page.toc"
+          :key="link.id"
+          :class="`link-depth-${link.depth - 1}`"
+        >
+          <nuxt-link
+            :to="localePath(page.path + '#' + link.id)"
+            class="link section-link scrollactive-item"
+          >
+            {{ link.text }}
+          </nuxt-link>
+        </li>
+      </ul>
+    </LiCollapse>
   </li>
 </template>
 
@@ -48,13 +59,13 @@ import { Page } from '@/plugins/docs'
 import { mdiChevronRight as mdiRight } from '@mdi/js'
 
 const route = useRoute()
-const localeRoute = useLocaleRoute()
 const localePath = useLocalePath()
 
 const props = defineProps<{ page: Page }>()
-const tocExpanded = ref(localeRoute(props.page.path)!.path === route.path)
+const tocExpanded = ref(localePath(props.page.path) === route.path)
 const tocId = computed(() => props.page.slug + '--toc')
-const tocAriaExpanded =  computed(() => tocExpanded.value && 'true' || 'false')
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const tocAriaExpanded = computed(() => tocExpanded.value && 'true' || 'false')
 </script>
 
 <style scoped>

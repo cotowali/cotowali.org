@@ -1,12 +1,17 @@
 <template>
   <header class="header">
     <div class="flex items-center">
-      <nuxt-link :to="localePath('/')"><CotowaliLogoText /></nuxt-link>
+      <nuxt-link :to="localePath('/')">
+        <CotowaliLogoText />
+      </nuxt-link>
     </div>
     <nav>
       <ul class="nav-list">
         <li>
-          <LiButton small :to="localePath('/docs/getting-started')">
+          <LiButton
+            small
+            :to="localePath('/docs/getting-started')"
+          >
             Docs
           </LiButton>
         </li>

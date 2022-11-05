@@ -13,25 +13,43 @@
   <div class="hero">
     <div class="h-[240px] flex flex-col justify-between">
       <div>
-        <h1 class="text-brand-red leading-none" style="font-size: 76px; margin: 65px 240px 0 -6px; ">
+        <h1
+          class="text-brand-red leading-none"
+          style="font-size: 76px; margin: 65px 240px 0 -6px;"
+        >
           <CotowaliLogoText />
         </h1>
-        <div class="font-medium" style="font-size: 16px; margin-top: 0px;">
+        <div
+          class="font-medium"
+          style="font-size: 16px; margin-top: 0px;"
+        >
           <p>
             {{ t('cotowali.description') }}
           </p>
         </div>
       </div>
       <div class="flex gap-x-4">
-        <LiButton large :to="localePath('/docs/getting-started')">
+        <LiButton
+          large
+          :to="localePath('/docs/getting-started')"
+        >
           {{ t('get-started') }}
         </LiButton>
-        <LiButton large dark-red :to="localePath('/play')">
+        <LiButton
+          large
+          dark-red
+          :to="localePath('/play')"
+        >
           {{ t('try') }}
         </LiButton>
       </div>
     </div>
-    <img src="~/assets/cotowali.svg" height="240px" width="240px" alt="cotowali">
+    <img
+      src="~/assets/cotowali.svg"
+      height="240px"
+      width="240px"
+      alt="cotowali"
+    >
   </div>
 </template>
 
