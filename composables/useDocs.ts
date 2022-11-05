@@ -4,7 +4,7 @@ import type { ContentIndex } from '@/types/docs'
 export const useDocs = () => {
   const i18n = useI18n()
   async function fetchDocs(): Promise<Docs> {
-    const contentIndex = await queryContent()<ContentIndex>.where({ _path: '/docs'}).findOne()
+    const contentIndex = await queryContent<ContentIndex>().where({ _path: '/docs'}).findOne()
 
     const fetchChapter = async (contentChapter: ContentChapter, locale: string) => {
       const paths = contentChapter.pages.map((v) => '/docs/' + v)
