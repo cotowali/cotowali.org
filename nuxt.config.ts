@@ -2,11 +2,12 @@ const baseUrl = 'https://cotowali.org'
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-fonts',
+    //'@nuxtjs/google-fonts', // not work (@3.0.0-1)
     '@nuxtjs/i18n',
     '@nuxt/content',
   ],
 
+  /*
   googleFonts: {
     display: 'swap',
     families: {
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
       'Source Code Pro': [400],
     },
   },
+  */
 
   i18n: {
     baseUrl,
