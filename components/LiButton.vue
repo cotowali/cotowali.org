@@ -121,8 +121,8 @@ const classes = computed(() => {
     icon: props.icon,
     hover,
     dense: props.dense,
-    [`size-${ size }`]: true,
-    [`color-${ color }`]: true,
+    [`size-${ size.value }`]: true,
+    [`color-${ color.value }`]: true,
     rounded: props.rounded,
   }
 })
