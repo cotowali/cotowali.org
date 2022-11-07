@@ -6,7 +6,8 @@
     />
     <Link
       rel="preconnect"
-      href="https://fonts.gstatic.com" crossorigin
+      href="https://fonts.gstatic.com"
+      crossorigin
     />
     <Link
       rel="stylesheet"
