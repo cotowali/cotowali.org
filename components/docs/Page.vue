@@ -70,7 +70,7 @@ const { page } = toRefs(props)
 }
 
 .nuxt-content code {
-  @apply px-1 rounded bg-black;
+  @apply px-1 rounded-sm bg-black;
 }
 
 .nuxt-content .nuxt-content-highlight pre code {
@@ -78,7 +78,7 @@ const { page } = toRefs(props)
 }
 
 .nuxt-content .nuxt-content-highlight pre {
-  @apply rounded;
+  @apply rounded-sm;
   @apply !bg-black;
 }
 

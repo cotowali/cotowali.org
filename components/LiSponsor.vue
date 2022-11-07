@@ -9,7 +9,7 @@
       <template v-if="small">
         <img
           :src="image"
-          class="rounded"
+          class="rounded-sm"
           height="80px"
           width="80px"
         >
@@ -18,7 +18,7 @@
       <template v-else>
         <img
           :src="image"
-          class="rounded"
+          class="rounded-sm"
           height="120px"
           width="120px"
         >

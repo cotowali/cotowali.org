@@ -27,9 +27,6 @@ module.exports = {
     extend: {
       minHeight: defaultTheme.spacing,
       minWidth: defaultTheme.spacing,
-      borderRadius: {
-        DEFAULT: '0.125rem',
-      },
       zIndex: {
         front: '10',
       },

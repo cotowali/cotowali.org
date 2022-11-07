@@ -130,7 +130,7 @@ const classes = computed(() => {
 
 <style scoped>
   .button {
-    @apply rounded;
+    @apply rounded-sm;
     @apply no-underline hover:no-underline;
     @apply inline-flex items-center justify-center;
   }
