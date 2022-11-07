@@ -11,8 +11,8 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "check": "nuxt typecheck",
-    "eslint": "eslint",
-    "lint": "eslint --ignore-path .gitignore --ext .ts,.vue .",
+    "eslint": "eslint --ignore-path .gitignore --ext .ts,.vue",
+    "lint": "pnpm eslint .",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
