@@ -19,9 +19,11 @@
       href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap"
     />
   </Head>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <div v-scroll-url-sync>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
