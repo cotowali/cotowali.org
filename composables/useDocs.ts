@@ -1,7 +1,7 @@
 import { queryContent, useI18n } from '#imports'
 import type { ContentIndex } from '@/types/docs'
 
-export const useDocs = () => {
+export default () => {
   const i18n = useI18n()
   async function fetchDocs(): Promise<Docs> {
     const contentIndex = await queryContent<ContentIndex>().where({ _path: '/docs' }).findOne()
