@@ -21,7 +21,7 @@
         rev{{ page.revision }}
       </div>
     </div>
-    <div class="content">
+    <div class="docs-content">
       <ContentRenderer :value="page" />
     </div>
   </article>
@@ -37,53 +37,50 @@ const { page } = toRefs(props)
 </script>
 
 <style>
-.nuxt-content {
+.docs-content {
   @apply leading-relaxed
 }
-.nuxt-content p {
+.docs-content p {
   @apply mt-2;
 }
-.nuxt-content a {
+.docs-content a {
   @apply text-brand-red;
   @apply hover:underline;
 }
 
-.nuxt-content h2 {
+.docs-content h2 {
   @apply text-2xl font-bold font-title;
   @apply mt-12 mb-6;
 }
-.nuxt-content h3 {
+.docs-content h3 {
   @apply text-xl font-bold font-title;
   @apply mt-6 mb-2;
 }
-.nuxt-content h4 {
+.docs-content h4 {
   @apply text-lg font-bold;
   @apply mt-6;
 }
-.nuxt-content h5 {
+.docs-content h5 {
   @apply font-bold;
   @apply mt-4;
 }
-.nuxt-content h6 {
+.docs-content h6 {
   @apply font-bold;
   @apply mt-4;
 }
 
-.nuxt-content code {
+.docs-content code {
   @apply px-1 rounded-sm bg-black;
 }
 
-.nuxt-content .nuxt-content-highlight pre code {
-  @apply p-0; /* cancel `code { px-1 }` */
-}
-
-.nuxt-content .nuxt-content-highlight pre {
-  @apply rounded-sm;
+.docs-content pre:has(code){
+  @apply rounded-sm leading-normal text-xs;
+  @apply p-2;
   @apply !bg-black;
 }
 
-.nuxt-content-editor {
-  @apply bg-black;
+.docs-content pre code {
+  @apply p-0; /* cancel `code { px-1 }` */
 }
 </style>
 
