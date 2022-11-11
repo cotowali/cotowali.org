@@ -31,9 +31,21 @@
 import { Page } from '@/plugins/docs'
 
 const switchLocalePath = useSwitchLocalePath()
+const scrollUrlSync = useScrollUrlSync()
 
 const props = defineProps<{ page: Page }>()
 const { page } = toRefs(props)
+
+watch(page, (page, oldPage) => {
+  const { registerId, removeId } = scrollUrlSync
+
+  const oldIds = oldPage.body.toc.links.map((v) => v.id)
+  oldIds.forEach(removeId)
+  const ids = page.body.toc.links.map((v) => v.id)
+  ids.forEach(registerId)
+}, {
+  immediate: true,
+})
 </script>
 
 <style>
