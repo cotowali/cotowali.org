@@ -38,7 +38,7 @@
     >
       <ul class="page-toc">
         <li
-          v-for="link of page.toc"
+          v-for="link of page.body.toc.links"
           :key="link.id"
           :class="`link-depth-${link.depth - 1}`"
         >
