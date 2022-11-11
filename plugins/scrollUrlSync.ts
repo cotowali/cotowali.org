@@ -1,15 +1,15 @@
 import type { FunctionDirective } from 'vue'
 import { useScrollUrlSync } from '#imports'
 export default defineNuxtPlugin(({ vueApp }) => {
-  const { elements, onScroll } = useScrollUrlSync()
+  const { registerId, removeId, onScroll } = useScrollUrlSync()
 
   const directiveScrollId: FunctionDirective<HTMLElement, string> = (el, binding) => {
     const oldId = binding.oldValue ?? ''
     const id = binding.value
 
     el.id = id
-    elements.value[id] = el
-    delete elements.value[oldId]
+    registerId(id)
+    removeId(oldId)
   }
 
   vueApp.directive('scroll-id', directiveScrollId)
