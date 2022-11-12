@@ -1,5 +1,5 @@
 import { queryContent, useI18n } from '#imports'
-import type { ContentIndex } from '@/types/docs'
+import type { Page, Docs, ContentIndex, ContentChapter } from '@/types/docs'
 
 export default () => {
   const i18n = useI18n()
@@ -9,13 +9,14 @@ export default () => {
     const fetchChapter = async (contentChapter: ContentChapter, locale: string) => {
       const paths = contentChapter.pages.map((v) => '/docs/' + v)
       const pathIndex = Object.fromEntries(paths.map((path, i) => [path, i]))
-      const pages = (
+      const pages: Page[] = (
         await queryContent<Page>('docs')
           .where({ _path: { $in: paths.map((v) => [v, locale].join('.')) } })
           .find()
-      ).map((page) => {
-        return ({ ...page, path: page._path.split('.')[0], locale })
-      })
+      ).map((page) => (
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        { ...page, path: page._path!.split('.')[0], locale }
+      ))
       pages.sort((a, b) => pathIndex[a.path] - pathIndex[b.path])
 
       return {
