@@ -9,6 +9,7 @@
   "scripts": {
     "updates": "ncu",
     "do-updates": "ncu -u",
+    "nuxt": "nuxt",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "check": "nuxt typecheck",
