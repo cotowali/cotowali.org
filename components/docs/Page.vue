@@ -39,8 +39,10 @@ const { page } = toRefs(props)
 watch(page, (page, oldPage) => {
   const { registerId, removeId } = scrollUrlSync
 
-  const oldIds = oldPage.body.toc.links.map((v) => v.id)
-  oldIds.forEach(removeId)
+  if (oldPage) {
+    const oldIds = oldPage.body.toc.links.map((v) => v.id)
+    oldIds.forEach(removeId)
+  }
   const ids = page.body.toc.links.map((v) => v.id)
   ids.forEach(registerId)
 }, {
