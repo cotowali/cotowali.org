@@ -41,7 +41,7 @@ export default () => {
     const locale = i18n.locale.value
     const localeCodes = i18n.localeCodes.value
 
-    const page = fetchPage(path, locale)
+    const page = await fetchPage(path, locale)
     page.latestRevisionLocale = locale
     let latestRevision = page.revision
 
