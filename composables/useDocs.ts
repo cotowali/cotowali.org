@@ -30,15 +30,16 @@ export default () => {
     return { chapters }
   }
 
-  async function fetchPage(path: string, locale: string) {
+  async function fetchPage(path: string | string[], locale: string) {
+    const sPath = `${ (typeof path === 'string' ? path : path.join('/')) }`
     const page = await queryContent<Page>('docs')
-      .where({ _path: ['/docs' + path, locale].join('.') }).findOne()
-    page.path = path
+      .where({ _path: `/docs/${ sPath }.${ locale }` }).findOne()
+    page.path = sPath
     page.locale = locale
     return page
   }
 
-  async function fetchDoc(path: string): Promise<Page> {
+  async function fetchDoc(path: string | string[]): Promise<Page> {
     const locale = i18n.locale.value
     const localeCodes = i18n.localeCodes.value
 
