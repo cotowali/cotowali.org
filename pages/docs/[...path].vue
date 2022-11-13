@@ -12,7 +12,11 @@
 import type { Docs, Page } from '@/types/docs'
 definePageMeta({ layout: 'raw' })
 
+const route = useRoute()
 const { fetchDocs, fetchDoc } = useDocs()
+
+const pathParts = route.params.path as string[]
+
 const { data: docs } = await useAsyncData(() => fetchDocs())
-const { data: page } = await useAsyncData(() => fetchDoc('/getting-started'))
+const { data: page } = await useAsyncData(() => fetchDoc('/' + pathParts.join('/')))
 </script>
