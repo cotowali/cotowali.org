@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { Page } from '@/plugins/docs'
+import { Page } from '@/types/docs'
 
 const switchLocalePath = useSwitchLocalePath()
 const scrollUrlSync = useScrollUrlSync()
@@ -40,10 +40,10 @@ watch(page, (page, oldPage) => {
   const { registerId, removeId } = scrollUrlSync
 
   if (oldPage) {
-    const oldIds = oldPage.body.toc.links.map((v) => v.id)
+    const oldIds = oldPage?.body?.toc?.links.map((v) => v.id) || []
     oldIds.forEach(removeId)
   }
-  const ids = page.body.toc.links.map((v) => v.id)
+  const ids = page.body.toc?.links.map((v) => v.id) || []
   ids.forEach(registerId)
 }, {
   immediate: true,
