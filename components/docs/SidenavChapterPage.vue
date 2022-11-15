@@ -18,7 +18,7 @@
           text
           icon
           circle
-          :aria-expanded="ariaExpanded"
+          :aria-expanded="tocAriaExpanded"
           :aria-controls="tocId"
           @click="tocExpanded = !tocExpanded"
         >

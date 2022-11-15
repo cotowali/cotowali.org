@@ -24,6 +24,7 @@
 </template>
 
 <script setup lang="ts">
+import { mdiMenu } from '@mdi/js'
 const closed = ref(false)
 </script>
 
