@@ -21,7 +21,7 @@ assert @expr('1', '+', '1') == '2'
 assert ((1.1 |> @awk('{print $1 * 2}')) as float) == 2.2
 ```
 
-<alert type="portability"></alert>
+:alert{type="portability"}
 
 ## glob literal
 
@@ -64,4 +64,4 @@ sh {
 assert(s == 'shell') // updated in inline shell
 ```
 
-<alert type="portability"></alert>
+:alert{type="portability"}
