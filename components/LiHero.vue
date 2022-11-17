@@ -32,6 +32,7 @@
         <LiButton
           large
           :to="localePath('/docs/getting-started')"
+          class="w-48"
         >
           {{ t('get-started') }}
         </LiButton>
