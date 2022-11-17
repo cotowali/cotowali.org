@@ -35,13 +35,6 @@
         >
           {{ t('get-started') }}
         </LiButton>
-        <LiButton
-          large
-          dark-red
-          :to="localePath('/play')"
-        >
-          {{ t('try') }}
-        </LiButton>
       </div>
     </div>
     <img
