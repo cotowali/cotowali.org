@@ -30,7 +30,6 @@
       </div>
       <div class="flex gap-x-4">
         <LiButton
-          large
           :to="localePath('/docs/getting-started')"
           class="w-48"
         >
