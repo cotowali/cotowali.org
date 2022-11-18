@@ -57,7 +57,7 @@ watch(page, (page, oldPage) => {
 .docs-content p {
   @apply mt-2;
 }
-.docs-content a {
+.docs-content p a {
   @apply text-brand-red;
   @apply hover:underline;
 }
