@@ -40,8 +40,8 @@
     </div>
     <img
       src="~/assets/cotowali.svg"
-      height="240px"
-      width="240px"
+      height="240"
+      width="240"
       alt="cotowali"
     >
   </div>

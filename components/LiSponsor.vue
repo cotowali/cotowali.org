@@ -10,8 +10,8 @@
         <img
           :src="image"
           class="rounded-sm"
-          height="80px"
-          width="80px"
+          height="80"
+          width="80"
         >
         <figcaption class="mt-2 text-center text-sm">{{ name }}</figcaption>
       </template>
@@ -19,8 +19,8 @@
         <img
           :src="image"
           class="rounded-sm"
-          height="120px"
-          width="120px"
+          height="120"
+          width="120"
         >
         <figcaption class="mt-2 text-center">{{ name }}</figcaption>
       </template>
