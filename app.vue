@@ -14,7 +14,6 @@
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&family=Montserrat:wght@700&family=Source+Code+Pro&display=swap"
     />
     <Link
-      v-if="locale === 'ja'"
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500;700&display=swap"
     />
@@ -28,7 +27,7 @@
 
 <script setup lang="ts">
 const route = useRoute()
-const { t, locale } = useI18n()
+const { t } = useI18n()
 const i18nHead = useLocaleHead({
   addSeoAttributes: true,
 })
