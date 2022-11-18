@@ -23,7 +23,7 @@
           class="font-medium"
           style="font-size: 16px; margin-top: 0px;"
         >
-          <p>
+          <p class="w-[480px]">
             {{ t('cotowali.description') }}
           </p>
         </div>
@@ -54,6 +54,6 @@ const { t } = useI18n({ useScope: 'local' })
 <style scoped>
 .hero {
   @apply flex justify-center items-center;
-  @apply gap-x-16 py-24;
+  @apply py-24;
 }
 </style>
