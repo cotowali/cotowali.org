@@ -54,7 +54,8 @@ watch(page, (page, oldPage) => {
 .docs-content {
   @apply leading-relaxed
 }
-.docs-content p {
+.docs-content p,
+.docs-content pre {
   @apply mt-2;
 }
 .docs-content p a {
