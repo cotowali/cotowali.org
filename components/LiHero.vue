@@ -1,10 +1,10 @@
 <i18n lang="json">
 {
   "en": {
-    "get-started": "Get Started",
-    "try": "Try"
+    "get-started": "Get Started"
   },
   "ja": {
+    "get-started": "はじめる"
   }
 }
 </i18n>
