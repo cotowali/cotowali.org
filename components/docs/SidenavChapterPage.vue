@@ -77,7 +77,7 @@
 </template>
 
 <script setup lang="ts">
-import { Page } from '@/plugins/docs'
+import { Page } from '@/types/docs'
 import { mdiChevronRight as mdiRight } from '@mdi/js'
 
 const route = useRoute()

@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { Docs } from '@/plugins/docs'
+import { Docs } from '@/types/docs'
 
 defineProps<{ docs: Docs }>()
 </script>

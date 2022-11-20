@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { Chapter } from '@/plugins/docs'
+import { Chapter } from '@/types/docs'
 
 defineProps<{ chapter: Chapter }>()
 </script>
