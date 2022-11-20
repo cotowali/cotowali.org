@@ -3,6 +3,6 @@ title: Builtin
 revision: 0
 ---
 
-:wip
+:alert{type=wip}
 
 ## Global Functions
