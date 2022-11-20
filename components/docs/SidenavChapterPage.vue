@@ -44,6 +44,7 @@
           <nuxt-link
             :to="localePath(page.path + '#' + link.id)"
             class="link section-link"
+            :class="{ 'link-active': link.id === activeId }"
           >
             {{ link.text }}
           </nuxt-link>
@@ -59,6 +60,7 @@ import { mdiChevronRight as mdiRight } from '@mdi/js'
 
 const route = useRoute()
 const localePath = useLocalePath()
+const { activeId } = useScrollUrlSync()
 
 const props = defineProps<{ page: Page }>()
 
