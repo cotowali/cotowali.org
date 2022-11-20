@@ -47,9 +47,11 @@ export default () => {
     'scrollUrlSyncElements',
     () => ({}),
   )
+  const activeId = useState('scrollUrlSyncActiveId', () => '')
 
   const onScroll = () => {
     const { id } = getActiveItem(range.value, targetIds.value)
+    activeId.value = id
     const hash = id.length > 0 ? '#' + id : ''
     window.history.replaceState(null, '', new URL(hash, window.location.href))
   }
@@ -62,5 +64,5 @@ export default () => {
     delete targetIds.value[id]
   }
 
-  return { range, targetIds, registerId, removeId, onScroll }
+  return { range, targetIds, activeId, registerId, removeId, onScroll }
 }
