@@ -36,15 +36,14 @@
       :id="tocId"
       :expanded="tocExpanded"
     >
-      <ul class="page-toc">
+      <ul class="toc-items">
         <li
           v-for="link of page.body.toc.links"
           :key="link.id"
-          :class="`link-depth-${link.depth - 1}`"
         >
           <nuxt-link
             :to="localePath(page.path + '#' + link.id)"
-            class="link section-link scrollactive-item"
+            class="link section-link"
           >
             {{ link.text }}
           </nuxt-link>
@@ -62,6 +61,7 @@ const route = useRoute()
 const localePath = useLocalePath()
 
 const props = defineProps<{ page: Page }>()
+
 const tocExpanded = ref(localePath(props.page.path) === route.path)
 const tocId = computed(() => props.page.slug + '--toc')
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -81,16 +81,9 @@ const tocAriaExpanded = computed(() => tocExpanded.value && 'true' || 'false')
   @apply font-bold;
 }
 
-.link-depth-2 {
-  @apply px-2 text-sm;
-}
-
-.page-toc {
+.toc-items {
   @apply flex flex-col;
   @apply px-2;
-}
-
-.page-link {
 }
 
 .section-link {
