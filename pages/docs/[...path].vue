@@ -20,5 +20,6 @@ const path = computed(() => route.value.params.path)
 const { data: page } = await useAsyncData(() => fetchDoc(path.value))
 watch(path, async (path) => {
   page.value = await fetchDoc(path)
+  docs.value = await fetchDocs()
 })
 </script>
