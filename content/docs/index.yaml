@@ -26,4 +26,4 @@ chapters:
       ja: サンプル集
       en: Examples
     pages:
-      - examples
+      - examples/hello-world
