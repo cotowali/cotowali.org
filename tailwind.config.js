@@ -52,6 +52,7 @@ module.exports = {
         hero: '876px',
         'header-height': defaultTheme.spacing[12],
         'article-pt': defaultTheme.spacing[8],
+        'default-scroll-mt': defaultTheme.spacing[12 + 8], // header-height + article-pt
       },
     },
   },

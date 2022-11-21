@@ -64,3 +64,9 @@ useHead({
   ]),
 })
 </script>
+
+<style>
+[id] {
+  @apply scroll-mt-default-scroll-mt;
+}
+</style>
