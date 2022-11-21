@@ -1,5 +1,5 @@
 <template>
-  <article class="px-12 pt-8">
+  <article class="px-12 pt-article-pt">
     <Alert v-if="page.locale !== page.latestRevisionLocale">
       <p>This documentation for current locale is out of date.</p>
       <p>
