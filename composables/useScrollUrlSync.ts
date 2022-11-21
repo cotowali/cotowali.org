@@ -53,7 +53,7 @@ export default () => {
     const { id } = getActiveItem(range.value, targetIds.value)
     activeId.value = id
     const hash = id.length > 0 ? '#' + id : ''
-    window.history.replaceState(null, '', new URL(hash, window.location.href))
+    history.replaceState(history.state, '', new URL(hash, window.location.href))
   }
 
   const registerId = (id: string) => {
