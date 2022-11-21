@@ -36,15 +36,8 @@
       :id="tocId"
       :expanded="tocExpanded"
     >
-      <!--
-        TODO:
-        extract <ul> to component
-      -->
-      <ul class="toc-items">
-        <li
-          v-for="link of page.body.toc.links"
-          :key="link.id"
-        >
+      <DocsSidenavChapterPageToc :links="page.body.toc.links">
+        <template #link="{ link }">
           <nuxt-link
             :to="localePath(page.path + '#' + link.id)"
             class="link section-link"
@@ -52,31 +45,14 @@
           >
             {{ link.text }}
           </nuxt-link>
-          <!-- TODO: component -->
-          <ul
-            v-if="link.children"
-            class="toc-items"
-          >
-            <li
-              v-for="link of link.children"
-              :key="link.id"
-            >
-              <nuxt-link
-                :to="localePath(page.path + '#' + link.id)"
-                class="link section-link"
-                :class="{ 'link-active': link.id === activeId }"
-              >
-                {{ link.text }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </li>
-      </ul>
+        </template>
+      </DocsSidenavChapterPageToc>
     </LiCollapse>
   </li>
 </template>
 
 <script setup lang="ts">
+
 import { Page } from '@/types/docs'
 import { mdiChevronRight as mdiRight } from '@mdi/js'
 
