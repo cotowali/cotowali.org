@@ -50,6 +50,7 @@ module.exports = {
       },
       spacing: {
         hero: '876px',
+        'header-height': defaultTheme.spacing[12],
       },
     },
   },

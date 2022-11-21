@@ -1,6 +1,6 @@
 <template>
   <header
-    class="header header-height"
+    class="header h-header-height"
     v-bind="$attrs"
   >
     <div class="flex items-center">
@@ -37,7 +37,7 @@
       </ul>
     </nav>
   </header>
-  <div class="header-height" />
+  <div class="h-header-height" />
 </template>
 
 <script setup lang="ts">
@@ -51,9 +51,7 @@ import { mdiGithub } from '@mdi/js'
     @apply px-4;
     @apply bg-brand-red;
   }
-  .header-height {
-    @apply h-12;
-  }
+
   .nav-list {
     @apply flex items-center gap-x-2;
   }
