@@ -1,8 +1,8 @@
 <template>
   <div>
-    <LiHeader class="h-12" />
+    <LiHeader />
 
-    <div class="page pt-12">
+    <div class="page">
       <template v-if="$slots.left">
         <slot name="left" />
       </template>

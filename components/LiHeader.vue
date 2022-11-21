@@ -1,5 +1,8 @@
 <template>
-  <header class="header">
+  <header
+    class="header header-height"
+    v-bind="$attrs"
+  >
     <div class="flex items-center">
       <nuxt-link :to="localePath('/')">
         <CotowaliLogoText />
@@ -34,6 +37,7 @@
       </ul>
     </nav>
   </header>
+  <div class="header-height" />
 </template>
 
 <script setup lang="ts">
@@ -46,6 +50,9 @@ import { mdiGithub } from '@mdi/js'
     @apply fixed w-full z-front;
     @apply px-4;
     @apply bg-brand-red;
+  }
+  .header-height {
+    @apply h-12;
   }
   .nav-list {
     @apply flex items-center gap-x-2;
