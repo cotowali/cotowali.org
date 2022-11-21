@@ -39,7 +39,7 @@
       <DocsSidenavChapterPageToc :links="page.body.toc.links">
         <template #link="{ link }">
           <nuxt-link
-            :to="localePath(page.path + '#' + link.id)"
+            :to="{ path: localePath(page.path), hash: '#' + link.id }"
             class="link section-link"
             :class="{ 'link-active': link.id === activeId }"
           >
