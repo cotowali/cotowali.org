@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-scroll-url-sync>
     <LiHeader />
 
     <div class="page">
