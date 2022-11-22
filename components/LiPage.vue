@@ -27,6 +27,9 @@ defineProps({
     type: Boolean,
   },
 })
+
+const { range } = useScrollUrlSync()
+range.value = { top: 80, bottom: 120 }
 </script>
 
 <style>
