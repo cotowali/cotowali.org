@@ -15,11 +15,7 @@ definePageMeta({ layout: 'raw' })
 const { currentRoute: route } = useRouter()
 const { fetchDocs, fetchDoc } = useDocs()
 
-const { data: docs } = await useAsyncData(() => fetchDocs())
 const path = computed(() => route.value.params.path)
-const { data: page } = await useAsyncData(() => fetchDoc(path.value))
-watch(path, async (path) => {
-  page.value = await fetchDoc(path)
-  docs.value = await fetchDocs()
-})
+const { data: docs } = await useAsyncData(() => fetchDocs(), { watch: [path] })
+const { data: page } = await useAsyncData(() => fetchDoc(path.value), { watch: [path] })
 </script>

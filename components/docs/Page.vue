@@ -34,9 +34,8 @@ const switchLocalePath = useSwitchLocalePath()
 const scrollUrlSync = useScrollUrlSync()
 
 const props = defineProps<{ page: Page }>()
-const { page } = toRefs(props)
 
-watch(page, (page, oldPage) => {
+watch(props.page, (page, oldPage) => {
   const { registerId, removeId } = scrollUrlSync
 
   interface Link { id: string, children?: Link[] }
