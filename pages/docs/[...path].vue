@@ -16,6 +16,6 @@ const { currentRoute: route } = useRouter()
 const { fetchDocs, fetchDoc } = useDocs()
 
 const path = computed(() => route.value.params.path)
-const { data: docs } = await useAsyncData(() => fetchDocs(), { watch: [path] })
-const { data: page } = await useAsyncData(() => fetchDoc(path.value), { watch: [path] })
+const { data: docs } = await useAsyncData(async () => await fetchDocs(), { watch: [path] })
+const { data: page } = await useAsyncData(async () => await fetchDoc(path.value), { watch: [path] })
 </script>
