@@ -5,6 +5,6 @@ tasks:
     then
       pnpm dev
     else
-      pnpm run "$(echo "$*" | tr ' ' ':')"
+      pnpm $@
     fi
   install: pnpm install --shamefully-hoist $@
