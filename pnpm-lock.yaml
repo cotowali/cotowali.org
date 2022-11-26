@@ -7,6 +7,7 @@ specifiers:
   '@nuxtjs/google-fonts': ^3.0.0-0
   '@nuxtjs/i18n': ^8.0.0-beta.1
   '@nuxtjs/tailwindcss': ^6.1.2
+  '@playwright/test': ^1.28.1
   '@typescript-eslint/eslint-plugin': ^5.0.0
   '@typescript-eslint/parser': ^5.42.0
   eslint: ^8.0.1
@@ -31,6 +32,7 @@ devDependencies:
   '@nuxtjs/google-fonts': 3.0.0-0
   '@nuxtjs/i18n': 8.0.0-beta.3_ugnfwh7g6lmpaylz4yfw4sbnry
   '@nuxtjs/tailwindcss': 6.1.2_webpack@5.74.0
+  '@playwright/test': 1.28.1
   '@typescript-eslint/eslint-plugin': 5.42.0_6xw5wg2354iw4zujk2f3vyfrzu
   '@typescript-eslint/parser': 5.42.0_wyqvi574yv7oiwfeinomdzmc3m
   eslint: 8.26.0
@@ -566,8 +568,8 @@ packages:
       vue-i18n:
         optional: true
     dependencies:
-      '@intlify/message-compiler': 9.3.0-beta.6
-      '@intlify/shared': 9.3.0-beta.6
+      '@intlify/message-compiler': 9.3.0-beta.10
+      '@intlify/shared': 9.3.0-beta.10
       jsonc-eslint-parser: 1.4.1
       source-map: 0.6.1
       vue-i18n: 9.3.0-beta.6_vue@3.2.41
@@ -591,12 +593,25 @@ packages:
       '@intlify/shared': 9.3.0-beta.6
     dev: true
 
+  /@intlify/message-compiler/9.3.0-beta.10:
+    resolution: {integrity: sha512-RoOC6yceOykLRhN0NlbkNOBUx1el6iphx3W8NfOx3jHVNtfT1FYokx14/5sU3F1F0uxeG4sp6q+ppKvaF8o+ww==}
+    engines: {node: '>= 14'}
+    dependencies:
+      '@intlify/shared': 9.3.0-beta.10
+      source-map: 0.6.1
+    dev: true
+
   /@intlify/message-compiler/9.3.0-beta.6:
     resolution: {integrity: sha512-3PJqRJoqvFHExA9DCkf7fZYKbvYne1tYQ0fptJAhUOZsELarh8wr4aPLKWCkQSRuutdrtZ/n5CcPgJgUmVthDw==}
     engines: {node: '>= 14'}
     dependencies:
       '@intlify/shared': 9.3.0-beta.6
       source-map: 0.6.1
+    dev: true
+
+  /@intlify/shared/9.3.0-beta.10:
+    resolution: {integrity: sha512-h93uAanbAt/XgjDHclrVB7xix6r7Uz11wx0iGNOCdHP7aA2LCJjUT3uNbekJjjbo+Fl5jzTSJZdm2SexzoqhRA==}
+    engines: {node: '>= 14'}
     dev: true
 
   /@intlify/shared/9.3.0-beta.6:
@@ -620,7 +635,7 @@ packages:
         optional: true
     dependencies:
       '@intlify/bundle-utils': 3.2.1_vue-i18n@9.3.0-beta.6
-      '@intlify/shared': 9.3.0-beta.6
+      '@intlify/shared': 9.3.0-beta.10
       '@rollup/pluginutils': 4.2.1
       '@vue/compiler-sfc': 3.2.41
       debug: 4.3.4
@@ -1196,6 +1211,15 @@ packages:
       - supports-color
       - ts-node
       - webpack
+    dev: true
+
+  /@playwright/test/1.28.1:
+    resolution: {integrity: sha512-xN6spdqrNlwSn9KabIhqfZR7IWjPpFK1835tFNgjrlysaSezuX8PYUwaz38V/yI8TJLG9PkAMEXoHRXYXlpTPQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      '@types/node': 18.11.9
+      playwright-core: 1.28.1
     dev: true
 
   /@pnpm/network.ca-file/1.0.1:
@@ -7006,6 +7030,12 @@ packages:
       pathe: 0.3.9
     dev: true
 
+  /playwright-core/1.28.1:
+    resolution: {integrity: sha512-3PixLnGPno0E8rSBJjtwqTwJe3Yw72QwBBBxNoukIj3lEeBNXwbNiKrNuB1oyQgTBw5QHUhNO3SteEtHaMK6ag==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
+
   /portfinder/1.0.32:
     resolution: {integrity: sha512-on2ZJVVDXRADWE6jnQaX0ioEylzgBpQk8r55NE4wjXW1ZxO+BgDlY6DXwj20i0V8eB4SenDQ00WEaxfiIQPcxg==}
     engines: {node: '>= 0.12.0'}
@@ -9324,7 +9354,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      '@intlify/shared': 9.3.0-beta.6
+      '@intlify/shared': 9.3.0-beta.10
       '@intlify/vue-i18n-bridge': 0.7.0_dybyk3kyl7g34srrts4qxm2bxi
       '@intlify/vue-router-bridge': 0.7.0_vue@3.2.41
       ufo: 0.8.6

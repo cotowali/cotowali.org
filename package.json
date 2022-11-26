@@ -16,6 +16,7 @@
     "eslint": "eslint --ignore-path .gitignore --ext .ts,.vue",
     "lint": "pnpm eslint .",
     "lint-staged": "nano-staged",
+    "playwright": "pnpm dlx playwright",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -27,6 +28,7 @@
     "@nuxtjs/google-fonts": "^3.0.0-0",
     "@nuxtjs/i18n": "^8.0.0-beta.1",
     "@nuxtjs/tailwindcss": "^6.1.2",
+    "@playwright/test": "^1.28.1",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.42.0",
     "eslint": "^8.0.1",
