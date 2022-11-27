@@ -17,6 +17,7 @@
     "lint": "pnpm eslint .",
     "lint-staged": "nano-staged",
     "playwright": "pnpm dlx playwright",
+    "e2e": "pnpm dlx playwright test",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
