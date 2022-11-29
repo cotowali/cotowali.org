@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <LiHeader class="h-12" />
+  <div v-scroll-url-sync>
+    <LiHeader />
 
-    <div class="page pt-12">
+    <div class="page">
       <template v-if="$slots.left">
         <slot name="left" />
       </template>
@@ -21,20 +21,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  name: 'LiPage',
-  props: {
-    noFooter: {
-      type: Boolean,
-    },
-  },
-  head() {
-    return this.$nuxtI18nHead({ addSeoAttributes: true })
+<script setup lang="ts">
+defineProps({
+  noFooter: {
+    type: Boolean,
   },
 })
+
+const { range } = useScrollUrlSync()
+range.value = { top: 80, bottom: 120 }
 </script>
 
 <style>

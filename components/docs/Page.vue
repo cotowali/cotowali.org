@@ -1,92 +1,104 @@
 <template>
-  <article class="px-12 pt-8">
-    <Alert v-if="$i18n.locale !== 'ja'">
-      <p>We are currently working on the Japanese documentation.</p>
-      <p>Documentation in other languages will be provided after the Japanese documentation is written.</p>
-    </Alert>
+  <article class="px-12 pt-article-pt">
     <Alert v-if="page.locale !== page.latestRevisionLocale">
       <p>This documentation for current locale is out of date.</p>
       <p>
         The latest document is available in
-        <nuxt-link class="font-bold hover:underline" :to="switchLocalePath(page.latestRevisionLocale)">another locale</nuxt-link>
+        <nuxt-link
+          class="font-bold hover:underline"
+          :to="switchLocalePath(page.latestRevisionLocale)"
+        >
+          another locale
+        </nuxt-link>
       </p>
     </Alert>
 
     <div class="title-box">
-      <h1 class="title">{{ page.title }}</h1>
+      <h1 class="title">
+        {{ page.title }}
+      </h1>
       <div class="revision">
         rev{{ page.revision }}
       </div>
     </div>
-    <div class="content">
-      <nuxt-content :document="page" />
+    <div class="docs-content">
+      <ContentRenderer :value="page" />
     </div>
   </article>
 </template>
 
-<script lang="ts">
-import Vue, { PropType } from 'vue'
-import { Page } from '@/plugins/docs'
+<script setup lang="ts">
+import { Page } from '@/types/docs'
 
-export default Vue.extend({
-  name: 'DocsPage',
-  props: {
-    page: {
-      type: Object as PropType<Page>,
-      required: true,
-    },
-  },
+const switchLocalePath = useSwitchLocalePath()
+const scrollUrlSync = useScrollUrlSync()
+
+const props = defineProps<{ page: Page }>()
+
+watch(props.page, (page, oldPage) => {
+  const { registerId, removeId } = scrollUrlSync
+
+  interface Link { id: string, children?: Link[] }
+  const getIdsInLink = (link: Link): string[] =>
+    [link.id, ...(link.children ?? []).map(getIdsInLink).flat()]
+  const getIdsInPage = (p: Page): string[] =>
+    p.body.toc?.links.map(getIdsInLink).flat() || []
+
+  if (oldPage) {
+    getIdsInPage(oldPage).forEach(removeId)
+  }
+  getIdsInPage(page).forEach(registerId)
+}, {
+  immediate: true,
 })
 </script>
 
 <style>
-.nuxt-content {
+.docs-content {
   @apply leading-relaxed
 }
-.nuxt-content p {
+.docs-content p,
+.docs-content pre {
   @apply mt-2;
 }
-.nuxt-content a {
+.docs-content p a {
   @apply text-brand-red;
   @apply hover:underline;
 }
 
-.nuxt-content h2 {
+.docs-content h2 {
   @apply text-2xl font-bold font-title;
   @apply mt-12 mb-6;
 }
-.nuxt-content h3 {
+.docs-content h3 {
   @apply text-xl font-bold font-title;
   @apply mt-6 mb-2;
 }
-.nuxt-content h4 {
+.docs-content h4 {
   @apply text-lg font-bold;
   @apply mt-6;
 }
-.nuxt-content h5 {
+.docs-content h5 {
   @apply font-bold;
   @apply mt-4;
 }
-.nuxt-content h6 {
+.docs-content h6 {
   @apply font-bold;
   @apply mt-4;
 }
 
-.nuxt-content code {
-  @apply px-1 rounded bg-black;
+.docs-content code {
+  @apply px-1 rounded-sm bg-black;
 }
 
-.nuxt-content .nuxt-content-highlight pre code {
-  @apply p-0; /* cancel `code { px-1 }` */
-}
-
-.nuxt-content .nuxt-content-highlight pre {
-  @apply rounded;
+.docs-content pre:has(code){
+  @apply rounded-sm leading-normal text-xs;
+  @apply p-2;
   @apply !bg-black;
 }
 
-.nuxt-content-editor {
-  @apply bg-black;
+.docs-content pre code {
+  @apply p-0; /* cancel `code { px-1 }` */
 }
 </style>
 

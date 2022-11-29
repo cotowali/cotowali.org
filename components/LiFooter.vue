@@ -5,13 +5,6 @@
   </footer>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
-  name: 'LiFooter',
-})
-</script>
-
 <style scoped>
 .footer {
   @apply text-center text-2xs opacity-75;

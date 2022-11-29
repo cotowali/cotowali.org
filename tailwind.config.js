@@ -23,21 +23,10 @@ const fontMono = [
 ]
 
 module.exports = {
-  mode: 'jit',
-  purge: [
-    './components/**/*.{vue,js}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './plugins/**/*.{js,ts}',
-    './nuxt.config.{js,ts}',
-  ],
   theme: {
     extend: {
       minHeight: defaultTheme.spacing,
       minWidth: defaultTheme.spacing,
-      borderRadius: {
-        DEFAULT: '0.125rem',
-      },
       zIndex: {
         front: '10',
       },
@@ -61,6 +50,9 @@ module.exports = {
       },
       spacing: {
         hero: '876px',
+        'header-height': defaultTheme.spacing[12],
+        'article-pt': defaultTheme.spacing[8],
+        'default-scroll-mt': defaultTheme.spacing[12 + 8], // header-height + article-pt
       },
     },
   },

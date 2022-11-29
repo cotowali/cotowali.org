@@ -6,68 +6,66 @@
       custom
     >
       <div class="flex items-end justify-between">
-        <a class="link page-link" :class="{ 'link-active': isActive }" :href="href" @click="navigate">
+        <a
+          class="link page-link"
+          :class="{ 'link-active': isActive }"
+          :href="href"
+          @click="navigate"
+        >
           {{ page.title }}
         </a>
         <LiButton
           text
           icon
           circle
-          :aria-expanded="ariaExpanded"
+          :aria-expanded="tocAriaExpanded"
           :aria-controls="tocId"
           @click="tocExpanded = !tocExpanded"
         >
-          <LiIcon :icon="mdiRight" aria-label="expand" class="icon-expand" :class="{ 'expanded': tocExpanded }" />
+          <LiIcon
+            :icon="mdiRight"
+            aria-label="expand"
+            class="icon-expand"
+            :class="{ 'expanded': tocExpanded }"
+          />
         </LiButton>
       </div>
     </nuxt-link>
 
-    <scrollactive v-if="page.toc.length > 0" active-class="link-active">
-      <LiCollapse :id="tocId" :expanded="tocExpanded">
-        <ul class="page-toc">
-          <li v-for="link of page.toc" :key="link.id" :class="`link-depth-${link.depth - 1}`">
-            <nuxt-link
-              :to="localePath(page.path + '#' + link.id)"
-              class="link section-link scrollactive-item"
-            >
-              {{ link.text }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </LiCollapse>
-    </scrollactive>
+    <LiCollapse
+      :id="tocId"
+      :expanded="tocExpanded"
+    >
+      <DocsSidenavChapterPageToc :links="page.body.toc.links">
+        <template #link="{ link }">
+          <nuxt-link
+            :to="{ path: localePath(page.path), hash: '#' + link.id }"
+            class="link section-link"
+            :class="{ 'link-active': link.id === activeId }"
+          >
+            {{ link.text }}
+          </nuxt-link>
+        </template>
+      </DocsSidenavChapterPageToc>
+    </LiCollapse>
   </li>
 </template>
 
-<script lang="ts">
-import Vue, { PropType } from 'vue'
-import { Page } from '@/plugins/docs'
+<script setup lang="ts">
+
+import { Page } from '@/types/docs'
 import { mdiChevronRight as mdiRight } from '@mdi/js'
 
-export default Vue.extend({
-  name: 'DocsSidenavChapterPage',
-  props: {
-    page: {
-      type: Object as PropType<Page>,
-      required: true,
-    },
-  },
-  data() {
-    return {
-      mdiRight,
-      tocExpanded: this.localeRoute(this.page.path)!.path === this.$route.path,
-    }
-  },
-  computed: {
-    tocId(): string {
-      return this.page.slug + '--toc'
-    },
-    ariaExpanded(): boolean | 'false' {
-      // return 'false' explicitly to avoid removal attirbute
-      return this.tocExpanded || 'false'
-    },
-  },
-})
+const route = useRoute()
+const localePath = useLocalePath()
+const { activeId } = useScrollUrlSync()
+
+const props = defineProps<{ page: Page }>()
+
+const tocExpanded = ref(localePath(props.page.path) === route.path)
+const tocId = computed(() => props.page.slug + '--toc')
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const tocAriaExpanded = computed(() => tocExpanded.value && 'true' || 'false')
 </script>
 
 <style scoped>
@@ -83,16 +81,9 @@ export default Vue.extend({
   @apply font-bold;
 }
 
-.link-depth-2 {
-  @apply px-2 text-sm;
-}
-
-.page-toc {
+.toc-items {
   @apply flex flex-col;
   @apply px-2;
-}
-
-.page-link {
 }
 
 .section-link {

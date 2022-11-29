@@ -7,11 +7,12 @@
     "portability": "portability alert",
     "undecided": "undecided",
     "unimplemented": "unimplemented",
+    "wip": "work in progress",
 
     "defaultTexts": {
       "portability": "Use of this feature will compromise portability.",
       "undecided": "Details of this feature is undecided.",
-      "wip": "Work In Progress"
+      "wip": "This document is work in progress"
     }
   },
   "ja": {
@@ -21,19 +22,27 @@
     "portability": "ポータビリティアラート",
     "undecided": "未決定",
     "unimplemented": "未実装",
+    "wip": "執筆中",
 
     "defaultTexts": {
       "portability": "この機能の利用はポータビリティを損ねます。",
       "undecided": "この機能の詳細は未決定です",
-      "wip": "執筆中"
+      "wip": "このドキュメントは執筆中です"
     }
   }
 }
 </i18n>
 
 <template>
-  <div class="alert" :class="[color]">
-    <LiIcon class="alert-icon" :icon="icon" :aria-label="iconLabel" />
+  <div
+    class="alert"
+    :class="[color]"
+  >
+    <LiIcon
+      class="alert-icon"
+      :icon="icon"
+      :aria-label="iconLabel"
+    />
     <div class="alert-content">
       <template v-if="hasSlot">
         <slot />
@@ -48,7 +57,6 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
 import {
   mdiAlert,
   mdiInformation,
@@ -67,30 +75,24 @@ const icons: { [key: string]: string } = {
   unimplemented: mdiTrafficCone,
   wip: mdiPencil,
 }
+</script>
 
-export default Vue.extend({
-  name: 'Alert',
-  props: {
-    type: {
-      type: String,
-      default: 'alert',
-      validator: (v) => Object.keys(icons).includes(v),
-    },
-  },
-  data() {
-    return {
-      hasSlot: !!(this.$slots.default ?? []).map((v) => ((v.tag ?? '') + (v.text ?? '')).trim()).join(''),
-      icon: icons[this.type],
-      iconLabel: this.$t(this.type),
-      color: this.type === 'info' ? 'blue' : 'red',
-    }
-  },
-  computed: {
-    defaultText() {
-      return this.$t(`defaultTexts.${this.type}`)
-    },
+<script setup lang="ts">
+const props = defineProps({
+  type: {
+    type: String,
+    default: 'alert',
+    validator: (v: string) => Object.keys(icons).includes(v),
   },
 })
+
+const slots = useSlots()
+const { t } = useI18n({ useScope: 'local' })
+const hasSlot = computed(() => slots.default !== undefined)
+const icon = computed(() => icons[props.type])
+const iconLabel = computed(() => t(props.type))
+const color = computed(() => props.type === 'info' ? 'blue' : 'red')
+const defaultText = computed(() => t(`defaultTexts.${ props.type }`))
 </script>
 
 <style scoped>

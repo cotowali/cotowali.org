@@ -1,12 +1,20 @@
 <template>
-  <header class="header">
+  <header
+    class="header h-header-height"
+    v-bind="$attrs"
+  >
     <div class="flex items-center">
-      <nuxt-link :to="localePath('/')"><CotowaliLogoText /></nuxt-link>
+      <nuxt-link :to="localePath('/')">
+        <CotowaliLogoText />
+      </nuxt-link>
     </div>
     <nav>
       <ul class="nav-list">
         <li>
-          <LiButton small :to="localePath('/docs/getting-started')">
+          <LiButton
+            small
+            :to="localePath('/docs/getting-started')"
+          >
             Docs
           </LiButton>
         </li>
@@ -29,16 +37,11 @@
       </ul>
     </nav>
   </header>
+  <div class="h-header-height" />
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script setup lang="ts">
 import { mdiGithub } from '@mdi/js'
-
-export default Vue.extend({
-  name: 'LiHeader',
-  data: () => ({ mdiGithub }),
-})
 </script>
 
 <style scoped>
@@ -48,6 +51,7 @@ export default Vue.extend({
     @apply px-4;
     @apply bg-brand-red;
   }
+
   .nav-list {
     @apply flex items-center gap-x-2;
   }

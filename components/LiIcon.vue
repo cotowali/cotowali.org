@@ -1,5 +1,8 @@
-<template>
-  <div class="fill-current" :style="{ width: size, height: size }">
+<template inheritAttrs="false">
+  <div
+    class="fill-current"
+    :style="{ width: size, height: size }"
+  >
     <svg
       v-bind="$attrs"
       role="img"
@@ -12,21 +15,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  name: 'LiIcon',
-  inheritAttrs: false,
-  props: {
-    icon: {
-      type: String,
-      required: true,
-    },
-    size: {
-      type: String,
-      default: '1.5rem',
-    },
+<script setup lang="ts">
+defineProps({
+  icon: {
+    type: String,
+    required: true,
+  },
+  size: {
+    type: String,
+    default: '1.5rem',
   },
 })
 </script>

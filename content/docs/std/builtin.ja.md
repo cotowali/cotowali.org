@@ -3,7 +3,7 @@ title: ビルトイン
 revision: 20210114
 ---
 
-<wip></wip>
+:alert{type=wip}
 
 ## グローバル関数
 

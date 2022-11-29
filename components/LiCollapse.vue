@@ -4,7 +4,6 @@
     @enter="enter"
     @after-enter="afterEnter"
     @leave="leave"
-    @after-leave="afterLeave"
   >
     <div v-show="expanded">
       <slot />
@@ -13,56 +12,52 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-
-// https://markus.oberlehner.net/blog/transition-to-height-auto-with-vue/
-export default Vue.extend({
+export default {
   name: 'LiCollapse',
-  props: {
-    expanded: {
-      type: Boolean,
-    },
-  },
-  methods: {
-    enter(el: HTMLElement) {
-      const { width } = getComputedStyle(el)
-      el.style.setProperty('width', width)
-      el.style.setProperty('position', 'absolute')
-      el.style.setProperty('visibility', 'hidden')
-      el.style.setProperty('height', 'auto')
+}
+</script>
 
-      const { height } = getComputedStyle(el)
-      el.style.setProperty('width', null)
-      el.style.setProperty('position', null)
-      el.style.setProperty('visibility', null)
-      el.style.setProperty('height', '0')
-
-      // Force repaint to make sure the
-      // animation is triggered correctly
-      getComputedStyle(el).height // eslint-disable-line no-unused-expressions
-      requestAnimationFrame(() => {
-        el.style.height = height
-      })
-    },
-    afterEnter(el: HTMLElement) {
-      el.style.height = 'auto'
-    },
-    leave(el: HTMLElement) {
-      const { height } = getComputedStyle(el)
-      el.style.height = height
-
-      // Force repaint to make sure the
-      // animation is triggered correctly.
-      getComputedStyle(el).height // eslint-disable-line no-unused-expressions
-      requestAnimationFrame(() => {
-        el.style.height = '0'
-      })
-    },
-    afterLeave(_el: HTMLElement) {
-      // eslint-disable-line
-    },
+<script setup lang="ts">
+defineProps({
+  expanded: {
+    type: Boolean,
   },
 })
+
+// https://markus.oberlehner.net/blog/transition-to-height-auto-with-vue/
+
+const enter = (el: HTMLElement) => {
+  const { width } = getComputedStyle(el)
+  el.style.width = width
+  el.style.position = 'absolute'
+  el.style.visibility = 'hidden'
+  el.style.height = 'auto'
+
+  const { height } = getComputedStyle(el)
+
+  el.style.width = null
+  el.style.position = null
+  el.style.visibility = null
+  el.style.height = 0
+
+  getComputedStyle(el).height // eslint-disable-line no-unused-expressions
+  requestAnimationFrame(() => {
+    el.style.height = height
+  })
+}
+
+const afterEnter = (el: HTMLElement) => {
+  el.style.height = 'auto'
+}
+
+const leave = (el: HTMLElement) => {
+  el.style.height = getComputedStyle(el).height
+
+  getComputedStyle(el).height // eslint-disable-line no-unused-expressions
+  requestAnimationFrame(() => {
+    el.style.height = '0'
+  })
+}
 </script>
 
 <style scoped>

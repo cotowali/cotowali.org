@@ -1,5 +1,8 @@
 <template>
   <LiPage>
-    <Nuxt />
+    <slot />
   </LiPage>
 </template>
+
+<script setup lang="ts">
+</script>

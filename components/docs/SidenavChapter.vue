@@ -1,6 +1,8 @@
 <template>
   <section class="chapter">
-    <h2 class="chapter-title">{{ chapter.title }}</h2>
+    <h2 class="chapter-title">
+      {{ chapter.title }}
+    </h2>
     <ul class="chapter-pages">
       <DocsSidenavChapterPage
         v-for="page in chapter.pages"
@@ -11,19 +13,10 @@
   </section>
 </template>
 
-<script lang="ts">
-import Vue, { PropType } from 'vue'
-import { Chapter } from '@/plugins/docs'
+<script setup lang="ts">
+import { Chapter } from '@/types/docs'
 
-export default Vue.extend({
-  name: 'DocsSidenavChapter',
-  props: {
-    chapter: {
-      type: Object as PropType<Chapter>,
-      required: true,
-    },
-  },
-})
+defineProps<{ chapter: Chapter }>()
 </script>
 
 <style scoped>

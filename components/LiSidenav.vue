@@ -1,25 +1,31 @@
 <template>
-  <div class="sidenav-wrapper" :class="{ closed }">
-    <nav class="sidenav" :class="{ closed }">
+  <div
+    class="sidenav-wrapper"
+    :class="{ closed }"
+  >
+    <nav
+      class="sidenav"
+      :class="{ closed }"
+    >
       <slot />
     </nav>
-    <LiButton icon dark-red class="menu-button" @click="closed = !closed">
-      <LiIcon :icon="mdiMenu" :aria-label="closed ? 'open menu' : 'close menu'" />
+    <LiButton
+      icon
+      dark-red
+      class="menu-button"
+      @click="closed = !closed"
+    >
+      <LiIcon
+        :icon="mdiMenu"
+        :aria-label="closed ? 'open menu' : 'close menu'"
+      />
     </LiButton>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script setup lang="ts">
 import { mdiMenu } from '@mdi/js'
-
-export default Vue.extend({
-  name: 'LiSidenav',
-  data: () => ({
-    closed: false,
-    mdiMenu,
-  }),
-})
+const closed = ref(false)
 </script>
 
 <style scoped>
@@ -34,7 +40,7 @@ export default Vue.extend({
 
 .sidenav {
   @apply bg-dark-darken-1;
-  @apply fixed w-60 lg:w-72 pt-6 pl-6 pr-2;
+  @apply fixed w-60 lg:w-72 pt-article-pt pl-6 pr-2;
   @apply overflow-y-scroll h-full;
   transition-property: transform;
   @apply translate-x-0;

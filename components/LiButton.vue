@@ -1,130 +1,136 @@
 <template>
-  <span v-if="!clickable" class="cursor-default" :class="classes" :href="href" v-on="$listeners">
+  <span
+    v-if="!clickable"
+    class="cursor-default"
+    :class="classes"
+  >
     <slot />
   </span>
 
-  <a v-else-if="useAnchorTag" :class="classes" :href="href" v-on="$listeners">
+  <a
+    v-else-if="useAnchorTag"
+    :class="classes"
+    :href="href"
+  >
     <slot />
   </a>
 
-  <nuxt-link v-else-if="useNuxtLinkTag" :class="classes" :to="to" v-on="$listeners">
+  <nuxt-link
+    v-else-if="useNuxtLinkTag"
+    :class="classes"
+    :to="to"
+  >
     <slot />
   </nuxt-link>
 
-  <button v-else :class="classes" :type="type" v-on="$listeners">
+  <button
+    v-else
+    :class="classes"
+    :type="type"
+  >
     <slot />
   </button>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script setup lang="ts">
+import { PropType } from 'vue'
 
-export default Vue.extend({
-  name: 'LiButton',
-  props: {
-    type: {
-      type: String,
-      default: 'button',
-    },
-    href: {
-      type: String,
-      default: undefined,
-    },
-    to: {
-      type: [String, Object],
-      default: undefined,
-    },
-
-    // size
-    large: {
-      type: Boolean,
-    },
-    small: {
-      type: Boolean,
-    },
-
-    red: {
-      type: Boolean,
-    },
-    darkRed: {
-      type: Boolean,
-    },
-
-    text: {
-      type: Boolean,
-    },
-    plain: {
-      type: Boolean,
-    },
-
-    // shape
-    icon: {
-      type: Boolean,
-    },
-    circle: {
-      type: Boolean,
-    },
-    rounded: {
-      type: Boolean,
-    },
-    dense: {
-      type: Boolean,
-    },
-
-    // behavior
-    hover: {
-      type: Boolean,
-      default: undefined, // eslint-disable-line  vue/no-boolean-default
-    },
-    clickable: {
-      type: Boolean,
-      default: true, // eslint-disable-line  vue/no-boolean-default
-    },
+const props = defineProps({
+  type: {
+    type: String as PropType<'button' | 'submit' | 'reset'>,
+    default: 'button',
   },
-  computed: {
-    useAnchorTag(): boolean {
-      return !!this.href
-    },
-    useNuxtLinkTag(): boolean {
-      return !!this.to
-    },
-    size(): string {
-      return (
-        (this.large && 'large') ||
-        (this.small && 'small') ||
-        (this.text && 'text') ||
-        'default'
-      )
-    },
-    color(): string {
-      return (
-        (this.red && 'red') ||
-        (this.darkRed && 'dark-red') ||
-        ((this.plain || this.text) && 'plain') ||
-        'red'
-      )
-    },
-    classes(): { [key:string]: boolean } {
-      const hover = this.hover ||
-        (this.hover === undefined && this.clickable) // when hover is not specified, hover is true if clickable
-      return {
-        button: true,
-        circle: this.circle,
-        icon: this.icon,
-        hover,
-        dense: this.dense,
-        [`size-${this.size}`]: true,
-        [`color-${this.color}`]: true,
-        rounded: this.rounded,
-      }
-    },
+  href: {
+    type: String,
+    default: undefined,
   },
+  to: {
+    type: [String, Object],
+    default: undefined,
+  },
+
+  // size
+  large: {
+    type: Boolean,
+  },
+  small: {
+    type: Boolean,
+  },
+
+  red: {
+    type: Boolean,
+  },
+  darkRed: {
+    type: Boolean,
+  },
+
+  text: {
+    type: Boolean,
+  },
+  plain: {
+    type: Boolean,
+  },
+
+  // shape
+  icon: {
+    type: Boolean,
+  },
+  circle: {
+    type: Boolean,
+  },
+  rounded: {
+    type: Boolean,
+  },
+  dense: {
+    type: Boolean,
+  },
+
+  // behavior
+  hover: {
+    type: Boolean,
+    default: undefined, // eslint-disable-line  vue/no-boolean-default
+  },
+  clickable: {
+    type: Boolean,
+    default: true, // eslint-disable-line  vue/no-boolean-default
+  },
+})
+
+const useAnchorTag = computed(() => !!props.href)
+const useNuxtLinkTag = computed(() => !!props.to)
+const size = computed(() => (
+  (props.large && 'large') ||
+  (props.small && 'small') ||
+  (props.text && 'text') ||
+  'default'
+))
+
+const color = computed(() => (
+  (props.red && 'red') ||
+  (props.darkRed && 'dark-red') ||
+  ((props.plain || props.text) && 'plain') ||
+  'red'
+))
+
+const classes = computed(() => {
+  const hover = props.hover ||
+    (props.hover === undefined && props.clickable) // when hover is not specified, hover is true if clickable
+  return {
+    button: true,
+    circle: props.circle,
+    icon: props.icon,
+    hover,
+    dense: props.dense,
+    [`size-${ size.value }`]: true,
+    [`color-${ color.value }`]: true,
+    rounded: props.rounded,
+  }
 })
 </script>
 
 <style scoped>
   .button {
-    @apply rounded;
+    @apply rounded-sm;
     @apply no-underline hover:no-underline;
     @apply inline-flex items-center justify-center;
   }

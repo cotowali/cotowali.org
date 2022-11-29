@@ -8,17 +8,8 @@
   </LiSidenav>
 </template>
 
-<script lang="ts">
-import Vue, { PropType } from 'vue'
-import { Docs } from '@/plugins/docs'
+<script setup lang="ts">
+import { Docs } from '@/types/docs'
 
-export default Vue.extend({
-  name: 'DocsSidenav',
-  props: {
-    docs: {
-      type: Object as PropType<Docs>,
-      required: true,
-    },
-  },
-})
+defineProps<{ docs: Docs }>()
 </script>
