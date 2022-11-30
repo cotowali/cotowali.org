@@ -1,17 +1,23 @@
-import { queryContent, useI18n } from '#imports'
+import { queryContent, useLocaleContent } from '#imports'
 import type { Page, Docs, ContentIndex, ContentChapter } from '@/types/docs'
 
 export default () => {
-  const i18n = useI18n()
+  const {
+    currentLocale,
+    localeCodes,
+    contentPathForLocale,
+  } = useLocaleContent()
   async function fetchDocs(): Promise<Docs> {
     const contentIndex = await queryContent<ContentIndex>().where({ _path: '/docs' }).findOne()
 
     const fetchChapter = async (contentChapter: ContentChapter, locale: string) => {
-      const paths = contentChapter.pages.map((v) => '/docs/' + v)
+      const paths = contentChapter.pages
+        .map((path) => contentPathForLocale(locale, 'docs', path))
       const pathIndex = Object.fromEntries(paths.map((path, i) => [path, i]))
+      console.log(paths, pathIndex)
       const pages: Page[] = (
         await queryContent<Page>('docs')
-          .where({ _path: { $in: paths.map((v) => [v, locale].join('.')) } })
+          .where({ _path: { $in: paths } })
           .find()
       ).map((page) => (
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -25,7 +31,7 @@ export default () => {
       }
     }
     const chapters = await Promise.all(
-      contentIndex.chapters.map((c) => fetchChapter(c, i18n.locale.value)),
+      contentIndex.chapters.map((c) => fetchChapter(c, currentLocale())),
     )
     return { chapters }
   }
@@ -40,14 +46,13 @@ export default () => {
   }
 
   async function fetchDoc(path: string | string[]): Promise<Page> {
-    const locale = i18n.locale.value
-    const localeCodes = i18n.localeCodes.value
+    const locale = currentLocale()
 
     const page = await fetchPage(path, locale)
     page.latestRevisionLocale = locale
     let latestRevision = page.revision
 
-    const pages = await Promise.all(localeCodes.map(async (locale) => await fetchPage(path, locale)))
+    const pages = await Promise.all(localeCodes().map(async (l) => await fetchPage(path, l)))
     pages.forEach((v) => {
       if (v.revision > latestRevision) {
         latestRevision = v.revision
