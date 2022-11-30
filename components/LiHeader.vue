@@ -1,6 +1,6 @@
 <template>
   <header
-    class="header h-header-height"
+    class="header"
     v-bind="$attrs"
   >
     <div class="flex items-center">
@@ -37,7 +37,6 @@
       </ul>
     </nav>
   </header>
-  <div class="h-header-height" />
 </template>
 
 <script setup lang="ts">
@@ -45,14 +44,14 @@ import { mdiGithub } from '@mdi/js'
 </script>
 
 <style scoped>
-  .header {
-    @apply flex justify-between items-center;
-    @apply fixed w-full z-front;
-    @apply px-4;
-    @apply bg-brand-red;
-  }
+.header {
+  @apply flex justify-between items-center;
+  @apply fixed z-front w-full h-header-height;
+  @apply px-4;
+  @apply bg-brand-red;
+}
 
-  .nav-list {
-    @apply flex items-center gap-x-2;
-  }
+.nav-list {
+  @apply flex items-center gap-x-2;
+}
 </style>

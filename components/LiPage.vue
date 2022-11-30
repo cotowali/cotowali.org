@@ -2,7 +2,7 @@
   <div v-scroll-url-sync>
     <LiHeader />
 
-    <div class="page">
+    <div class="page pt-header-height">
       <template v-if="$slots.left">
         <slot name="left" />
       </template>
