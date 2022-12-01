@@ -56,3 +56,18 @@ z generate
         - revison: document revision (yyyymmdd)
 
 Read existing documents for more information
+
+## TOOD: Nuxt3 Stable
+
+rc -> stable
+
+### Waiting update
+
+- [google-fonts](https://github.com/nuxt-community/google-fonts-module/blob/main/package.json#L33)
+- [tailwindcss](https://github.com/nuxt-modules/tailwindcss/blob/main/package.json#L29)
+
+### Can update
+
+- [i18n: 8.0.0-beta.6](https://github.com/nuxt-modules/i18n/blob/next/package.json#L78)
+- [content: 2.2.2](https://github.com/nuxt/content/blob/main/package.json#L45)
+- nuxt: 3.0.0
