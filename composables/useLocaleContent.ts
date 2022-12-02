@@ -4,7 +4,6 @@ export default () => {
   const currentLocale = () => i18n.locale.value
   const localeCodes = () => i18n.localeCodes.value
   function contentPathForLocale(locale: string, ...parts: string[]): string {
-    console.log(locale)
     const path = parts
       .map((s) => s.split('/'))
       .flat()

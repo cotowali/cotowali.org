@@ -14,7 +14,6 @@ export default () => {
       const paths = contentChapter.pages
         .map((path) => contentPathForLocale(locale, 'docs', path))
       const pathIndex = Object.fromEntries(paths.map((path, i) => [path, i]))
-      console.log(paths, pathIndex)
       const pages: Page[] = (
         await queryContent<Page>('docs')
           .where({ _path: { $in: paths } })
