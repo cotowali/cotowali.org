@@ -1,30 +1,27 @@
 <template>
-  <article class="px-12 pt-article-pt">
-    <Alert v-if="page.locale !== page.latestRevisionLocale">
-      <p>This documentation for current locale is out of date.</p>
-      <p>
-        The latest document is available in
-        <nuxt-link
-          class="font-bold hover:underline"
-          :to="switchLocalePath(page.latestRevisionLocale)"
-        >
-          another locale
-        </nuxt-link>
-      </p>
-    </Alert>
-
-    <div class="title-box">
-      <h1 class="title">
-        {{ page.title }}
-      </h1>
-      <div class="revision">
-        rev{{ page.revision }}
-      </div>
-    </div>
-    <div class="docs-content">
-      <ContentRenderer :value="page" />
-    </div>
-  </article>
+  <LiArticle
+    :title="page.title"
+    :title-subtext="`rev${ page.revision }`"
+    :content="page"
+  >
+    <template
+      v-if="page.locale !== page.latestRevisionLocale"
+      #above
+    >
+      <Alert>
+        <p>This documentation for current locale is out of date.</p>
+        <p>
+          The latest document is available in
+          <nuxt-link
+            class="font-bold hover:underline"
+            :to="switchLocalePath(page.latestRevisionLocale)"
+          >
+            another locale
+          </nuxt-link>
+        </p>
+      </Alert>
+    </template>
+  </LiArticle>
 </template>
 
 <script setup lang="ts">
