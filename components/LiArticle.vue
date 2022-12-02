@@ -25,50 +25,51 @@ defineProps<{ content: object, title: string, titleSubtext?: string }>()
 
 <style>
 .article-content {
-  @apply leading-relaxed
-}
-.article-content p,
-.article-content pre {
-  @apply mt-2;
-}
-.article-content p a {
-  @apply text-brand-red;
-  @apply hover:underline;
-}
+  @apply leading-relaxed;
 
-.article-content h2 {
-  @apply text-2xl font-bold font-title;
-  @apply mt-12 mb-6;
-}
-.article-content h3 {
-  @apply text-xl font-bold font-title;
-  @apply mt-6 mb-2;
-}
-.article-content h4 {
-  @apply text-lg font-bold;
-  @apply mt-6;
-}
-.article-content h5 {
-  @apply font-bold;
-  @apply mt-4;
-}
-.article-content h6 {
-  @apply font-bold;
-  @apply mt-4;
-}
+  & p,
+  & pre {
+    @apply mt-2;
+  }
+  & p a {
+    @apply text-brand-red;
+    @apply hover:underline;
+  }
 
-.article-content code {
-  @apply px-1 rounded-sm bg-black;
-}
+  & h2 {
+    @apply text-2xl font-bold font-title;
+    @apply mt-12 mb-6;
+  }
+  & h3 {
+    @apply text-xl font-bold font-title;
+    @apply mt-6 mb-2;
+  }
+  & h4 {
+    @apply text-lg font-bold;
+    @apply mt-6;
+  }
+  & h5 {
+    @apply font-bold;
+    @apply mt-4;
+  }
+  & h6 {
+    @apply font-bold;
+    @apply mt-4;
+  }
 
-.article-content pre:has(code){
-  @apply rounded-sm leading-normal text-xs;
-  @apply p-2;
-  @apply !bg-black;
-}
+  & code {
+    @apply px-1 rounded-sm bg-black;
+  }
 
-.article-content pre code {
-  @apply p-0; /* cancel `code { px-1 }` */
+  & pre:has(code){
+    @apply rounded-sm leading-normal text-xs;
+    @apply p-2;
+    @apply !bg-black;
+  }
+
+  & pre code {
+    @apply p-0; /* cancel `code { px-1 }` */
+  }
 }
 </style>
 
