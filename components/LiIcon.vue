@@ -6,6 +6,7 @@
     <svg
       v-bind="$attrs"
       role="img"
+      :aria-label="label"
       viewBox="0 0 24 24"
       :width="size"
       :height="size"
@@ -31,6 +32,10 @@ const props = defineProps({
   size: {
     type: String,
     default: '1.5rem',
+  },
+  label: {
+    type: String,
+    default: null,
   },
 })
 

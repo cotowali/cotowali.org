@@ -29,7 +29,7 @@
             rel="external noopener noreferrer"
           >
             <LiIcon
-              aria-label="github"
+              label="github"
               name="github"
             />
           </LiButton>

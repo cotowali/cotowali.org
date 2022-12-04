@@ -41,7 +41,7 @@
     <LiIcon
       class="alert-icon"
       :path="icon"
-      :aria-label="iconLabel"
+      :label="iconLabel"
     />
     <div class="alert-content">
       <template v-if="hasSlot">

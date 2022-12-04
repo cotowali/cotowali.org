@@ -17,7 +17,7 @@
     >
       <LiIcon
         name="menu"
-        :aria-label="closed ? 'open menu' : 'close menu'"
+        :label="closed ? 'open menu' : 'close menu'"
       />
     </LiButton>
   </div>

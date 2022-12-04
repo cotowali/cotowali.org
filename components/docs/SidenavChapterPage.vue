@@ -24,7 +24,7 @@
         >
           <LiIcon
             :path="mdiRight"
-            aria-label="expand"
+            label="expand"
             class="icon-expand"
             :class="{ 'expanded': tocExpanded }"
           />

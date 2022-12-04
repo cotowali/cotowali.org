@@ -10,7 +10,7 @@
       icon
     >
       <LiIcon
-        aria-label="switch-language"
+        label="switch-language"
         name="translate"
       />
     </LiButton>
