@@ -16,14 +16,23 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  icon: {
+import * as icons from '@/assets/icons'
+
+const props = defineProps({
+  name: {
     type: String,
-    required: true,
+    default: null,
+    validator: (v: string | null) => v && Object.keys(icons).includes(v) || true,
+  },
+  path: {
+    type: String,
+    default: null,
   },
   size: {
     type: String,
     default: '1.5rem',
   },
 })
+
+const icon = computed(() => props.path ?? icons[props.name])
 </script>

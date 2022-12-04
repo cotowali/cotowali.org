@@ -11,7 +11,7 @@
     >
       <LiIcon
         aria-label="switch-language"
-        :icon="mdiTranslate"
+        name="translate"
       />
     </LiButton>
     <ul
@@ -36,8 +36,6 @@
 </template>
 
 <script setup lang="ts">
-import { mdiTranslate } from '@mdi/js'
-
 const { locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 

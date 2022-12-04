@@ -40,7 +40,7 @@
   >
     <LiIcon
       class="alert-icon"
-      :icon="icon"
+      :path="icon"
       :aria-label="iconLabel"
     />
     <div class="alert-content">

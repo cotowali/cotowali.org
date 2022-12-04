@@ -16,7 +16,7 @@
       @click="closed = !closed"
     >
       <LiIcon
-        :icon="mdiMenu"
+        name="menu"
         :aria-label="closed ? 'open menu' : 'close menu'"
       />
     </LiButton>
@@ -24,7 +24,6 @@
 </template>
 
 <script setup lang="ts">
-import { mdiMenu } from '@mdi/js'
 const closed = ref(false)
 </script>
 

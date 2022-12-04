@@ -30,7 +30,7 @@
           >
             <LiIcon
               aria-label="github"
-              :icon="mdiGithub"
+              name="github"
             />
           </LiButton>
         </li>
@@ -38,10 +38,6 @@
     </nav>
   </header>
 </template>
-
-<script setup lang="ts">
-import { mdiGithub } from '@mdi/js'
-</script>
 
 <style scoped>
 .header {

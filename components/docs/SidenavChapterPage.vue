@@ -23,7 +23,7 @@
           @click="tocExpanded = !tocExpanded"
         >
           <LiIcon
-            :icon="mdiRight"
+            :path="mdiRight"
             aria-label="expand"
             class="icon-expand"
             :class="{ 'expanded': tocExpanded }"
