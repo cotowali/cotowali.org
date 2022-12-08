@@ -1,7 +1,4 @@
----
-title: Testing and Assertion
-revision: 20210729
----
+# Testing and Assertion
 
 ## Assert Statement
 

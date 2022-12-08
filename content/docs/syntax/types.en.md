@@ -1,7 +1,4 @@
----
-title: Types
-revision: 0
----
+# Types
 
 ## Builtin
 

@@ -1,7 +1,4 @@
----
-title: Variables
-revision: 20211113
----
+# Variables
 
 ## Declarations and Assignments
 

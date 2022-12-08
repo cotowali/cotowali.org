@@ -1,7 +1,4 @@
----
-title: Compiler Directives
-revision: 0
----
+# Compiler Directives
 
 ## Compiler Symbols
 

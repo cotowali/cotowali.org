@@ -1,7 +1,4 @@
----
-title: Builtin
-revision: 0
----
+# Builtin
 
 :alert{type=wip}
 

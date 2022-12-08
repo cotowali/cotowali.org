@@ -1,5 +1,3 @@
----
-title: Cotowali について
----
+# Cotowali について
 
 :alert{type=wip}

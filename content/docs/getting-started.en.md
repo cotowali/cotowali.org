@@ -1,7 +1,4 @@
----
-title: Getting Started
-revision: 20211203
----
+# Getting Started
 
 ## Setup
 

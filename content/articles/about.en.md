@@ -1,5 +1,3 @@
----
-title: About Cotowali
----
+# About Cotowali
 
 :alert{type=wip}

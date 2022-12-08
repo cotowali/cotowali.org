@@ -1,7 +1,4 @@
----
-title: ShellScript Integration
-revision: 20211113
----
+# ShellScript Integration
 
 ## Redirection
 

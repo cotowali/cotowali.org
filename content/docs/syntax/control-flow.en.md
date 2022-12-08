@@ -1,7 +1,4 @@
----
-title: Control Flow
-revision: 20220311
----
+# Control Flow
 
 ## Conditions
 

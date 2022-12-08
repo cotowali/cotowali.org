@@ -1,7 +1,4 @@
----
-title: Hello World
-revision: 20210101
----
+# Hello World
 
 ## Code
 

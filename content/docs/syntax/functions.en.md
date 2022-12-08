@@ -1,7 +1,4 @@
----
-title: Functions
-revision: 20220311
----
+# Functions
 
 ## Basic
 

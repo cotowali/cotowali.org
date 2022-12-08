@@ -1,7 +1,4 @@
----
-title: ビルトイン
-revision: 20210114
----
+# ビルトイン
 
 :alert{type=wip}
 

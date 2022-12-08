@@ -1,7 +1,4 @@
----
-title: Comments
-revision: 20220311
----
+# Comments
 
 Cotowali's comments are basically C-style.
 
