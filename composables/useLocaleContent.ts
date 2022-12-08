@@ -18,7 +18,7 @@ export default () => {
   const fetchContentForLocale = async <T>(locale: string, ...pathParts: string[]) =>
     await queryContent<T>()
       .where({ _path: contentPathForLocale(locale, ...pathParts) })
-
+      .findOne()
   const fetchContentForCurrentLocale = async <T>(...pathParts: string[]) =>
     await fetchContentForLocale<T>(currentLocale(), ...pathParts)
 

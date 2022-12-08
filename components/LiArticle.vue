@@ -2,9 +2,12 @@
   <article class="px-12 pt-article-pt">
     <slot name="above" />
 
-    <div class="title-box">
+    <div
+      v-if="hasTitleBox"
+      class="title-box"
+    >
       <h1 class="title">
-        {{ title }}
+        {{ actualTitle }}
       </h1>
       <div
         v-if="titleSubtext"
@@ -20,7 +23,12 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ content: object, title: string, titleSubtext?: string }>()
+interface Content extends Object {
+  title?: string
+}
+const props = defineProps<{ content: Content, title?: string, titleSubtext?: string }>()
+const actualTitle = computed(() => props.title ?? props.content.title ?? null)
+const hasTitleBox = computed(() => actualTitle.value || props.titleSubtext)
 </script>
 
 <style>
