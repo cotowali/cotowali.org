@@ -3,13 +3,18 @@
     <slot name="above" />
 
     <div class="article-content">
-      <ContentRenderer :value="content" />
+      <template v-if="content">
+        <ContentRenderer :value="content" />
+      </template>
+      <template v-else>
+        <ContentDoc :path="contentPath" />
+      </template>
     </div>
   </article>
 </template>
 
 <script setup lang="ts">
-defineProps<{ content: object }>()
+defineProps<{ contentPath?: string, content?: object }>()
 </script>
 
 <style>
