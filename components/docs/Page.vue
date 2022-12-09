@@ -1,9 +1,5 @@
 <template>
-  <LiArticle
-    :title="page.title"
-    :title-subtext="`rev${ page.revision }`"
-    :content="page"
-  >
+  <LiArticle :content="page">
     <template
       v-if="page.locale !== page.latestRevisionLocale"
       #above
