@@ -1,20 +1,12 @@
 <template>
-  <LiArticle
-    :content="article"
-  />
+  <LiArticle :content-path="contentPath" />
 </template>
 
 <script setup lang="ts">
-const { currentRoute: route } = useRouter()
-const { locale } = useI18n()
-const { fetchContentForCurrentLocale } = useLocaleContent()
+const route = useRoute()
+const { contentPathForCurrentLocale } = useLocaleContent()
 
-const path = computed(() => route.value.params.path)
-const { data: article } = await useAsyncData(async () =>
-  await fetchContentForCurrentLocale('articles', ...path.value),
-  // { watch: [path, locale] }
+const contentPath = computed(() =>
+  contentPathForCurrentLocale('articles', ...route.params.path),
 )
-watch([path, locale], async () => {
-  article.value = await fetchContentForCurrentLocale('articles', ...path.value)
-})
 </script>
