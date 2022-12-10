@@ -1,29 +1,10 @@
 <template>
-  <LiArticle :content="page">
-    <template
-      v-if="page.locale !== page.latestRevisionLocale"
-      #above
-    >
-      <Alert>
-        <p>This documentation for current locale is out of date.</p>
-        <p>
-          The latest document is available in
-          <nuxt-link
-            class="font-bold hover:underline"
-            :to="switchLocalePath(page.latestRevisionLocale)"
-          >
-            another locale
-          </nuxt-link>
-        </p>
-      </Alert>
-    </template>
-  </LiArticle>
+  <LiArticle :content="page" />
 </template>
 
 <script setup lang="ts">
 import { Page } from '@/types/docs'
 
-const switchLocalePath = useSwitchLocalePath()
 const scrollUrlSync = useScrollUrlSync()
 
 const props = defineProps<{ page: Page }>()
