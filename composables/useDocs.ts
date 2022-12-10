@@ -4,8 +4,9 @@ import type { Page, Docs, ContentIndex, ContentChapter } from '@/types/docs'
 export default () => {
   const {
     currentLocale,
-    localeCodes,
     contentPathForLocale,
+    fetchContentForCurrentLocale,
+    trimLocaleFromPath,
   } = useLocaleContent()
   async function fetchDocs(): Promise<Docs> {
     const contentIndex = await queryContent<ContentIndex>().where({ _path: '/docs' }).findOne()
@@ -14,15 +15,15 @@ export default () => {
       const paths = contentChapter.pages
         .map((path) => contentPathForLocale(locale, 'docs', path))
       const pathIndex = Object.fromEntries(paths.map((path, i) => [path, i]))
-      const pages: Page[] = (
+      const pages =
         await queryContent<Page>('docs')
           .where({ _path: { $in: paths } })
           .find()
-      ).map((page) => (
+
+      pages.sort((a, b) =>
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        { ...page, path: page._path!.split('.')[0], locale }
-      ))
-      pages.sort((a, b) => pathIndex[a.path] - pathIndex[b.path])
+        pathIndex[trimLocaleFromPath(a._path!)] - pathIndex[b._path!],
+      )
 
       return {
         title: contentChapter.title[locale],
@@ -35,31 +36,8 @@ export default () => {
     return { chapters }
   }
 
-  async function fetchPage(path: string | string[], locale: string) {
-    const sPath = `${ (typeof path === 'string' ? path : path.join('/')) }`
-    const page = await queryContent<Page>('docs')
-      .where({ _path: `/docs/${ sPath }.${ locale }` }).findOne()
-    page.path = sPath
-    page.locale = locale
-    return page
-  }
+  const fetchDoc = async (pathParts: string[]) =>
+    fetchContentForCurrentLocale('docs', ...pathParts)
 
-  async function fetchDoc(path: string | string[]): Promise<Page> {
-    const locale = currentLocale()
-
-    const page = await fetchPage(path, locale)
-    page.latestRevisionLocale = locale
-    let latestRevision = page.revision
-
-    const pages = await Promise.all(localeCodes().map(async (l) => await fetchPage(path, l)))
-    pages.forEach((v) => {
-      if (v.revision > latestRevision) {
-        latestRevision = v.revision
-        page.latestRevisionLocale = v.locale
-      }
-    })
-
-    return page
-  }
   return { fetchDocs, fetchDoc }
 }

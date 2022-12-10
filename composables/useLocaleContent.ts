@@ -22,6 +22,8 @@ export default () => {
   const fetchContentForCurrentLocale = async <T>(...pathParts: string[]) =>
     await fetchContentForLocale<T>(currentLocale(), ...pathParts)
 
+  const trimLocaleFromPath = (path: string) => path.split('.')[0]
+
   return {
     currentLocale,
     localeCodes,
@@ -29,5 +31,6 @@ export default () => {
     contentPathForCurrentLocale,
     fetchContentForLocale,
     fetchContentForCurrentLocale,
+    trimLocaleFromPath,
   }
 }
