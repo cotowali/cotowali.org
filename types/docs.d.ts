@@ -10,6 +10,7 @@ export interface ContentIndex extends ParsedContent {
 
 export interface Page extends MarkdownParsedContent {
   title: string
+  path: string
 }
 
 export interface Chapter {

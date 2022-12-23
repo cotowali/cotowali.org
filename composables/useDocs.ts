@@ -15,14 +15,17 @@ export default () => {
       const paths = contentChapter.pages
         .map((path) => contentPathForLocale(locale, 'docs', path))
       const pathIndex = Object.fromEntries(paths.map((path, i) => [path, i]))
-      const pages =
+      const pages = (
         await queryContent<Page>('docs')
           .where({ _path: { $in: paths } })
           .find()
+      )
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        .map((v: Page): Page => ({ ...v, path: trimLocaleFromPath(v._path!) }))
 
       pages.sort((a, b) =>
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        pathIndex[trimLocaleFromPath(a._path!)] - pathIndex[b._path!],
+        pathIndex[trimLocaleFromPath(a._path!)] - pathIndex[trimLocaleFromPath(b._path!)],
       )
 
       return {
