@@ -1,10 +1,12 @@
 <i18n lang="json">
 {
   "en": {
-    "get-started": "Get Started"
+    "get-started": "Get Started",
+    "taika": "Taika Program"
   },
   "ja": {
-    "get-started": "はじめる"
+    "get-started": "はじめる",
+    "taika": "タイカ計画"
   }
 }
 </i18n>
@@ -28,12 +30,19 @@
           </p>
         </div>
       </div>
-      <div class="flex gap-x-4">
+      <div class="flex gap-x-2">
         <LiButton
           :to="localePath('/docs/getting-started')"
           class="w-48"
         >
           {{ t('get-started') }}
+        </LiButton>
+        <LiButton
+          :to="localePath('/taika-program')"
+          class="mw-32"
+          dark-red
+        >
+          {{ t('taika') }}
         </LiButton>
       </div>
     </div>
