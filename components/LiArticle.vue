@@ -23,7 +23,7 @@ defineProps<{ contentPath?: string, content?: object }>()
 
   & p,
   & pre {
-    @apply mt-2;
+    @apply mt-4;
   }
 
   & p a {
@@ -70,6 +70,12 @@ defineProps<{ contentPath?: string, content?: object }>()
 
   & pre code {
     @apply p-0; /* cancel `code { px-1 }` */
+  }
+
+  & .task-list-item {
+    & input[type="checkbox"] {
+      @apply mr-2;
+    }
   }
 }
 </style>
