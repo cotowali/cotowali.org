@@ -3,18 +3,28 @@
     <slot name="above" />
 
     <div class="article-content">
-      <template v-if="content">
-        <ContentRenderer :value="content" />
-      </template>
-      <template v-else>
-        <ContentDoc :path="contentPath" />
-      </template>
+      <ContentRenderer :value="contentData" />
     </div>
   </article>
 </template>
 
 <script setup lang="ts">
-defineProps<{ contentPath?: string, content?: object }>()
+const props = defineProps<{ contentPath?: string, content?: object | null }>()
+const { data: contentData } = await useAsyncData(async () => {
+  if (props.content !== undefined) {
+    if (props.content !== null) {
+      return props.content
+    }
+  } else if (props.contentPath !== undefined) {
+    return await queryContent(props.contentPath).findOne()
+  }
+  return null
+}, { watch: [props] })
+watch(contentData, (data) => {
+  if (!data) {
+    throw createError({ statusCode: 404 })
+  }
+}, { immediate: true })
 </script>
 
 <style>
