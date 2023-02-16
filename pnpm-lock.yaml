@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@cotowali/design': ^0.3.4
+  '@cotowali/eslint-config': github:cotowali/eslint-config
   '@mdi/js': ^7.0.96
   '@nuxt/content': ^2.2.1
   '@nuxtjs/google-fonts': ^3.0.0-0
@@ -10,8 +11,6 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.0.0
   '@typescript-eslint/parser': ^5.42.0
   eslint: ^8.0.1
-  eslint-config-standard: ^17.0.0
-  eslint-config-standard-with-typescript: ^23.0.0
   eslint-plugin-import: ^2.26.0
   eslint-plugin-n: ^15.4.0
   eslint-plugin-nuxt: ^4.0.0
@@ -27,6 +26,7 @@ specifiers:
 
 devDependencies:
   '@cotowali/design': 0.3.4
+  '@cotowali/eslint-config': github.com/cotowali/eslint-config/bda5d3b63fc776d71a80de875b8ce53047acb572_rdjc5rtbjinvha3hlbe5k2r4uy
   '@mdi/js': 7.0.96
   '@nuxt/content': 2.2.1
   '@nuxtjs/google-fonts': 3.0.0-0
@@ -35,8 +35,6 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.42.0_6xw5wg2354iw4zujk2f3vyfrzu
   '@typescript-eslint/parser': 5.42.0_wyqvi574yv7oiwfeinomdzmc3m
   eslint: 8.26.0
-  eslint-config-standard: 17.0.0_pxgizx7scytnzv6tfhdgsab7u4
-  eslint-config-standard-with-typescript: 23.0.0_cuhm7w6dppd435hmbz5wtjkgum
   eslint-plugin-import: 2.26.0_5aea5dp4n23mfv4y2mmjxole3e
   eslint-plugin-n: 15.4.0_eslint@8.26.0
   eslint-plugin-nuxt: 4.0.0_eslint@8.26.0
@@ -1067,8 +1065,8 @@ packages:
       vue-i18n:
         optional: true
     dependencies:
-      '@intlify/message-compiler': 9.3.0-beta.10
-      '@intlify/shared': 9.3.0-beta.10
+      '@intlify/message-compiler': 9.3.0-beta.16
+      '@intlify/shared': 9.3.0-beta.16
       jsonc-eslint-parser: 1.4.1
       source-map: 0.6.1
       vue-i18n: 9.3.0-beta.6_vue@3.2.41
@@ -1092,11 +1090,11 @@ packages:
       '@intlify/shared': 9.3.0-beta.6
     dev: true
 
-  /@intlify/message-compiler/9.3.0-beta.10:
-    resolution: {integrity: sha512-RoOC6yceOykLRhN0NlbkNOBUx1el6iphx3W8NfOx3jHVNtfT1FYokx14/5sU3F1F0uxeG4sp6q+ppKvaF8o+ww==}
+  /@intlify/message-compiler/9.3.0-beta.16:
+    resolution: {integrity: sha512-CGQI3xRcs1ET75eDQ0DUy3MRYOqTauRIIgaMoISKiF83gqRWg93FqN8lGMKcpBqaF4tI0JhsfosCaGiBL9+dnw==}
     engines: {node: '>= 14'}
     dependencies:
-      '@intlify/shared': 9.3.0-beta.10
+      '@intlify/shared': 9.3.0-beta.16
       source-map: 0.6.1
     dev: true
 
@@ -1108,8 +1106,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /@intlify/shared/9.3.0-beta.10:
-    resolution: {integrity: sha512-h93uAanbAt/XgjDHclrVB7xix6r7Uz11wx0iGNOCdHP7aA2LCJjUT3uNbekJjjbo+Fl5jzTSJZdm2SexzoqhRA==}
+  /@intlify/shared/9.3.0-beta.16:
+    resolution: {integrity: sha512-kXbm4svALe3lX+EjdJxfnabOphqS4yQ1Ge/iIlR8tvUiYRCoNz3hig1M4336iY++Dfx5ytEQJPNjIcknNIuvig==}
     engines: {node: '>= 14'}
     dev: true
 
@@ -1134,7 +1132,7 @@ packages:
         optional: true
     dependencies:
       '@intlify/bundle-utils': 3.2.1_vue-i18n@9.3.0-beta.6
-      '@intlify/shared': 9.3.0-beta.10
+      '@intlify/shared': 9.3.0-beta.16
       '@rollup/pluginutils': 4.2.1
       '@vue/compiler-sfc': 3.2.41
       debug: 4.3.4
@@ -4213,28 +4211,6 @@ packages:
   /escape-string-regexp/5.0.0:
     resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
     engines: {node: '>=12'}
-    dev: true
-
-  /eslint-config-standard-with-typescript/23.0.0_cuhm7w6dppd435hmbz5wtjkgum:
-    resolution: {integrity: sha512-iaaWifImn37Z1OXbNW1es7KI+S7D408F9ys0bpaQf2temeBWlvb0Nc5qHkOgYaRb5QxTZT32GGeN1gtswASOXA==}
-    peerDependencies:
-      '@typescript-eslint/eslint-plugin': ^5.0.0
-      eslint: ^8.0.1
-      eslint-plugin-import: ^2.25.2
-      eslint-plugin-n: ^15.0.0
-      eslint-plugin-promise: ^6.0.0
-      typescript: '*'
-    dependencies:
-      '@typescript-eslint/eslint-plugin': 5.42.0_6xw5wg2354iw4zujk2f3vyfrzu
-      '@typescript-eslint/parser': 5.42.0_wyqvi574yv7oiwfeinomdzmc3m
-      eslint: 8.26.0
-      eslint-config-standard: 17.0.0_pxgizx7scytnzv6tfhdgsab7u4
-      eslint-plugin-import: 2.26.0_5aea5dp4n23mfv4y2mmjxole3e
-      eslint-plugin-n: 15.4.0_eslint@8.26.0
-      eslint-plugin-promise: 6.1.1_eslint@8.26.0
-      typescript: 4.8.4
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /eslint-config-standard/17.0.0_pxgizx7scytnzv6tfhdgsab7u4:
@@ -10040,7 +10016,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      '@intlify/shared': 9.3.0-beta.10
+      '@intlify/shared': 9.3.0-beta.16
       '@intlify/vue-i18n-bridge': 0.7.0_dybyk3kyl7g34srrts4qxm2bxi
       '@intlify/vue-router-bridge': 0.7.0_vue@3.2.41
       ufo: 0.8.6
@@ -10422,4 +10398,23 @@ packages:
 
   /zwitch/2.0.2:
     resolution: {integrity: sha512-JZxotl7SxAJH0j7dN4pxsTV6ZLXoLdGME+PsjkL/DaBrVryK9kTGq06GfKrwcSOqypP+fdXGoCHE36b99fWVoA==}
+    dev: true
+
+  github.com/cotowali/eslint-config/bda5d3b63fc776d71a80de875b8ce53047acb572_rdjc5rtbjinvha3hlbe5k2r4uy:
+    resolution: {tarball: https://codeload.github.com/cotowali/eslint-config/tar.gz/bda5d3b63fc776d71a80de875b8ce53047acb572}
+    id: github.com/cotowali/eslint-config/bda5d3b63fc776d71a80de875b8ce53047acb572
+    name: '@cotowali/eslint-config'
+    version: 0.1.0
+    peerDependencies:
+      eslint: ^8.34.0
+      eslint-config-standard: ^17.0.0
+      eslint-plugin-import: ^2.27.5
+      eslint-plugin-n: ^15.6.1
+      eslint-plugin-promise: ^6.1.1
+    dependencies:
+      eslint: 8.26.0
+      eslint-config-standard: 17.0.0_pxgizx7scytnzv6tfhdgsab7u4
+      eslint-plugin-import: 2.26.0_5aea5dp4n23mfv4y2mmjxole3e
+      eslint-plugin-n: 15.4.0_eslint@8.26.0
+      eslint-plugin-promise: 6.1.1_eslint@8.26.0
     dev: true
