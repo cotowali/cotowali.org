@@ -23,7 +23,7 @@ export const personalBronzeSponsors: Sponsors = [{
   url: 'https://github.com/Krout0n',
 }, {
   name: 'Kazuki Chigita',
-  image: 'https://pbs.twimg.com/profile_images/1480844416462225409/aiBGMxvt.jpg',
+  image: 'https://kazuki.chigita.net/chigichan24_2022.png',
   url: 'https://kazuki.chigita.net/profile',
 }]
 
