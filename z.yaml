@@ -7,4 +7,3 @@ tasks:
     else
       pnpm run "$(echo "$*" | tr ' ' ':')"
     fi
-  install: pnpm install --shamefully-hoist $@
