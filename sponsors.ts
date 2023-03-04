@@ -31,5 +31,12 @@ export const personalSponsors: Sponsors = [{
   name: 'くろぐろ',
   image: 'https://github.com/k-kuroguro.png',
   url: 'https://twitter.com/k_kuroguro',
+}, {
+  name: 'かずひら',
+  image: 'https://unavatar.io/twitter/kazuhi_ra',
+  url: 'https://twitter.com/kazuhi_ra',
+}, {
+  name: 'ヒツジのしっぽ',
+  image: 'https://github.com/hituzi-no-sippo.png',
+  url: 'https://github.com/hituzi-no-sippo',
 }]
-
