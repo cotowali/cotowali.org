@@ -52,7 +52,7 @@ const { t } = useI18n({ useScope: 'local' })
 
 <style scoped>
 .hero {
-  @apply flex justify-center items-center;
+  @apply flex justify-start items-center;
   @apply py-24;
 }
 </style>

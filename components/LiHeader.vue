@@ -3,10 +3,11 @@
     class="header"
     v-bind="$attrs"
   >
-    <div class="flex items-center">
+    <div class="flex items-end">
       <nuxt-link :to="localePath('/')">
         <CotowaliLogoText />
       </nuxt-link>
+      <span class="ml-2 font-thin">is no longer maintained.</span>
     </div>
     <nav>
       <ul class="nav-list">

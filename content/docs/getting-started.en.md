@@ -1,5 +1,11 @@
 # Getting Started
 
+::alert
+<span class="vertical-middle">
+Cotowali is no longer maintained.
+</span>
+::
+
 ## Setup
 
 You can install Cotowali with [Konryu](https://github.com/cotowali/konryu) that is written in Cotowali itself。
